@@ -25,3 +25,4 @@ dist-ssr
 
 # Rate My Modules review texts (copyrighted; local only)
 data/.reviews-cache.json
+.vercel
