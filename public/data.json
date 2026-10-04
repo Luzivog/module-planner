@@ -1,0 +1,3464 @@
+{
+ "generatedAt": "2026-10-04T16:45:51.543Z",
+ "programme": "MSc Advanced Computing",
+ "selection": {
+  "closes": "2026-10-23T17:00:00"
+ },
+ "rules": [
+  {
+   "group": "SELECTIVE",
+   "min": 45,
+   "max": 45
+  }
+ ],
+ "terms": {
+  "1": {
+   "teaching": "5 Oct – 27 Nov",
+   "exams": "7–11 Dec"
+  },
+  "2": {
+   "teaching": "11 Jan – 5 Mar",
+   "exams": "15–19 Mar"
+  }
+ },
+ "modules": [
+  {
+   "code": "70005",
+   "title": "Complexity",
+   "short": "Complexity",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "108",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "video",
+     "rooms": [],
+     "recorded": false,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [
+    {
+     "title": "Time and Space",
+     "opens": "2026-10-28T09:00:00+00:00",
+     "due": "2026-11-11T19:00:00+00:00",
+     "weightPct": 100,
+     "hours": 15,
+     "group": false
+    }
+   ],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Iain Phillips"
+    ],
+    "lastYear": [
+     "Iain Phillips"
+    ],
+    "meanYear": [
+     "Iain Phillips"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 65.08
+    },
+    {
+     "year": "2023-24",
+     "mean": 69.12
+    },
+    {
+     "year": "2022-23",
+     "mean": 71.44
+    }
+   ],
+   "reviews": {
+    "count": 1,
+    "content": 4,
+    "teaching": 4,
+    "difficulty": 3,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70005-complexity",
+    "summary": "The one reviewer found the exam predictable from the tutorials, the lecturer kind, and the content more intuitive than it looks."
+   },
+   "notes": {
+    "coursework": "One written coursework (20%); unassessed tutorial exercises, about half discussed in class.",
+    "exam": "80%: 2 h, all 3 questions, open book, all proof: NP-completeness and logspace reductions, NL, NC and oracle classes.",
+    "examiners": "2024-25: terse, no statistics; marks lost for non-total reductions and malformed clauses.",
+    "caveat": "Every question needs a fresh reduction idea, so open book barely helps; mean about 65.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70005/",
+    "site": null
+   }
+  },
+  {
+   "code": "70006",
+   "title": "Computational Finance",
+   "short": "Computational Finance",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "107",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "video",
+     "rooms": [],
+     "recorded": false,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Panos Parpas"
+    ],
+    "lastYear": [
+     "Panos Parpas"
+    ],
+    "meanYear": null
+   },
+   "means": [
+    {
+     "year": "2023-24",
+     "mean": 69.77
+    },
+    {
+     "year": "2022-23",
+     "mean": 69.2
+    }
+   ],
+   "reviews": {
+    "count": 4,
+    "content": 3.5,
+    "teaching": 2.25,
+    "difficulty": 5,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70006-computational-finance",
+    "summary": "All four reviewers found the content interesting but the teaching weak and the exam extremely hard, long and unlike the tutorials."
+   },
+   "notes": {
+    "coursework": "Assessed exercises plus implementing and testing a portfolio optimisation model (20%).",
+    "exam": "80%: 2 h, all 3 questions, calculator: ~45% derivations (portfolios, CAPM), ~40% calculations (binomial option pricing).",
+    "examiners": "No recent report: the last paper was for resit students only; last mean 69.8 (2023-24).",
+    "caveat": "Reviewers say the exam is far harder than the teaching and too long for 2 h.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70006/",
+    "site": null
+   }
+  },
+  {
+   "code": "70015",
+   "title": "Mathematics for Machine Learning",
+   "short": "Maths for ML",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 70,
+   "examSlot": "103",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": null,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Matthew Wicker"
+    ],
+    "lastYear": [
+     "Matthew Wicker"
+    ],
+    "meanYear": [
+     "Matthew Wicker"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 75.15
+    },
+    {
+     "year": "2023-24",
+     "mean": 71.5
+    },
+    {
+     "year": "2022-23",
+     "mean": 61.24
+    }
+   ],
+   "reviews": {
+    "count": 2,
+    "content": 5,
+    "teaching": 3.5,
+    "difficulty": 4.5,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70015-mathematics-for-machine-learning",
+    "summary": "Reviewers split: one found the exam as expected thanks to plenty of practice papers, the other found the maths under-explained and the exam brutal."
+   },
+   "notes": {
+    "coursework": "Assessed exercises (30%), the Kryptonite-N project; not difficult but time-consuming.",
+    "exam": "70%: 90 min, 2 questions of 50% each, closed book, no calculator: mostly textbook derivations (MLE, estimator bias, conjugate priors).",
+    "examiners": "No report since 2022-23.",
+    "caveat": "With only two questions, one blank derivation costs a lot.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70015/",
+    "site": null
+   }
+  },
+  {
+   "code": "70017",
+   "title": "Principles of Distributed Ledgers",
+   "short": "Distributed Ledgers",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "103",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": null,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Paul Pritz",
+     "Sam Werner"
+    ],
+    "lastYear": [
+     "Paul Pritz",
+     "Sam Werner"
+    ],
+    "meanYear": [
+     "Paul Pritz",
+     "Sam Werner",
+     "Daniel Perez Hernandez"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 75.21
+    },
+    {
+     "year": "2023-24",
+     "mean": 72.42
+    },
+    {
+     "year": "2022-23",
+     "mean": 72.98
+    }
+   ],
+   "reviews": {
+    "count": 3,
+    "content": 5,
+    "teaching": 5,
+    "difficulty": 2.33,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70017-principles-of-distributed-ledgers",
+    "summary": "Reviewers loved it: well taught, contemporary and enjoyable with very easy coursework, though fast-paced with a lot of content."
+   },
+   "notes": {
+    "coursework": "Implement and test smart contracts in Foundry (in 2023 an NFT ticketing contract plus an ERC20 token), 20%; this year's not out yet.",
+    "exam": "80%: 2 h, both questions: short concept answers plus an AMM calculation, then find the bug in a ~40-line Solidity contract.",
+    "examiners": "Dec 2025: paper slightly harder than in earlier years; concise answers wanted.",
+    "caveat": "Dec 2025 results were polarised: a large group did poorly, which examiners link to low attendance.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70017/",
+    "site": null
+   }
+  },
+  {
+   "code": "70021",
+   "title": "Quantum Computing",
+   "short": "Quantum Computing",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "104",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Roberto Bondesan",
+     "Callum Gray"
+    ],
+    "lastYear": [
+     "Roberto Bondesan"
+    ],
+    "meanYear": [
+     "Roberto Bondesan"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 66.17
+    },
+    {
+     "year": "2023-24",
+     "mean": 66.42
+    },
+    {
+     "year": "2022-23",
+     "mean": 69.72
+    }
+   ],
+   "reviews": {
+    "count": 2,
+    "content": 5,
+    "teaching": 4.5,
+    "difficulty": 4.5,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70021-quantum-computing",
+    "summary": "Reviewers praised the lecturer and found the exam fair, but the material hard, unusual and sometimes rushed, needing lots of practice."
+   },
+   "notes": {
+    "coursework": "Two assessed coursework tests (20%).",
+    "exam": "80%: 2 h, all 3 questions, no calculator: ~75% Dirac-notation calculation (teleportation, QFT, Grover, error-correcting codes).",
+    "examiners": "2024-25: went well with few resits; the complexity comparison and Q3c were hard for most.",
+    "caveat": "Means sit around 66 both years, so 70% takes real fluency.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70021/",
+    "site": null
+   }
+  },
+  {
+   "code": "70022",
+   "title": "Scalable Systems and Data",
+   "short": "Scalable Systems & Data",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "102",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Thomas Heinis",
+     "Peter Pietzuch"
+    ],
+    "lastYear": [
+     "Thomas Heinis",
+     "Peter Pietzuch"
+    ],
+    "meanYear": [
+     "Thomas Heinis",
+     "Peter Pietzuch"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 66.62
+    },
+    {
+     "year": "2023-24",
+     "mean": 68.5
+    },
+    {
+     "year": "2022-23",
+     "mean": 65.77
+    }
+   ],
+   "reviews": {
+    "count": 5,
+    "content": 3.8,
+    "teaching": 2.4,
+    "difficulty": 2.8,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70022-scalable-systems-and-data",
+    "summary": "Reviewers liked the papers half and the easy coursework but found the storage half disorganised and poorly taught, with much self-study."
+   },
+   "notes": {
+    "coursework": "Two one-page worksheets (20%) that reviewers found very easy.",
+    "exam": "80%: 2 h, one question per lecturer: explain 15-20 systems (Spanner, Dynamo, Bigtable...) and apply them to a scenario; no maths.",
+    "examiners": "Dec 2025 report unavailable; in 2024-25 vague or off-target answers lost marks.",
+    "caveat": "The storage half is reviewed as disorganised, so expect to self-study from the papers.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70022/",
+    "site": null
+   }
+  },
+  {
+   "code": "70023",
+   "title": "Scalable Software Verification",
+   "short": "Software Verification",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "101",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 342"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Philippa Gardner"
+    ],
+    "lastYear": [
+     "Philippa Gardner"
+    ],
+    "meanYear": [
+     "Philippa Gardner"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 71.59
+    },
+    {
+     "year": "2023-24",
+     "mean": 74.42
+    },
+    {
+     "year": "2022-23",
+     "mean": 69.25
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "Two coursework exercises (20%).",
+    "exam": "80%: 2 h, both questions, all separation-logic proof: assertions and proof sketches for list and tree algorithms.",
+    "examiners": "No report since 2022-23.",
+    "caveat": "All formal proof: formulaic, but long, notation-heavy and unforgiving of slips.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70023/",
+    "site": null
+   }
+  },
+  {
+   "code": "70024",
+   "title": "Software Reliability",
+   "short": "Software Reliability",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 70,
+   "examSlot": "104",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [
+    {
+     "title": "Group formation and project selection",
+     "opens": "2026-10-07T08:00:00+00:00",
+     "due": "2026-10-13T18:00:00+00:00",
+     "weightPct": 2,
+     "hours": 0,
+     "group": true
+    },
+    {
+     "title": "Final report and artifact",
+     "opens": "2026-10-13T08:00:00+00:00",
+     "due": "2026-11-13T19:00:00+00:00",
+     "weightPct": 95,
+     "hours": 40,
+     "group": true
+    },
+    {
+     "title": "Presentation slides",
+     "opens": "2026-11-13T09:00:00+00:00",
+     "due": "2026-11-17T19:00:00+00:00",
+     "weightPct": 3,
+     "hours": 2,
+     "group": true
+    }
+   ],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Cristian Cadar"
+    ],
+    "lastYear": [
+     "Cristian Cadar"
+    ],
+    "meanYear": null
+   },
+   "means": [
+    {
+     "year": "2023-24",
+     "mean": 61.35
+    },
+    {
+     "year": "2022-23",
+     "mean": 65.62
+    }
+   ],
+   "reviews": {
+    "count": 1,
+    "content": 4,
+    "teaching": 5,
+    "difficulty": 4,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70024-software-reliability",
+    "summary": "The one reviewer rated the teaching top level and the module valuable, but found the courseworks and exam demanding and some tools niche."
+   },
+   "notes": {
+    "coursework": "Team project in groups of 2-3 (30%): study a reliability tool from its paper, extend its evaluation, then report and present.",
+    "exam": "70%: 90 min, two compulsory questions on code and tool internals (ASan, KLEE, AFL); guest lectures are examinable.",
+    "examiners": "2024-25 (MEng paper): all did well; slips on ASan redzones and KLEE path details.",
+    "caveat": "Teams and project choice are due 13 Oct; the last MSc mean (61.4) is the lowest in autumn.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70024/",
+    "site": "https://srg.doc.ic.ac.uk/70024/"
+   }
+  },
+  {
+   "code": "70025",
+   "title": "Software Engineering for Industry",
+   "short": "SE for Industry",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 0,
+   "examSlot": null,
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "tutorial",
+     "rooms": [
+      "HXLY 342"
+     ],
+     "recorded": false,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": false,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [
+    {
+     "title": "Before We Begin",
+     "opens": "2026-09-28T08:00:00+00:00",
+     "due": "2026-10-02T18:00:00+00:00",
+     "weightPct": 2,
+     "hours": 1,
+     "group": false
+    },
+    {
+     "title": "Cloud Computing",
+     "opens": "2026-10-06T07:00:00+00:00",
+     "due": "2026-10-12T18:00:00+00:00",
+     "weightPct": 5,
+     "hours": 6,
+     "group": true
+    },
+    {
+     "title": "Software Architecture",
+     "opens": "2026-10-13T07:00:00+00:00",
+     "due": "2026-10-19T18:00:00+00:00",
+     "weightPct": 5,
+     "hours": 6,
+     "group": true
+    },
+    {
+     "title": "Microservices",
+     "opens": "2026-10-20T07:00:00+00:00",
+     "due": "2026-10-26T19:00:00+00:00",
+     "weightPct": 5,
+     "hours": 6,
+     "group": true
+    },
+    {
+     "title": "DevOps",
+     "opens": "2026-10-27T09:00:00+00:00",
+     "due": "2026-11-02T19:00:00+00:00",
+     "weightPct": 5,
+     "hours": 6,
+     "group": true
+    },
+    {
+     "title": "Mid-Point Assessment",
+     "opens": "2026-10-23T08:00:00+00:00",
+     "due": "2026-11-06T19:00:00+00:00",
+     "weightPct": 25,
+     "hours": 8,
+     "group": true
+    },
+    {
+     "title": "Operating Software",
+     "opens": "2026-11-06T09:00:00+00:00",
+     "due": "2026-11-12T19:00:00+00:00",
+     "weightPct": 5,
+     "hours": 6,
+     "group": true
+    },
+    {
+     "title": "Sustainable Software",
+     "opens": "2026-11-13T09:00:00+00:00",
+     "due": "2026-11-19T19:00:00+00:00",
+     "weightPct": 5,
+     "hours": 6,
+     "group": true
+    },
+    {
+     "title": "Software Engineering for AI",
+     "opens": "2026-11-20T09:00:00+00:00",
+     "due": "2026-11-26T19:00:00+00:00",
+     "weightPct": 3,
+     "hours": 4,
+     "group": true
+    },
+    {
+     "title": "Final Assessment",
+     "opens": "2026-11-13T09:00:00+00:00",
+     "due": "2026-11-27T19:00:00+00:00",
+     "weightPct": 40,
+     "hours": 16,
+     "group": true
+    }
+   ],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Matthew Green",
+     "Eoin Woods"
+    ],
+    "lastYear": [
+     "Eoin Woods",
+     "Matthew Green"
+    ],
+    "meanYear": [
+     "Eoin Woods",
+     "Robert Chatley"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 71.17
+    },
+    {
+     "year": "2023-24",
+     "mean": 65.83
+    },
+    {
+     "year": "2022-23",
+     "mean": 69.82
+    }
+   ],
+   "reviews": {
+    "count": 5,
+    "content": 3.6,
+    "teaching": 3.2,
+    "difficulty": 3,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70025-software-engineering-for-industry",
+    "summary": "Reviewers found the weekly group worksheets tedious and the marking vague, harsh and slow, but valued the guest speakers and having no exam."
+   },
+   "notes": {
+    "coursework": "All in groups of 3: weekly worksheets 35%, presentation 25% (6 Nov), final report 40% (27 Nov); about 6 h a week.",
+    "exam": null,
+    "examiners": null,
+    "caveat": "Sessions are not recorded, Thursday attendance is expected, and marking is reportedly harsh.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70025/",
+    "site": "https://www.doc.ic.ac.uk/~ewoods1/sei70025_autumn2026.html"
+   }
+  },
+  {
+   "code": "70028",
+   "title": "Reinforcement Learning",
+   "short": "Reinforcement Learning",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 70,
+   "examSlot": "106",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": null,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lab",
+     "rooms": [
+      "HXLY 210",
+      "HXLY 219",
+      "HXLY 221",
+      "HXLY 225"
+     ],
+     "recorded": false,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [
+    {
+     "title": "MDP, DP, MC, TD, Value-function Approx, Policy Gradients",
+     "opens": "2026-11-03T09:00:00+00:00",
+     "due": "2026-11-17T19:00:00+00:00",
+     "weightPct": 100,
+     "hours": 4,
+     "group": false
+    }
+   ],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Stephen James"
+    ],
+    "lastYear": [
+     "Stephen James"
+    ],
+    "meanYear": [
+     "Edward Johns"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 65.95
+    },
+    {
+     "year": "2023-24",
+     "mean": 65.48
+    },
+    {
+     "year": "2022-23",
+     "mean": 68.98
+    }
+   ],
+   "reviews": {
+    "count": 3,
+    "content": 5,
+    "teaching": 5,
+    "difficulty": 3,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70028-reinforcement-learning",
+    "summary": "All three reviewers praised the new lecturer's clear, caring teaching and the restructured, easier module."
+   },
+   "notes": {
+    "coursework": "One individual theory-and-code piece (30%), out 3 Nov, due 17 Nov, about 4 h; weekly tutorials are ungraded.",
+    "exam": "70%: worked by hand: a grid-world MDP, policy evaluation and value iteration, then MC, TD, SARSA and Q-learning step by step.",
+    "examiners": "Dec 2025: strong overall, Q2 and Q3 harder than Q1; formulas without the numbers lost marks.",
+    "caveat": "The Friday lab isn't recorded, and the 66.0 mean predates the current lecturer.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70028/",
+    "site": null
+   }
+  },
+  {
+   "code": "70050",
+   "title": "Machine Learning",
+   "short": "Machine Learning",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 70,
+   "examSlot": "105",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": null,
+     "weeks": 8
+    },
+    {
+     "day": "Wed",
+     "start": "10:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Wed",
+     "start": "11:00",
+     "end": "12:00",
+     "kind": "lab",
+     "rooms": [
+      "HXLY 210",
+      "HXLY 219",
+      "HXLY 221",
+      "HXLY 225"
+     ],
+     "recorded": false,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Iason Kokkinos"
+    ],
+    "lastYear": [
+     "Antoine Cully",
+     "Marek Rei",
+     "Josiah Wang"
+    ],
+    "meanYear": [
+     "Marek Rei",
+     "Josiah Wang",
+     "Antoine Cully"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 75.06
+    },
+    {
+     "year": "2023-24",
+     "mean": 75.68
+    },
+    {
+     "year": "2022-23",
+     "mean": 73.9
+    }
+   ],
+   "reviews": {
+    "count": 4,
+    "content": 3.75,
+    "teaching": 3.75,
+    "difficulty": 3.25,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70050-introduction-to-machine-learning",
+    "summary": "Reviewers found it well organised and fair but repetitive for anyone with ML background, with time-consuming group work and a tight exam."
+   },
+   "notes": {
+    "coursework": "Two group courseworks in groups of 4 (Python/NumPy): decision trees (12%) and a neural-network library plus regressor (18%).",
+    "exam": "70%: 90 min, 3 questions, one A4 notes sheet: ~90% calculation (information gain, k-means/GMM, backprop); tight on time.",
+    "examiners": "Dec 2025: most answered Q1a perfectly; marks lost to occasional calculation slips.",
+    "caveat": "New lead lecturer this year; largely a repeat if you have already taken an ML course.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70050/",
+    "site": null
+   }
+  },
+  {
+   "code": "70068",
+   "title": "Scheduling and Resource Allocation",
+   "short": "Scheduling",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "107",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [
+    {
+     "title": "Coursework",
+     "opens": "2026-11-02T09:00:00+00:00",
+     "due": "2026-11-18T19:00:00+00:00",
+     "weightPct": 100,
+     "hours": 15,
+     "group": true
+    }
+   ],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Giuliano Casale",
+     "Dario Paccagnan"
+    ],
+    "lastYear": [
+     "Giuliano Casale",
+     "Dario Paccagnan"
+    ],
+    "meanYear": [
+     "Dario Paccagnan",
+     "Giuliano Casale"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 73.34
+    },
+    {
+     "year": "2023-24",
+     "mean": 72.74
+    },
+    {
+     "year": "2022-23",
+     "mean": 70.85
+    }
+   ],
+   "reviews": {
+    "count": 2,
+    "content": 4,
+    "teaching": 3.5,
+    "difficulty": 3.5,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70068-scheduling-and-resource-allocation",
+    "summary": "Reviewers found the workload high with many algorithms and proofs to memorise and the scheduling half dull, but enjoyed the game theory and coursework."
+   },
+   "notes": {
+    "coursework": "One group coursework (20%), e.g. a branch-and-bound scheduler plus report; out 2 Nov, due 18 Nov, about 15 h.",
+    "exam": "80%: 2 h, 2 questions, closed book: ~70% algorithms by hand (scheduling, Nash equilibria, auctions), ~15% proofs, ~15% reasoning.",
+    "examiners": "Dec 2025: step-by-step proofs beat qualitative arguments; calculation slips cost marks.",
+    "caveat": "Expect an unseen proof, and 2-3 new algorithms to memorise each lecture.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70068/",
+    "site": null
+   }
+  },
+  {
+   "code": "70072",
+   "title": "Independent Study Option",
+   "short": "Independent Study",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 0,
+   "examSlot": null,
+   "excludes": [],
+   "sessions": [],
+   "spansTerms": true,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Tom Crossland"
+    ],
+    "lastYear": [
+     "Thomas Lancaster"
+    ],
+    "meanYear": null
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 72.18
+    },
+    {
+     "year": "2023-24",
+     "mean": 72.08
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "100% coursework: a 20-30 page report on a self-chosen advanced topic plus an oral presentation, each passed separately.",
+    "exam": null,
+    "examiners": null,
+    "caveat": "Needs a willing supervisor before choices close on 23 Oct; effectively a spring module.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70072/",
+    "site": null
+   }
+  },
+  {
+   "code": "70086",
+   "title": "Advanced Computer Architecture",
+   "short": "Comp. Architecture",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "101",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "video",
+     "rooms": [],
+     "recorded": false,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Paul Kelly"
+    ],
+    "lastYear": [
+     "Paul Kelly"
+    ],
+    "meanYear": [
+     "Paul Kelly"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 72.26
+    },
+    {
+     "year": "2023-24",
+     "mean": 74.73
+    }
+   ],
+   "reviews": {
+    "count": 2,
+    "content": 4.5,
+    "teaching": 4.5,
+    "difficulty": 3,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70086-advanced-computer-architecture",
+    "summary": "Reviewers rated the lecturer outstanding and liked the flipped format and article-based exam, while warning there is a lot of content."
+   },
+   "notes": {
+    "coursework": "Two pieces (20%): a simulator lab finding the lowest-energy configuration, then an open-ended piece in groups of up to 3.",
+    "exam": "80%: 2 h, open book, 3 open-ended questions mostly on a recent processor article handed out in advance; no maths.",
+    "examiners": "Dec 2025 paper built on AMD's Zen 5 guide; 2024-25 marking rewarded any sensible argument.",
+    "caveat": "Heavy: lots of content, time-consuming coursework, and Monday's material is watched at home.",
+    "extraHoursPerWeek": 1
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70086/",
+    "site": "https://www.doc.ic.ac.uk/~phjk/AdvancedCompArchitecture/aca20/"
+   }
+  },
+  {
+   "code": "70100",
+   "title": "Computational Neurodynamics",
+   "short": "Neurodynamics",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "101",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lab",
+     "rooms": [
+      "HXLY 219"
+     ],
+     "recorded": false,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Pedro Mediano"
+    ],
+    "lastYear": [
+     "Pedro Mediano"
+    ],
+    "meanYear": [
+     "Pedro Mediano"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 75.04
+    },
+    {
+     "year": "2023-24",
+     "mean": 77.29
+    }
+   ],
+   "reviews": {
+    "count": 1,
+    "content": 4,
+    "teaching": 5,
+    "difficulty": 3,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70100-computational-neurodynamics",
+    "summary": "The one reviewer found the content interesting and the lecturer nice, but the exam harder than in previous years."
+   },
+   "notes": {
+    "coursework": "Labs (Thu and Fri), 20%.",
+    "exam": "80%: 2 h, all 3 questions: mostly concepts and sketches (neuron models, networks) plus ODE and mutual-information calculations.",
+    "examiners": "2024-25: Q1 hardest, Q2 best answered; marks lost for missing proofs, mixed-up plots and units.",
+    "caveat": "The 2025-26 exam reportedly felt harder than in earlier years.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70100/",
+    "site": null
+   }
+  },
+  {
+   "code": "70101",
+   "title": "Human-Robot Interaction",
+   "short": "Human-Robot Interaction",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 70,
+   "examSlot": "101",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lab",
+     "rooms": [
+      "HXLY 202",
+      "HXLY 206"
+     ],
+     "recorded": false,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Nicole Salomons"
+    ],
+    "lastYear": null,
+    "meanYear": null
+   },
+   "means": [
+    {
+     "year": "2023-24",
+     "mean": 68.99
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "30%: two in-class exercises, a short programming assignment and a group project with peer evaluation.",
+    "exam": "70%: 2 h, 3 questions (2023-24): user-study design writing, Markov-chain calculations and multi-select MCQs.",
+    "examiners": "2023-24: most did well; marks lost for weak study controls and HMM vs POMDP mix-ups.",
+    "caveat": "Didn't run in 2024-25 or 2025-26, so the only paper and feedback are from 2023-24.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70101/",
+    "site": null
+   }
+  },
+  {
+   "code": "70103",
+   "title": "Statistical Information Theory",
+   "short": "Stat. Info Theory",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "102",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Pedro Mediano"
+    ],
+    "lastYear": [
+     "Pedro Mediano"
+    ],
+    "meanYear": [
+     "Pedro Mediano"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 66.91
+    },
+    {
+     "year": "2023-24",
+     "mean": 76.25
+    }
+   ],
+   "reviews": {
+    "count": 1,
+    "content": 5,
+    "teaching": 5,
+    "difficulty": 4,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70103-statistical-information-theory",
+    "summary": "The one reviewer found the content interesting and useful, the coursework simple and the exam balanced, though some proofs take time."
+   },
+   "notes": {
+    "coursework": "20%; in 2023 it was a mid-term in-class paper test.",
+    "exam": "80%: 2 h, both questions: MacKay-style calculations (entropy, KL, Hamming codes), definitions and some derivations.",
+    "examiners": "2024-25: some parts built to stretch; slips on normalisation, decodability and the Gaussian LLR.",
+    "caveat": "The mean fell from 76.3 to 66.9 in 2024-25, and some proofs take time.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70103/",
+    "site": null
+   }
+  },
+  {
+   "code": "70110",
+   "title": "Computer Vision",
+   "short": "Computer Vision",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "104",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "14:00",
+     "end": "15:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "15:00",
+     "end": "16:00",
+     "kind": "lab",
+     "rooms": [
+      "HXLY 219"
+     ],
+     "recorded": false,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Stamatia Giannarou"
+    ],
+    "lastYear": [
+     "Stamatia Giannarou"
+    ],
+    "meanYear": [
+     "Stamatia Giannarou"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 66.53
+    }
+   ],
+   "reviews": {
+    "count": 3,
+    "content": 5,
+    "teaching": 4.33,
+    "difficulty": 3.67,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70110-computer-vision",
+    "summary": "Reviewers praised the kind lecturer and consistent exam style but found the content huge and fast-paced; coursework was manageable."
+   },
+   "notes": {
+    "coursework": "Two Jupyter-notebook courseworks (20%).",
+    "exam": "80%: 2 h, all 3 questions: ~40% calculation (Sobel, camera projection, epipolar lines), ~40% outlining methods.",
+    "examiners": "2024-25: strict partial credit; procedural slips and the epipolar proof cost the most.",
+    "caveat": "Lots of fast-paced content, close to two modules' worth; mean 66.5.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70110/",
+    "site": null
+   }
+  },
+  {
+   "code": "70113",
+   "title": "Generative AI",
+   "short": "Generative AI",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "108",
+   "excludes": [
+    "70010"
+   ],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": null,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [
+    {
+     "title": "VAEs and the hot-dog challenge",
+     "opens": "2026-10-22T07:00:00+00:00",
+     "due": "2026-11-20T18:00:00+00:00",
+     "weightPct": 100,
+     "hours": 16,
+     "group": false
+    }
+   ],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Harry Coppock",
+     "Jiankang Deng",
+     "Rolandos Potamias"
+    ],
+    "lastYear": [
+     "Jiankang Deng"
+    ],
+    "meanYear": null
+   },
+   "means": [],
+   "reviews": null,
+   "notes": {
+    "coursework": "One individual coursework (20%): an image generator (VAEs) scored on metrics; out 22 Oct, due 20 Nov, about 16 h.",
+    "exam": "80%: 3 questions of 20 marks: about half conceptual, a quarter calculation, a quarter derivation (ELBO, Gaussian KL, diffusion).",
+    "examiners": "Spring 2026: about 83% average; Q2 (receptive field, attention, LoRA rank) split the class.",
+    "caveat": "Page says weekly videos plus a class, but CELCAT books two lectures; same course as spring 70010.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70113/",
+    "site": null
+   }
+  },
+  {
+   "code": "70114",
+   "title": "Machine Learning Systems and Hardware",
+   "short": "ML Systems & Hardware",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "108",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": null,
+     "weeks": 4
+    },
+    {
+     "day": "Tue",
+     "start": "14:00",
+     "end": "15:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 4
+    },
+    {
+     "day": "Tue",
+     "start": "15:00",
+     "end": "16:00",
+     "kind": "lab",
+     "rooms": [
+      "HXLY 219"
+     ],
+     "recorded": false,
+     "weeks": 4
+    },
+    {
+     "day": "Fri",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [
+    {
+     "title": "GPU Programming / Paper Reading",
+     "opens": "2026-10-27T09:00:00+00:00",
+     "due": "2026-11-19T19:00:00+00:00",
+     "weightPct": 100,
+     "hours": 10,
+     "group": false
+    }
+   ],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Hongxiang Fan"
+    ],
+    "lastYear": [
+     "Hongxiang Fan"
+    ],
+    "meanYear": null
+   },
+   "means": [],
+   "reviews": {
+    "count": 2,
+    "content": 3,
+    "teaching": 4,
+    "difficulty": 3.5,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70114-machine-learning-systems-and-hardware",
+    "summary": "Reviewers found the lecturer helpful and the examinable material clear, but the first run unstructured and the CUDA coursework tough."
+   },
+   "notes": {
+    "coursework": "An individual assignment implementing and optimising ML operators in CUDA, code plus report (20%); reviewers found it tough.",
+    "exam": "80%: 2 questions of 3 parts, ~70% calculation (roofline, compression ratios, tiling, KV-cache memory).",
+    "examiners": "2025-26: Q1 answered well; Q2 weak on compression metadata, per-tile latency and KV blocks.",
+    "caveat": "Only one previous run: no past papers, just a mock exam.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70114/",
+    "site": null
+   }
+  },
+  {
+   "code": "70117",
+   "title": "Type Systems for Programming Languages",
+   "short": "Type Systems",
+   "term": 1,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "107",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Steffen van Bakel"
+    ],
+    "lastYear": null,
+    "meanYear": null
+   },
+   "means": [],
+   "reviews": null,
+   "notes": {
+    "coursework": "One piece mixing theory and practice (20%).",
+    "exam": "80% written exam; no MSc past paper, since it ran as MEng COMP60023.",
+    "examiners": null,
+    "caveat": "Shares its exam slot and Tue/Thu slots with Scheduling and Comp. Finance.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70117/",
+    "site": "https://www.doc.ic.ac.uk/~svb/TSfPL/"
+   }
+  },
+  {
+   "code": "70001",
+   "title": "Advanced Computer Graphics",
+   "short": "Adv. Computer Graphics",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 70,
+   "examSlot": "201",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Abhijeet Ghosh"
+    ],
+    "lastYear": [
+     "Abhijeet Ghosh"
+    ],
+    "meanYear": [
+     "Abhijeet Ghosh"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 68.75
+    },
+    {
+     "year": "2023-24",
+     "mean": 69.58
+    },
+    {
+     "year": "2022-23",
+     "mean": 71.42
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "Two courseworks, alone or in pairs: HDR and image-based lighting, then Monte Carlo rendering (30%).",
+    "exam": "70%: 90 min, 2 questions, about 60% numeric calculation (radiometry, HDR, sampling) and 40% short concepts.",
+    "examiners": "Students did well overall; Q2 weaker; slips on light fields, Fresnel and sampling.",
+    "caveat": "Very tight on time, with many formulas to memorise and no formula sheet.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70001/",
+    "site": "http://www.doc.ic.ac.uk/~ghosh/COMP70001.htm"
+   }
+  },
+  {
+   "code": "70004",
+   "title": "Advanced Computer Security",
+   "short": "Adv. Computer Security",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "207",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Soteris Demetriou",
+     "Ben Livshits"
+    ],
+    "lastYear": [
+     "Soteris Demetriou",
+     "Ben Livshits"
+    ],
+    "meanYear": [
+     "Ben Livshits",
+     "Soteris Demetriou"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 66.12
+    },
+    {
+     "year": "2023-24",
+     "mean": 64.25
+    },
+    {
+     "year": "2022-23",
+     "mean": 59.93
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "Three individual paper summaries (10%) and a group Android malvertising assignment run as a competition (10%).",
+    "exam": "80%: 2 h, all 4 questions: scenario reasoning, MCQs needing a justification, and writing an SELinux policy.",
+    "examiners": "MCQs went well but unjustified answers lost marks; SELinux syntax errors; few good designs.",
+    "caveat": "One half is built on new real-world incidents each year, so it can't be memorised.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70004/",
+    "site": "https://comp97109.doc.ic.ac.uk/"
+   }
+  },
+  {
+   "code": "70007",
+   "title": "Computational Optimisation",
+   "short": "Comp. Optimisation",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "208",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Ruth Misener"
+    ],
+    "lastYear": [
+     "Ruth Misener",
+     "Panos Parpas"
+    ],
+    "meanYear": [
+     "Matthew Sheldon",
+     "Ruth Misener"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 75.04
+    },
+    {
+     "year": "2023-24",
+     "mean": 68.12
+    },
+    {
+     "year": "2022-23",
+     "mean": 65.33
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "Two courseworks (20%), essentially two past exam questions.",
+    "exam": "80%: 2 h, answer both: about 80% short show/justify derivations on toy functions (convexity, KKT, descent methods).",
+    "examiners": "Most students did very well; marks lost for unjustified claims and half-answers.",
+    "caveat": "Marks need full justification; Misener now teaches alone, so the old split may change.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70007/",
+    "site": null
+   }
+  },
+  {
+   "code": "70010",
+   "title": "Generative AI",
+   "short": "Generative AI",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "205",
+   "excludes": [
+    "70113"
+   ],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [
+    {
+     "title": "VAEs and the hot-dog challenge",
+     "opens": "2027-01-27T08:00:00+00:00",
+     "due": "2027-02-26T18:00:00+00:00",
+     "weightPct": 100,
+     "hours": 16,
+     "group": false
+    }
+   ],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Harry Coppock",
+     "Jiankang Deng",
+     "Rolandos Potamias"
+    ],
+    "lastYear": [
+     "Bernhard Kainz",
+     "Yingzhen Li"
+    ],
+    "meanYear": null
+   },
+   "means": [],
+   "reviews": null,
+   "notes": {
+    "coursework": "One term-long project to design, build and evaluate a deep generative model for images (20%).",
+    "exam": "80%; the last Deep Learning paper: 90 min, 2 questions, 1-page sheet, MCQs, calculations, derivations and design.",
+    "examiners": "Deep Learning 2024-25: Q2 averaged 12.2/20; conditional GAN hardest; paper too long.",
+    "caveat": "Rebuilt from Deep Learning, so old papers only partly apply; same syllabus as 70113, take one.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70010/",
+    "site": null
+   }
+  },
+  {
+   "code": "70014",
+   "title": "Machine Learning for Imaging",
+   "short": "ML for Imaging",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "201",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "video",
+     "rooms": [],
+     "recorded": false,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Ben Glocker",
+     "Daniel Rueckert"
+    ],
+    "lastYear": [
+     "Ben Glocker",
+     "Daniel Rueckert"
+    ],
+    "meanYear": [
+     "Ben Glocker",
+     "Athanasios Vlontzos",
+     "Daniel Rueckert"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 75.04
+    },
+    {
+     "year": "2023-24",
+     "mean": 70.07
+    },
+    {
+     "year": "2022-23",
+     "mean": 64.95
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "One mini-project in groups of two (20%).",
+    "exam": "80%: 2 h, 2 questions: hand calculation (convolutions), short recall, MCQs and pseudo-code tied to the tutorials.",
+    "examiners": "Mostly good; errors on transposed convolutions, U-Nets and unjustified causal claims.",
+    "caveat": "Strong medical-imaging focus; an old review found little new over computer vision.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70014/",
+    "site": null
+   }
+  },
+  {
+   "code": "70016",
+   "title": "Natural Language Processing",
+   "short": "NLP",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 70,
+   "examSlot": "206",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "RGS Ondaatje Lecture Theatre"
+     ],
+     "recorded": true,
+     "weeks": 9
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Oana-Maria Camburu"
+    ],
+    "lastYear": [
+     "Chiraag Lala",
+     "Marek Rei"
+    ],
+    "meanYear": [
+     "Marek Rei",
+     "Chiraag Lala"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 70.87
+    },
+    {
+     "year": "2023-24",
+     "mean": 71.93
+    },
+    {
+     "year": "2022-23",
+     "mean": 72.06
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "One coursework on a real NLP shared task (30%); a past one detected patronising language with BERT.",
+    "exam": "70%: 90 min, 3 compulsory questions: 2-3 sentence answers plus calculations (word2vec, perplexity, BPE, attention).",
+    "examiners": "Standard calculations went well, parsing less so; averages may be scaled down to 60-70.",
+    "caveat": "New lead lecturer this year, and it shares an exam slot with Networked Systems.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70016/",
+    "site": null
+   }
+  },
+  {
+   "code": "70019",
+   "title": "Probabilistic Inference",
+   "short": "Probabilistic Inference",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "202",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Yingzhen Li",
+     "Calvin Tsay"
+    ],
+    "lastYear": [
+     "Yingzhen Li",
+     "Calvin Tsay"
+    ],
+    "meanYear": null
+   },
+   "means": [
+    {
+     "year": "2022-23",
+     "mean": 64.26
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "One coursework, partly programming (20%).",
+    "exam": "80%; the 2023 paper: 2 h, 3 questions, closed book with a formula sheet (graphical models, VI, decision theory).",
+    "examiners": "2022-23: reasonable overall but few excellent scripts; the VI question was done poorly.",
+    "caveat": "New team and only one old paper from a previous lecturer; maths heavy.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70019/",
+    "site": null
+   }
+  },
+  {
+   "code": "70020",
+   "title": "Program Analysis",
+   "short": "Program Analysis",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "205",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Herbert Wiklicky"
+    ],
+    "lastYear": [
+     "Herbert Wiklicky"
+    ],
+    "meanYear": [
+     "Herbert Wiklicky"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 67.56
+    },
+    {
+     "year": "2023-24",
+     "mean": 69.27
+    },
+    {
+     "year": "2022-23",
+     "mean": 69.67
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "Two in-class tests (20%), which can't be AI-assisted.",
+    "exam": "80%: 2 h, 3 questions, closed book: about 75% mechanical analyses (reaching definitions, 0-CFA), 20% formal definitions.",
+    "examiners": "A standard paper and most did well; abstract interpretation and matrix sizes cost marks.",
+    "caveat": "Dense formal notation, and it shares an exam slot with spring Generative AI.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70020/",
+    "site": "https://www.doc.ic.ac.uk/~herbert/teaching.html"
+   }
+  },
+  {
+   "code": "70031",
+   "title": "Formal Methods for Safe AI",
+   "short": "Formal Methods Safe AI",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "208",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Francesco Belardinelli"
+    ],
+    "lastYear": [
+     "Francesco Belardinelli"
+    ],
+    "meanYear": null
+   },
+   "means": [],
+   "reviews": null,
+   "notes": {
+    "coursework": "Two written pieces of 10% each, which may be done in pairs.",
+    "exam": "80%: 2 h, 3 questions on one game model: run CTL/ATL model checking, plus small proofs and counterexamples.",
+    "examiners": "Mostly correct; marks lost for too little detail and missing counterexamples.",
+    "caveat": "Renamed from Modal Logic; the new safe-AI and RL material has no past paper.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70031/",
+    "site": null
+   }
+  },
+  {
+   "code": "70067",
+   "title": "Robot Learning",
+   "short": "Robot Learning",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 70,
+   "examSlot": "204",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lab",
+     "rooms": [
+      "HXLY 219"
+     ],
+     "recorded": false,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Edward Johns"
+    ],
+    "lastYear": [
+     "Edward Johns"
+    ],
+    "meanYear": [
+     "Edward Johns"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 69.21
+    },
+    {
+     "year": "2023-24",
+     "mean": 69.3
+    },
+    {
+     "year": "2022-23",
+     "mean": 64.64
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "Two individual pieces of 15% each; the second is a simulated-robot strategy ending in a live competition.",
+    "exam": "70%: 90 min, 3 questions, open book: mostly short reasoning plus some modelling and derivation.",
+    "examiners": "Q2 best and Q3 weakest; vague answers and copied slide phrases were penalised.",
+    "caveat": "Assumes autumn Reinforcement Learning or equivalent; each question ends with an unusual part.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70067/",
+    "site": null
+   }
+  },
+  {
+   "code": "70070",
+   "title": "Custom Computing",
+   "short": "Custom Computing",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "201",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Wayne Luk",
+     "Timothy Todman"
+    ],
+    "lastYear": [
+     "Wayne Luk",
+     "Timothy Todman"
+    ],
+    "meanYear": [
+     "Timothy Todman",
+     "Wayne Luk"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 75.04
+    },
+    {
+     "year": "2023-24",
+     "mean": 75.71
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "One individual coursework of about 10 h with essay, numerical and tool-based parts (20%).",
+    "exam": "80%: 2 h, 2 questions: circuits in Ruby notation, then MaxJ dataflow code and design.",
+    "examiners": "Most had no major problems; slips in wiring, MaxJ types and PCIe bandwidth.",
+    "caveat": "A large part of the first half is learning Ruby, a niche hardware notation.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70070/",
+    "site": "http://www.doc.ic.ac.uk/~wl/teach/cuscomp.html"
+   }
+  },
+  {
+   "code": "70075",
+   "title": "System Performance Engineering",
+   "short": "System Perf. Engineering",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "207",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "video",
+     "rooms": [],
+     "recorded": false,
+     "weeks": 4
+    },
+    {
+     "day": "Mon",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 4
+    },
+    {
+     "day": "Thu",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Holger Pirk",
+     "Lluis Vilanova"
+    ],
+    "lastYear": [
+     "Holger Pirk",
+     "Lluis Vilanova"
+    ],
+    "meanYear": [
+     "Holger Pirk",
+     "Lluis Vilanova"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 62.66
+    },
+    {
+     "year": "2023-24",
+     "mean": 65.03
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "Two courseworks, often in pairs: profiling, micro-benchmarks and thread-safe C++ (20%).",
+    "exam": "80%: 2 h, 2 questions: applied analysis (lock-free code, profiles, counters), essay-like explanation, some calculation.",
+    "examiners": "Only Q1 feedback published: high average, but races and bottleneck terms mishandled.",
+    "caveat": "Low mean (62.7), only two past papers, and heavy use of C++.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70075/",
+    "site": "https://co339.pages.doc.ic.ac.uk/"
+   }
+  },
+  {
+   "code": "70076",
+   "title": "Causality and Explanation in AI",
+   "short": "Causality & Explanation",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "203",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Wed",
+     "start": "10:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Wed",
+     "start": "11:00",
+     "end": "12:00",
+     "kind": "lab",
+     "rooms": [
+      "HXLY 202",
+      "HXLY 206"
+     ],
+     "recorded": false,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Francesco Leofante"
+    ],
+    "lastYear": [
+     "Francesco Leofante",
+     "Saman Hina",
+     "Matthew Wicker",
+     "Harry Coppock"
+    ],
+    "meanYear": null
+   },
+   "means": [],
+   "reviews": null,
+   "notes": {
+    "coursework": "One interpretability lab: run explainability tools on a model and write a technical report (20%).",
+    "exam": "80%: mostly causality (structural causal models, do-calculus, identifiability, counterfactuals).",
+    "examiners": null,
+    "caveat": "Rebuilt from an ethics module, so there is no past paper; teaching starts early, on 6 Jan.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70076/",
+    "site": null
+   }
+  },
+  {
+   "code": "70082",
+   "title": "Network and Web Security",
+   "short": "Network & Web Security",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "202",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lab",
+     "rooms": [
+      "HXLY 202",
+      "HXLY 206",
+      "HXLY 210",
+      "HXLY 219"
+     ],
+     "recorded": false,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Sergio Maffeis"
+    ],
+    "lastYear": [
+     "Sergio Maffeis"
+    ],
+    "meanYear": [
+     "Sergio Maffeis"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 60.79
+    },
+    {
+     "year": "2023-24",
+     "mean": 61.4
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "One individual coursework, a short test-like analysis (20%).",
+    "exam": "80%: 2 h in the labs, 2 questions, one A4 sheet: about half live hacking on VMs, half written.",
+    "examiners": "Generic written answers lost marks; few solved the later flags or the session forgery.",
+    "caveat": "Lowest mean (60.8): the practical half needs CTF practice all term.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70082/",
+    "site": "https://331.cybersec.fun/"
+   }
+  },
+  {
+   "code": "70090",
+   "title": "Graphics",
+   "short": "Graphics",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "202",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Tolga Birdal",
+     "Riza Alp Guler"
+    ],
+    "lastYear": [
+     "Bernhard Kainz",
+     "Tolga Birdal"
+    ],
+    "meanYear": [
+     "Abhijeet Ghosh",
+     "Bernhard Kainz"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 66.1
+    },
+    {
+     "year": "2023-24",
+     "mean": 64.84
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "Three individual shader tasks (20%): illumination 40%, texture 10%, GPU ray tracer 50%.",
+    "exam": "80%: 2 h, 2 questions: a design essay with some maths, MCQs and calculation.",
+    "examiners": "Q1 only: MCQs went well, stricter thresholds applied; matrix questions now dropped.",
+    "caveat": "New lecturer pair moving toward 3D vision, so past papers predict less.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70090/",
+    "site": null
+   }
+  },
+  {
+   "code": "70093",
+   "title": "Logic-Based Learning",
+   "short": "Logic-Based Learning",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "204",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Alessandra Russo"
+    ],
+    "lastYear": [
+     "Alessandra Russo"
+    ],
+    "meanYear": null
+   },
+   "means": [],
+   "reviews": null,
+   "notes": {
+    "coursework": "Two pieces of 10% each.",
+    "exam": "80%: 3 questions (per 2025-26 feedback): ILP derivations, completeness and consistency proofs, probabilistic BDDs.",
+    "examiners": "Marks lost for skipping steps and not using the method the question asked for.",
+    "caveat": "No past paper or mean, and it assumes basic logic and Prolog.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70093/",
+    "site": null
+   }
+  },
+  {
+   "code": "70098",
+   "title": "Introduction to Concrete Complexity",
+   "short": "Concrete Complexity",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "204",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Iddo Tzameret"
+    ],
+    "lastYear": [
+     "Michal Garlik",
+     "Iddo Tzameret"
+    ],
+    "meanYear": [
+     "Iddo Tzameret"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 68.68
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "One written coursework (20%).",
+    "exam": "80%: 2 h, 3 questions, almost all guided multi-part proofs (circuit, monotone and resolution lower bounds).",
+    "examiners": "Handled reasonably well; marks lost in intermediate justifications.",
+    "caveat": "Proof-heavy exam built on lower-bound techniques few students have seen before.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70098/",
+    "site": null
+   }
+  },
+  {
+   "code": "70102",
+   "title": "Software Engineering for Machine Learning Systems",
+   "short": "SE for ML Systems",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 0,
+   "examSlot": null,
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Tue",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lab",
+     "rooms": [
+      "HXLY 219"
+     ],
+     "recorded": false,
+     "weeks": 7
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Andrew Eland"
+    ],
+    "lastYear": [
+     "Andrew Eland"
+    ],
+    "meanYear": [
+     "Andrew Eland"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 75.02
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "About 6 pieces: one individual Docker predictor, then group design, service, Kubernetes, monitoring and a 2-week live run.",
+    "exam": null,
+    "examiners": null,
+    "caveat": "The final live run is marked on meeting service targets and depends on your group.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70102/",
+    "site": "https://www.andreweland.org/swemls/"
+   }
+  },
+  {
+   "code": "70105",
+   "title": "Deep Graph-Based Learning",
+   "short": "Deep Graph Learning",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 0,
+   "examSlot": null,
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "video",
+     "rooms": [],
+     "recorded": false,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Islem Rekik"
+    ],
+    "lastYear": [
+     "Islem Rekik"
+    ],
+    "meanYear": [
+     "Islem Rekik"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 75.03
+    },
+    {
+     "year": "2023-24",
+     "mean": 79.41
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "One coursework 30%, a team project (up to 5 people) 40%, and weekly timed quizzes 30%.",
+    "exam": null,
+    "examiners": null,
+    "caveat": "The weekly timed quizzes force steady study all term.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70105/",
+    "site": "https://github.com/basiralab/DGL"
+   }
+  },
+  {
+   "code": "70111",
+   "title": "Networked Systems",
+   "short": "Networked Systems",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 70,
+   "examSlot": "206",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 145"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Marios Kogias"
+    ],
+    "lastYear": [
+     "Marios Kogias"
+    ],
+    "meanYear": [
+     "Marios Kogias"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 67.53
+    }
+   ],
+   "reviews": {
+    "count": 3,
+    "content": 5,
+    "teaching": 5,
+    "difficulty": 3.33,
+    "year": "2025-26",
+    "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70111-networked-systems",
+    "summary": "Reviewers rate the lecturer very highly, but a research paper to read and discuss each week plus intense coursework make it demanding."
+   },
+   "notes": {
+    "coursework": "Three small courseworks building a middlebox in eBPF, DPDK or P4 (30%).",
+    "exam": "70%: 90 min, 2 questions: half recall of class topics, half continuing an in-class design exercise.",
+    "examiners": "Students did well overall; generic answers not tied to the class design scored almost nothing.",
+    "caveat": "Assumes networking background, and it shares an exam slot with NLP.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70111/",
+    "site": null
+   }
+  },
+  {
+   "code": "70112",
+   "title": "Non-Euclidean Methods in Machine Learning",
+   "short": "Non-Euclidean ML",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 70,
+   "examSlot": "203",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Wed",
+     "start": "10:00",
+     "end": "12:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 144"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Tolga Birdal"
+    ],
+    "lastYear": [
+     "Tolga Birdal"
+    ],
+    "meanYear": [
+     "Tolga Birdal"
+    ]
+   },
+   "means": [
+    {
+     "year": "2024-25",
+     "mean": 63.41
+    }
+   ],
+   "reviews": null,
+   "notes": {
+    "coursework": "Several theory and coding exercises (30%).",
+    "exam": "70%: 2 h, 2 long guided questions: differential-geometry derivations, algorithms and discussion.",
+    "examiners": null,
+    "caveat": "New maths (Riemannian geometry), one past paper and a low mean of 63.4.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70112/",
+    "site": null
+   }
+  },
+  {
+   "code": "70116",
+   "title": "World Models",
+   "short": "World Models",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 70,
+   "examSlot": "201",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "09:00",
+     "end": "11:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Fri",
+     "start": "11:00",
+     "end": "13:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 311"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Amir Bar"
+    ],
+    "lastYear": null,
+    "meanYear": null
+   },
+   "means": [],
+   "reviews": null,
+   "notes": {
+    "coursework": "Two assignments covering theory and coding (30%).",
+    "exam": "70%, described only as testing conceptual understanding; new module, no past paper.",
+    "examiners": null,
+    "caveat": "First run with a new lecturer, so there is no past paper or mean.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70116/",
+    "site": null
+   }
+  },
+  {
+   "code": "70118",
+   "title": "Generative Methods in AI for Science",
+   "short": "Gen. Methods for Science",
+   "term": 2,
+   "ects": 5,
+   "group": "SELECTIVE",
+   "examPct": 80,
+   "examSlot": "207",
+   "excludes": [],
+   "sessions": [
+    {
+     "day": "Mon",
+     "start": "16:00",
+     "end": "18:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": true,
+     "weeks": 8
+    },
+    {
+     "day": "Thu",
+     "start": "14:00",
+     "end": "16:00",
+     "kind": "lecture",
+     "rooms": [
+      "HXLY 308"
+     ],
+     "recorded": true,
+     "weeks": 8
+    }
+   ],
+   "spansTerms": false,
+   "coursework": [],
+   "examDate": null,
+   "lecturers": {
+    "now": [
+     "Avishek Bose"
+    ],
+    "lastYear": null,
+    "meanYear": null
+   },
+   "means": [],
+   "reviews": null,
+   "notes": {
+    "coursework": "Four bi-weekly open-ended research sprints in groups of 1-3 (20%).",
+    "exam": "A traditional exam (80%); new module, no past paper.",
+    "examiners": null,
+    "caveat": "Very maths heavy: expects Deep Learning and Maths for ML, plus weekly paper reading.",
+    "extraHoursPerWeek": null
+   },
+   "links": {
+    "official": "https://www.imperial.ac.uk/computing/current-students/courses/70118/",
+    "site": null
+   }
+  }
+ ]
+}

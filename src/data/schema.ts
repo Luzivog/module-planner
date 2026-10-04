@@ -34,6 +34,19 @@ export const Reviews = z.object({
 })
 export type Reviews = z.infer<typeof Reviews>
 
+/** One assessed coursework piece from Scientia (this year's; spring ones appear later). */
+export const Coursework = z.object({
+  title: z.string(),
+  opens: z.string(), // ISO datetime
+  due: z.string(), // ISO datetime
+  /** Share of the module's coursework component, in % (Scientia's "weight"), if given. */
+  weightPct: z.number().nullable(),
+  /** Department's time estimate in hours, if given. */
+  hours: z.number().nullable(),
+  group: z.boolean(),
+})
+export type Coursework = z.infer<typeof Coursework>
+
 export const Mean = z.object({ year: z.string(), mean: z.number() })
 export type Mean = z.infer<typeof Mean>
 
@@ -49,9 +62,18 @@ export const Module = z.object({
   /** Codes Scientia says can't be taken together with this one (content overlap). */
   excludes: z.array(z.string()),
   sessions: z.array(Session),
+  /** Runs across both terms (e.g. the ISO); `term` is then its start term. */
+  spansTerms: z.boolean(),
+  /** This year's assessed coursework, oldest due first; empty until published. */
+  coursework: z.array(Coursework),
+  /** Real exam date/time once the exam timetable is out (ISO), else null. */
+  examDate: z.string().nullable(),
   lecturers: z.object({
     now: z.array(z.string()), // 2026-27
-    lastYear: z.array(z.string()), // 2025-26 (who the reviews describe)
+    /** 2025-26 (who the reviews describe); null = unknown. */
+    lastYear: z.array(z.string()).nullable(),
+    /** 2024-25 (who the published mean describes); null = unknown. */
+    meanYear: z.array(z.string()).nullable(),
   }),
   /** Published class means, newest first (exams site, MSc AC class). */
   means: z.array(Mean),
@@ -62,6 +84,9 @@ export const Module = z.object({
     exam: z.string().nullable(),
     examiners: z.string().nullable(), // last examiners' report, paraphrased in one line
     caveat: z.string().nullable(), // the one thing to watch out for
+    /** Extra expected study hours per teaching week beyond timetabled sessions and
+     * coursework (e.g. Computer Architecture's 2-4 h of videos), if known. */
+    extraHoursPerWeek: z.number().nullable(),
   }),
   links: z.object({
     official: z.string().url(),

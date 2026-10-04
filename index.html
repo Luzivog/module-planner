@@ -2,9 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>module-planner</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg?v=2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Module planner</title>
+    <script>
+      // Apply the theme before first paint (no flash). Keep in sync with src/hooks/use-theme.ts.
+      try {
+        var t = localStorage.getItem("module-planner:theme")
+        var dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches
+        document.documentElement.classList.toggle("dark", dark)
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

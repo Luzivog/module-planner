@@ -16,6 +16,11 @@
     --color-sidebar-primary: var(--sidebar-primary);
     --color-sidebar-foreground: var(--sidebar-foreground);
     --color-sidebar: var(--sidebar);
+    --color-good: var(--good);
+    --color-bad: var(--bad);
+    --color-warn: var(--warn);
+    --color-exam: var(--exam);
+    --color-coursework: var(--coursework);
     --color-chart-5: var(--chart-5);
     --color-chart-4: var(--chart-4);
     --color-chart-3: var(--chart-3);
@@ -49,6 +54,13 @@
 }
 
 :root {
+    /* Planner semantics: ratings, conflicts, exam/coursework split, block tints. */
+    --good: oklch(0.5 0.12 160);
+    --bad: oklch(0.58 0.22 27);
+    --warn: oklch(0.62 0.15 65);
+    --exam: oklch(0.37 0.04 257);
+    --coursework: oklch(0.7 0.15 162);
+    --tint-scale: 1;
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
@@ -84,6 +96,12 @@
 }
 
 .dark {
+    --good: oklch(0.78 0.13 162);
+    --bad: oklch(0.7 0.18 22);
+    --warn: oklch(0.8 0.14 75);
+    --exam: oklch(0.8 0.03 257);
+    --coursework: oklch(0.65 0.14 162);
+    --tint-scale: 1.7;
     --background: oklch(0.145 0 0);
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.205 0 0);
@@ -126,5 +144,16 @@
     }
   html {
     @apply font-sans;
+    color-scheme: light;
+    }
+  html.dark {
+    color-scheme: dark;
+    }
+  /* Tailwind v4 resets buttons to cursor: default; every clickable thing gets a pointer. */
+  button:not(:disabled), [role="button"], [role="tab"], [role="switch"], [role="checkbox"], a, summary, label {
+    cursor: pointer;
+    }
+  button:disabled, [aria-disabled="true"], [data-disabled] {
+    cursor: not-allowed;
     }
 }
