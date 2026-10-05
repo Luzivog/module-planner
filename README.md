@@ -26,6 +26,8 @@ The Imperial sources need a student login, so the script runs locally with the
 author's read-only CLI tools (`imperial-doc`, `imperial-timetable`); the site itself
 only reads the generated JSON. No personal data is included.
 
+Contributions: see [CONTRIBUTING.md](CONTRIBUTING.md).
+
 Everything is unofficial and can be out of date: check Scientia before choosing.
 
 ## Develop
