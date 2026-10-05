@@ -14,8 +14,8 @@ import { useListSort, type ListSort, type SortKey } from "@/hooks/use-list-sort"
 import { TERM_NAMES, usePlanner } from "@/hooks/use-planner"
 import { conflictsWith, describeConflict } from "@/lib/conflicts"
 import { failedFilters, passes } from "@/lib/filters"
-import { meanByOtherTeam, teamVsReviewed } from "@/lib/lecturers"
-import { otherTeamNote } from "@/lib/means"
+import { teamVsReviewed } from "@/lib/lecturers"
+import { meanTeam, otherTeamNote } from "@/lib/means"
 import { guidance } from "@/lib/plan"
 import { HIGH_TEACHING, THIN_REVIEWS } from "@/lib/scores"
 import { cn } from "@/lib/utils"
@@ -234,7 +234,7 @@ function ModuleRow({ module: m, failed }: { module: Module; failed: string[] }) 
       >
         {r ? r.teaching.toFixed(1) : "–"}
       </span>
-      {mean && meanByOtherTeam(m) ? (
+      {mean && meanTeam(m, mean) === "different" ? (
         <Hint label={otherTeamNote(mean.year)}>
           <span className="w-8 text-right text-xs tabular-nums text-muted-foreground">{Math.round(mean.mean)}</span>
         </Hint>

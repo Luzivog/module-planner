@@ -30,11 +30,3 @@ export function teamVsReviewed(m: Module): TeamChange {
   if (reviewed === null) return "unknown"
   return sameNames(m.lecturers.now, reviewed) ? "same" : "different"
 }
-
-/** True when the latest published mean was set by a team none of whom teach it now.
- * (A partly changed team, e.g. one co-lecturer added, still counts as the same.) */
-export function meanByOtherTeam(m: Module): boolean {
-  const { now, meanYear } = m.lecturers
-  if (meanYear === null || meanYear.length === 0) return false
-  return !meanYear.some((n) => includesName(now, n))
-}

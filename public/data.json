@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-05T11:05:13.821Z",
+ "generatedAt": "2026-10-05T11:41:51.888Z",
  "programme": "MSc Advanced Computing",
  "selection": {
   "closes": "2026-10-23T17:00:00"
@@ -72,23 +72,29 @@
     ],
     "lastYear": [
      "Iain Phillips"
-    ],
-    "meanYear": [
-     "Iain Phillips"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 65.08
+     "mean": 65.08,
+     "team": [
+      "Iain Phillips"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 69.12
+     "mean": 69.12,
+     "team": [
+      "Iain Phillips"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 71.44
+     "mean": 71.44,
+     "team": [
+      "Iain Phillips"
+     ]
     }
    ],
    "reviews": {
@@ -156,17 +162,22 @@
     ],
     "lastYear": [
      "Panos Parpas"
-    ],
-    "meanYear": null
+    ]
    },
    "means": [
     {
      "year": "2023-24",
-     "mean": 69.77
+     "mean": 69.77,
+     "team": [
+      "Panos Parpas"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 69.2
+     "mean": 69.2,
+     "team": [
+      "Panos Parpas"
+     ]
     }
    ],
    "reviews": {
@@ -236,23 +247,30 @@
     ],
     "lastYear": [
      "Matthew Wicker"
-    ],
-    "meanYear": [
-     "Matthew Wicker"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 75.15
+     "mean": 75.15,
+     "team": [
+      "Matthew Wicker"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 71.5
+     "mean": 71.5,
+     "team": [
+      "Matthew Wicker"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 61.24
+     "mean": 61.24,
+     "team": [
+      "Yingzhen Li",
+      "Mark van der Wilk"
+     ]
     }
    ],
    "reviews": {
@@ -324,25 +342,37 @@
     "lastYear": [
      "Paul Pritz",
      "Sam Werner"
-    ],
-    "meanYear": [
-     "Paul Pritz",
-     "Sam Werner",
-     "Daniel Perez Hernandez"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 75.21
+     "mean": 75.21,
+     "team": [
+      "Paul Pritz",
+      "Sam Werner",
+      "Daniel Perez Hernandez"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 72.42
+     "mean": 72.42,
+     "team": [
+      "Paul Pritz",
+      "Sam Werner",
+      "Lewis Gudgeon",
+      "Daniel Perez Hernandez"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 72.98
+     "mean": 72.98,
+     "team": [
+      "Paul Pritz",
+      "Sam Werner",
+      "Lewis Gudgeon",
+      "Daniel Perez Hernandez"
+     ]
     }
    ],
    "reviews": {
@@ -414,23 +444,29 @@
     ],
     "lastYear": [
      "Roberto Bondesan"
-    ],
-    "meanYear": [
-     "Roberto Bondesan"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 66.17
+     "mean": 66.17,
+     "team": [
+      "Roberto Bondesan"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 66.42
+     "mean": 66.42,
+     "team": [
+      "Roberto Bondesan"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 69.72
+     "mean": 69.72,
+     "team": [
+      "Roberto Bondesan"
+     ]
     }
    ],
    "reviews": {
@@ -502,24 +538,29 @@
     "lastYear": [
      "Thomas Heinis",
      "Peter Pietzuch"
-    ],
-    "meanYear": [
-     "Thomas Heinis",
-     "Peter Pietzuch"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 66.62
+     "mean": 66.62,
+     "team": [
+      "Thomas Heinis",
+      "Peter Pietzuch"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 68.5
+     "mean": 68.5,
+     "team": null
     },
     {
      "year": "2022-23",
-     "mean": 65.77
+     "mean": 65.77,
+     "team": [
+      "Thomas Heinis",
+      "Peter Pietzuch"
+     ]
     }
    ],
    "reviews": {
@@ -590,23 +631,31 @@
     ],
     "lastYear": [
      "Philippa Gardner"
-    ],
-    "meanYear": [
-     "Philippa Gardner"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 71.59
+     "mean": 71.59,
+     "team": [
+      "Philippa Gardner"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 74.42
+     "mean": 74.42,
+     "team": [
+      "Petar Maksimovic",
+      "Philippa Gardner"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 69.25
+     "mean": 69.25,
+     "team": [
+      "Petar Maksimovic",
+      "Philippa Gardner"
+     ]
     }
    ],
    "reviews": null,
@@ -690,17 +739,22 @@
     ],
     "lastYear": [
      "Cristian Cadar"
-    ],
-    "meanYear": null
+    ]
    },
    "means": [
     {
      "year": "2023-24",
-     "mean": 61.35
+     "mean": 61.35,
+     "team": [
+      "Cristian Cadar"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 65.62
+     "mean": 65.62,
+     "team": [
+      "Cristian Cadar"
+     ]
     }
    ],
    "reviews": {
@@ -853,24 +907,32 @@
     "lastYear": [
      "Eoin Woods",
      "Matthew Green"
-    ],
-    "meanYear": [
-     "Eoin Woods",
-     "Robert Chatley"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 71.17
+     "mean": 71.17,
+     "team": [
+      "Eoin Woods",
+      "Robert Chatley"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 65.83
+     "mean": 65.83,
+     "team": [
+      "Eoin Woods",
+      "Robert Chatley"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 69.82
+     "mean": 69.82,
+     "team": [
+      "Eoin Woods",
+      "Robert Chatley"
+     ]
     }
    ],
    "reviews": {
@@ -953,23 +1015,31 @@
     ],
     "lastYear": [
      "Stephen James"
-    ],
-    "meanYear": [
-     "Edward Johns"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 65.95
+     "mean": 65.95,
+     "team": [
+      "Edward Johns"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 65.48
+     "mean": 65.48,
+     "team": [
+      "Nicole Salomons",
+      "Aldo Faisal"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 68.98
+     "mean": 68.98,
+     "team": [
+      "Paul Bilokon",
+      "Aldo Faisal"
+     ]
     }
    ],
    "reviews": {
@@ -1035,6 +1105,7 @@
      "end": "12:00",
      "kind": "lab",
      "rooms": [
+      "HXLY 206",
       "HXLY 210",
       "HXLY 219",
       "HXLY 221",
@@ -1056,25 +1127,35 @@
      "Antoine Cully",
      "Marek Rei",
      "Josiah Wang"
-    ],
-    "meanYear": [
-     "Marek Rei",
-     "Josiah Wang",
-     "Antoine Cully"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 75.06
+     "mean": 75.06,
+     "team": [
+      "Marek Rei",
+      "Josiah Wang",
+      "Antoine Cully"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 75.68
+     "mean": 75.68,
+     "team": [
+      "Marek Rei",
+      "Josiah Wang",
+      "Antoine Cully"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 73.9
+     "mean": 73.9,
+     "team": [
+      "Marek Rei",
+      "Josiah Wang",
+      "Antoine Cully"
+     ]
     }
    ],
    "reviews": {
@@ -1157,24 +1238,32 @@
     "lastYear": [
      "Giuliano Casale",
      "Dario Paccagnan"
-    ],
-    "meanYear": [
-     "Dario Paccagnan",
-     "Giuliano Casale"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 73.34
+     "mean": 73.34,
+     "team": [
+      "Dario Paccagnan",
+      "Giuliano Casale"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 72.74
+     "mean": 72.74,
+     "team": [
+      "Dario Paccagnan",
+      "Giuliano Casale"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 70.85
+     "mean": 70.85,
+     "team": [
+      "Dario Paccagnan",
+      "Giuliano Casale"
+     ]
     }
    ],
    "reviews": {
@@ -1222,17 +1311,18 @@
     ],
     "lastYear": [
      "Thomas Lancaster"
-    ],
-    "meanYear": null
+    ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 72.18
+     "mean": 72.18,
+     "team": null
     },
     {
      "year": "2023-24",
-     "mean": 72.08
+     "mean": 72.08,
+     "team": null
     }
    ],
    "reviews": null,
@@ -1289,19 +1379,22 @@
     ],
     "lastYear": [
      "Paul Kelly"
-    ],
-    "meanYear": [
-     "Paul Kelly"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 72.26
+     "mean": 72.26,
+     "team": [
+      "Paul Kelly"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 74.73
+     "mean": 74.73,
+     "team": [
+      "Paul Kelly"
+     ]
     }
    ],
    "reviews": {
@@ -1371,19 +1464,22 @@
     ],
     "lastYear": [
      "Pedro Mediano"
-    ],
-    "meanYear": [
-     "Pedro Mediano"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 75.04
+     "mean": 75.04,
+     "team": [
+      "Pedro Mediano"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 77.29
+     "mean": 77.29,
+     "team": [
+      "Pedro Mediano"
+     ]
     }
    ],
    "reviews": {
@@ -1452,13 +1548,15 @@
     "now": [
      "Nicole Salomons"
     ],
-    "lastYear": null,
-    "meanYear": null
+    "lastYear": null
    },
    "means": [
     {
      "year": "2023-24",
-     "mean": 68.99
+     "mean": 68.99,
+     "team": [
+      "Nicole Salomons"
+     ]
     }
    ],
    "reviews": null,
@@ -1517,19 +1615,22 @@
     ],
     "lastYear": [
      "Pedro Mediano"
-    ],
-    "meanYear": [
-     "Pedro Mediano"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 66.91
+     "mean": 66.91,
+     "team": [
+      "Pedro Mediano"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 76.25
+     "mean": 76.25,
+     "team": [
+      "Pedro Mediano"
+     ]
     }
    ],
    "reviews": {
@@ -1610,15 +1711,15 @@
     ],
     "lastYear": [
      "Stamatia Giannarou"
-    ],
-    "meanYear": [
-     "Stamatia Giannarou"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 66.53
+     "mean": 66.53,
+     "team": [
+      "Stamatia Giannarou"
+     ]
     }
    ],
    "reviews": {
@@ -1701,8 +1802,7 @@
     ],
     "lastYear": [
      "Jiankang Deng"
-    ],
-    "meanYear": null
+    ]
    },
    "means": [],
    "reviews": null,
@@ -1770,8 +1870,7 @@
     ],
     "lastYear": [
      "Hongxiang Fan"
-    ],
-    "meanYear": null
+    ]
    },
    "means": [],
    "reviews": {
@@ -1839,8 +1938,7 @@
     "now": [
      "Steffen van Bakel"
     ],
-    "lastYear": null,
-    "meanYear": null
+    "lastYear": null
    },
    "means": [],
    "reviews": null,
@@ -1899,23 +1997,29 @@
     ],
     "lastYear": [
      "Abhijeet Ghosh"
-    ],
-    "meanYear": [
-     "Abhijeet Ghosh"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 68.75
+     "mean": 68.75,
+     "team": [
+      "Abhijeet Ghosh"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 69.58
+     "mean": 69.58,
+     "team": [
+      "Abhijeet Ghosh"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 71.42
+     "mean": 71.42,
+     "team": [
+      "Abhijeet Ghosh"
+     ]
     }
    ],
    "reviews": null,
@@ -1976,24 +2080,32 @@
     "lastYear": [
      "Soteris Demetriou",
      "Ben Livshits"
-    ],
-    "meanYear": [
-     "Ben Livshits",
-     "Soteris Demetriou"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 66.12
+     "mean": 66.12,
+     "team": [
+      "Ben Livshits",
+      "Soteris Demetriou"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 64.25
+     "mean": 64.25,
+     "team": [
+      "Ben Livshits",
+      "Soteris Demetriou"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 59.93
+     "mean": 59.93,
+     "team": [
+      "Ben Livshits",
+      "Soteris Demetriou"
+     ]
     }
    ],
    "reviews": null,
@@ -2053,24 +2165,32 @@
     "lastYear": [
      "Ruth Misener",
      "Panos Parpas"
-    ],
-    "meanYear": [
-     "Matthew Sheldon",
-     "Ruth Misener"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 75.04
+     "mean": 75.04,
+     "team": [
+      "Matthew Sheldon",
+      "Ruth Misener"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 68.12
+     "mean": 68.12,
+     "team": [
+      "Panos Parpas",
+      "Ruth Misener"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 65.33
+     "mean": 65.33,
+     "team": [
+      "Panos Parpas",
+      "Ruth Misener"
+     ]
     }
    ],
    "reviews": null,
@@ -2143,8 +2263,7 @@
     "lastYear": [
      "Bernhard Kainz",
      "Yingzhen Li"
-    ],
-    "meanYear": null
+    ]
    },
    "means": [],
    "reviews": null,
@@ -2203,25 +2322,33 @@
     "lastYear": [
      "Ben Glocker",
      "Daniel Rueckert"
-    ],
-    "meanYear": [
-     "Ben Glocker",
-     "Athanasios Vlontzos",
-     "Daniel Rueckert"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 75.04
+     "mean": 75.04,
+     "team": [
+      "Ben Glocker",
+      "Athanasios Vlontzos",
+      "Daniel Rueckert"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 70.07
+     "mean": 70.07,
+     "team": [
+      "Ben Glocker",
+      "Daniel Rueckert"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 64.95
+     "mean": 64.95,
+     "team": [
+      "Ben Glocker",
+      "Daniel Rueckert"
+     ]
     }
    ],
    "reviews": null,
@@ -2281,24 +2408,30 @@
     "lastYear": [
      "Chiraag Lala",
      "Marek Rei"
-    ],
-    "meanYear": [
-     "Marek Rei",
-     "Chiraag Lala"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 70.87
+     "mean": 70.87,
+     "team": [
+      "Marek Rei",
+      "Chiraag Lala"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 71.93
+     "mean": 71.93,
+     "team": [
+      "Marek Rei"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 72.06
+     "mean": 72.06,
+     "team": [
+      "Marek Rei"
+     ]
     }
    ],
    "reviews": null,
@@ -2359,13 +2492,15 @@
     "lastYear": [
      "Yingzhen Li",
      "Calvin Tsay"
-    ],
-    "meanYear": null
+    ]
    },
    "means": [
     {
      "year": "2022-23",
-     "mean": 64.26
+     "mean": 64.26,
+     "team": [
+      "Mark van der Wilk"
+     ]
     }
    ],
    "reviews": null,
@@ -2424,23 +2559,29 @@
     ],
     "lastYear": [
      "Herbert Wiklicky"
-    ],
-    "meanYear": [
-     "Herbert Wiklicky"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 67.56
+     "mean": 67.56,
+     "team": [
+      "Herbert Wiklicky"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 69.27
+     "mean": 69.27,
+     "team": [
+      "Herbert Wiklicky"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 69.67
+     "mean": 69.67,
+     "team": [
+      "Herbert Wiklicky"
+     ]
     }
    ],
    "reviews": null,
@@ -2499,8 +2640,7 @@
     ],
     "lastYear": [
      "Francesco Belardinelli"
-    ],
-    "meanYear": null
+    ]
    },
    "means": [],
    "reviews": null,
@@ -2559,23 +2699,29 @@
     ],
     "lastYear": [
      "Edward Johns"
-    ],
-    "meanYear": [
-     "Edward Johns"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 69.21
+     "mean": 69.21,
+     "team": [
+      "Edward Johns"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 69.3
+     "mean": 69.3,
+     "team": [
+      "Edward Johns"
+     ]
     },
     {
      "year": "2022-23",
-     "mean": 64.64
+     "mean": 64.64,
+     "team": [
+      "Edward Johns"
+     ]
     }
    ],
    "reviews": null,
@@ -2636,20 +2782,24 @@
     "lastYear": [
      "Wayne Luk",
      "Timothy Todman"
-    ],
-    "meanYear": [
-     "Timothy Todman",
-     "Wayne Luk"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 75.04
+     "mean": 75.04,
+     "team": [
+      "Timothy Todman",
+      "Wayne Luk"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 75.71
+     "mean": 75.71,
+     "team": [
+      "Timothy Todman",
+      "Wayne Luk"
+     ]
     }
    ],
    "reviews": null,
@@ -2710,20 +2860,24 @@
     "lastYear": [
      "Holger Pirk",
      "Lluis Vilanova"
-    ],
-    "meanYear": [
-     "Holger Pirk",
-     "Lluis Vilanova"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 62.66
+     "mean": 62.66,
+     "team": [
+      "Holger Pirk",
+      "Lluis Vilanova"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 65.03
+     "mean": 65.03,
+     "team": [
+      "Holger Pirk",
+      "Lluis Vilanova"
+     ]
     }
    ],
    "reviews": null,
@@ -2797,8 +2951,7 @@
      "Saman Hina",
      "Matthew Wicker",
      "Harry Coppock"
-    ],
-    "meanYear": null
+    ]
    },
    "means": [],
    "reviews": null,
@@ -2860,19 +3013,22 @@
     ],
     "lastYear": [
      "Sergio Maffeis"
-    ],
-    "meanYear": [
-     "Sergio Maffeis"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 60.79
+     "mean": 60.79,
+     "team": [
+      "Sergio Maffeis"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 61.4
+     "mean": 61.4,
+     "team": [
+      "Sergio Maffeis"
+     ]
     }
    ],
    "reviews": null,
@@ -2933,20 +3089,24 @@
     "lastYear": [
      "Bernhard Kainz",
      "Tolga Birdal"
-    ],
-    "meanYear": [
-     "Abhijeet Ghosh",
-     "Bernhard Kainz"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 66.1
+     "mean": 66.1,
+     "team": [
+      "Abhijeet Ghosh",
+      "Bernhard Kainz"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 64.84
+     "mean": 64.84,
+     "team": [
+      "Bernhard Kainz",
+      "Daniel Rueckert"
+     ]
     }
    ],
    "reviews": null,
@@ -3005,8 +3165,7 @@
     ],
     "lastYear": [
      "Alessandra Russo"
-    ],
-    "meanYear": null
+    ]
    },
    "means": [],
    "reviews": null,
@@ -3066,15 +3225,15 @@
     "lastYear": [
      "Michal Garlik",
      "Iddo Tzameret"
-    ],
-    "meanYear": [
-     "Iddo Tzameret"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 68.68
+     "mean": 68.68,
+     "team": [
+      "Iddo Tzameret"
+     ]
     }
    ],
    "reviews": null,
@@ -3134,15 +3293,15 @@
     ],
     "lastYear": [
      "Andrew Eland"
-    ],
-    "meanYear": [
-     "Andrew Eland"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 75.02
+     "mean": 75.02,
+     "team": [
+      "Andrew Eland"
+     ]
     }
    ],
    "reviews": null,
@@ -3199,19 +3358,22 @@
     ],
     "lastYear": [
      "Islem Rekik"
-    ],
-    "meanYear": [
-     "Islem Rekik"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 75.03
+     "mean": 75.03,
+     "team": [
+      "Islem Rekik"
+     ]
     },
     {
      "year": "2023-24",
-     "mean": 79.41
+     "mean": 79.41,
+     "team": [
+      "Islem Rekik"
+     ]
     }
    ],
    "reviews": null,
@@ -3270,15 +3432,15 @@
     ],
     "lastYear": [
      "Marios Kogias"
-    ],
-    "meanYear": [
-     "Marios Kogias"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 67.53
+     "mean": 67.53,
+     "team": [
+      "Marios Kogias"
+     ]
     }
    ],
    "reviews": {
@@ -3348,15 +3510,15 @@
     ],
     "lastYear": [
      "Tolga Birdal"
-    ],
-    "meanYear": [
-     "Tolga Birdal"
     ]
    },
    "means": [
     {
      "year": "2024-25",
-     "mean": 63.41
+     "mean": 63.41,
+     "team": [
+      "Tolga Birdal"
+     ]
     }
    ],
    "reviews": null,
@@ -3413,8 +3575,7 @@
     "now": [
      "Amir Bar"
     ],
-    "lastYear": null,
-    "meanYear": null
+    "lastYear": null
    },
    "means": [],
    "reviews": null,
@@ -3471,8 +3632,7 @@
     "now": [
      "Avishek Bose"
     ],
-    "lastYear": null,
-    "meanYear": null
+    "lastYear": null
    },
    "means": [],
    "reviews": null,

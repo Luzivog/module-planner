@@ -26,14 +26,17 @@ const LAST_YEAR_FROM = "2025-09-01"
 const AVERAGE_YEARS = ["2024-2025", "2023-2024", "2022-2023"] // newest first
 const RMM = "https://www.ratemymodules.co.uk"
 const RMM_COURSE = `${RMM}/icl/adv-comp`
-/** The year `lecturers.meanYear` describes (the latest published means). */
-const MEAN_YEAR = "2024-25"
-/** Wayback snapshot windows: teaching months of each year, aiming for the middle. */
+/** Wayback snapshot windows per academic year, aiming for mid-December. Older pages were
+ * archived rarely, so the window runs Oct-Jul: module pages are updated for the next year
+ * in September, so a spring or early-summer snapshot still shows that year's leaders. */
 const ARCHIVE_YEARS = {
-  "2025-26": { from: "20251001", to: "20260331", aim: "20251215" },
-  "2024-25": { from: "20241001", to: "20250331", aim: "20241215" },
+  "2025-26": { from: "20251001", to: "20260731", aim: "20251215" },
+  "2024-25": { from: "20241001", to: "20250731", aim: "20241215" },
+  "2023-24": { from: "20231001", to: "20240731", aim: "20231215" },
+  "2022-23": { from: "20221001", to: "20230731", aim: "20221215" },
 } as const
 type ArchiveYear = keyof typeof ARCHIVE_YEARS
+const isArchiveYear = (y: string): y is ArchiveYear => y in ARCHIVE_YEARS
 
 const TERMS = {
   1: { teaching: "5 Oct – 27 Nov", exams: "7–11 Dec" },
@@ -328,7 +331,7 @@ function sameModule(a: string, b: string): boolean {
 }
 
 /** Means for one module across years, newest first, only where the title matches. */
-function meansFor(code: string, title: string, years: { year: string; rows: MeanRow[] }[]): Mean[] {
+function meansFor(code: string, title: string, years: { year: string; rows: MeanRow[] }[]): Omit<Mean, "team">[] {
   return years.flatMap(({ year, rows }) => {
     const row = rows.find((r) => r.codes.includes(code) && sameModule(r.title, title))
     return row ? [{ year: `${year.slice(0, 5)}${year.slice(7)}`, mean: row.mean }] : []
@@ -345,17 +348,21 @@ type WaybackCache = z.infer<typeof WaybackCache>
 const WAYBACK_DELAY_MS = 4000
 const officialUrl = (code: string) => `https://www.imperial.ac.uk/computing/current-students/courses/${code}/`
 
-/** Fetches from the Wayback Machine gently: a pause before each request, backing off on 429 and 5xx. */
+/** Fetches from the Wayback Machine gently: a pause before each request, backing off on
+ * 429, 5xx and dropped connections. */
 async function waybackFetch(url: string): Promise<string> {
   for (let attempt = 0; ; attempt++) {
     await sleep(WAYBACK_DELAY_MS)
-    const res = await fetch(url, { signal: AbortSignal.timeout(90_000) })
-    if ((res.status === 429 || res.status >= 500) && attempt < 2) {
-      console.warn(`wayback: ${res.status}, waiting ${30 * (attempt + 1)} s`)
+    const res = await fetch(url, { signal: AbortSignal.timeout(90_000) }).catch((e: unknown) => {
+      if (attempt >= 2) throw e
+      return null
+    })
+    if ((!res || res.status === 429 || res.status >= 500) && attempt < 2) {
+      console.warn(`wayback: ${res?.status ?? "connection failed"}, waiting ${30 * (attempt + 1)} s`)
       await sleep(30_000 * (attempt + 1))
       continue
     }
-    if (!res.ok) throw new Error(`${res.status} ${url}`)
+    if (!res || !res.ok) throw new Error(`${res?.status} ${url}`)
     return res.text()
   }
 }
@@ -400,7 +407,7 @@ async function fetchArchivedLeaders(needs: { code: string; years: ArchiveYear[] 
     try {
       const cdx = await waybackFetch(
         `https://web.archive.org/cdx/search/cdx?url=${encodeURIComponent(officialUrl(code))}` +
-          `&from=20241001&to=20260331&filter=statuscode:200&fl=timestamp&output=json`,
+          `&from=20221001&to=20260731&filter=statuscode:200&fl=timestamp&output=json`,
       )
       const rows = z.array(z.array(z.string())).parse(JSON.parse(cdx || "[]"))
       const timestamps = rows.slice(1).map((r) => r[0])
@@ -425,7 +432,7 @@ async function fetchArchivedLeaders(needs: { code: string; years: ArchiveYear[] 
 }
 
 /** Leaders on an archived page, or null when no snapshot or the page lists none. */
-function archived(cache: WaybackCache, code: string, year: ArchiveYear): string[] | null {
+function archived(cache: WaybackCache, code: string, year: string): string[] | null {
   const leaders = cache[code]?.[year]?.leaders
   return leaders && leaders.length > 0 ? leaders : null
 }
@@ -541,7 +548,7 @@ function reviewScores(
   summary: string | null,
   pastRun: PastRun | undefined,
   term: 1 | 2,
-  teams: Record<ArchiveYear, string[] | null>,
+  teamOf: (year: ArchiveYear) => string[] | null,
 ): Reviews | null {
   if (!cached || cached.reviews.length === 0) return null
   const year = reviewYear(pastRun, term, cached.reviews.map((r) => r.date).sort()[0])
@@ -553,7 +560,7 @@ function reviewScores(
     teaching: avg((r) => r.teaching),
     difficulty: avg((r) => r.difficulty),
     year,
-    team: teams[year],
+    team: teamOf(year),
     url: cached.url,
     summary,
   }
@@ -575,7 +582,8 @@ const Note = z
     /** Lecturers when the archive and CELCAT are missing or wrong ("First Last"). */
     now: z.array(z.string()),
     lastYear: z.array(z.string()),
-    meanYear: z.array(z.string()),
+    /** Who taught the run behind each mean, by year ("2023-24": [...]). */
+    meanTeams: z.record(z.string().regex(/^\d{4}-\d\d$/), z.array(z.string())),
     extraHoursPerWeek: z.number(),
   })
   .partial()
@@ -602,7 +610,7 @@ function overrideRecorded(sessions: Session[], override: Note["recordedOverride"
 type Sources = {
   events: TimetableEvent[]
   pastRun: PastRun | undefined
-  means: Mean[]
+  means: Omit<Mean, "team">[]
   rmm: CachedReviews | undefined
   coursework: Coursework[]
   examDate: string | null
@@ -616,7 +624,8 @@ function buildModule(m: DocModule, { events, pastRun, means, rmm, coursework, ex
   const term = m.terms[0] === 2 ? 2 : 1 // ISO runs in both; listed under its first term
   // Notes, then CELCAT's 2025-26 run, then the archived module page.
   const lastYear = note.lastYear ?? pastRun?.staff ?? archived(archive, code, "2025-26")
-  const meanYear = note.meanYear ?? (means.some((x) => x.year === MEAN_YEAR) ? archived(archive, code, "2024-25") : null)
+  // A past year's team: notes, then the archived module page.
+  const teamIn = (year: string) => note.meanTeams?.[year] ?? archived(archive, code, year)
   return {
     code,
     title: m.title,
@@ -634,10 +643,9 @@ function buildModule(m: DocModule, { events, pastRun, means, rmm, coursework, ex
     lecturers: {
       now: note.now ?? staffBetween(events, THIS_YEAR_FROM, "9999"),
       lastYear,
-      meanYear,
     },
-    means,
-    reviews: reviewScores(rmm, note.reviewSummary ?? null, pastRun, term, { "2025-26": lastYear, "2024-25": meanYear }),
+    means: means.map((x) => ({ ...x, team: teamIn(x.year) })),
+    reviews: reviewScores(rmm, note.reviewSummary ?? null, pastRun, term, (y) => (y === "2025-26" ? lastYear : teamIn(y))),
     notes: {
       coursework: note.coursework ?? null,
       exam: note.exam ?? null,
@@ -687,7 +695,7 @@ async function main() {
     const note = notes[m.code.replace(/^COMP/, "")] ?? {}
     const years: ArchiveYear[] = []
     if (!note.lastYear && !pastRuns[m.code.replace(/^COMP/, "")]) years.push("2025-26")
-    if (!note.meanYear && means[i].some((x) => x.year === MEAN_YEAR)) years.push("2024-25")
+    for (const { year } of means[i]) if (isArchiveYear(year) && !note.meanTeams?.[year]) years.push(year)
     return { code: m.code.replace(/^COMP/, ""), years }
   })
   const archive = await fetchArchivedLeaders(needs.filter((n) => n.years.length > 0))
@@ -736,12 +744,13 @@ async function main() {
   await writeFile(REVIEWS_CACHE, `${JSON.stringify(Object.fromEntries(rmm), null, 1)}\n`)
 
   const count = (pred: (m: Module) => boolean) => modules.filter(pred).length
+  const allMeans = modules.flatMap((m) => m.means)
   console.log(
     `wrote ${OUT.pathname}: ${modules.length} modules, ${count((m) => m.sessions.length > 0)} with sessions, ` +
       `${count((m) => m.reviews !== null)} with reviews, ${count((m) => m.means.length > 0)} with means, ` +
       `${count((m) => m.coursework.length > 0)} with coursework, ${count((m) => m.examDate !== null)} with exam dates; ` +
       `lecturers last year known ${count((m) => m.lecturers.lastYear !== null)}, ` +
-      `mean year known ${count((m) => m.lecturers.meanYear !== null)} of ${count((m) => m.means[0]?.year === MEAN_YEAR)} with a ${MEAN_YEAR} mean`,
+      `teams known for ${allMeans.filter((x) => x.team !== null).length} of ${allMeans.length} means`,
   )
 }
 

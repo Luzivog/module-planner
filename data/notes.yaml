@@ -8,8 +8,10 @@
 #   reviewSummary  one sentence in our own words on the Rate My Modules reviews (only if it has reviews)
 #   site           lecturer's own course site
 #   recordedOverride  overrides CELCAT's lecture capture: true/false for every session, or per day ({ Tue: false })
-#   now / lastYear / meanYear  lecturers in 2026-27 / 2025-26 / 2024-25 ("First Last"), when CELCAT (and, for past
-#                  years, the archived module pages) are missing or wrong
+#   now / lastYear lecturers in 2026-27 / 2025-26 ("First Last"), when CELCAT (or, for
+#                  2025-26, the archived module page) is missing or wrong
+#   meanTeams      who taught the run behind each published mean, by year ({ "2023-24": [...] }),
+#                  when the archived module page is missing or lists organisers/helpers
 #   extraHoursPerWeek  study hours a week beyond the timetabled sessions (incl. "video" slots) and coursework
 # This file is published with the app: keep it paraphrased and impersonal.
 
@@ -23,6 +25,9 @@
   examiners: "2024-25: marks lost for non-total reductions and malformed clauses."
   caveat: "Each question needs a fresh reduction idea, so open book helps less than it seems; mean about 65."
   reviewSummary: "The one reviewer found the exam in line with the tutorials and the content more intuitive than it first looks."
+  # No archived page for 2023-24; Phillips signed that year's examiners' feedback.
+  meanTeams:
+    "2023-24": ["Iain Phillips"]
 
 "70006":
   # Pre-recorded lectures are in the timetable as a 2 h "video" slot; no extra hours known beyond it.
@@ -48,8 +53,10 @@
   examiners: "Dec 2025: a slightly harder paper than in earlier years; examiners want concise answers."
   caveat: "Fast-paced with a lot of content; examiners advise attending the lectures."
   reviewSummary: "Reviewers rated it highly: clear teaching, current content and easy coursework, though fast-paced with a lot to cover."
-  # The archived page also lists the organiser (Knottenbelt), who does not lecture.
-  meanYear: ["Paul Pritz", "Sam Werner", "Daniel Perez Hernandez"]
+  # The archived pages also list the organiser (Knottenbelt), who does not lecture.
+  meanTeams:
+    "2024-25": ["Paul Pritz", "Sam Werner", "Daniel Perez Hernandez"]
+    "2023-24": ["Paul Pritz", "Sam Werner", "Lewis Gudgeon", "Daniel Perez Hernandez"]
 
 "70021":
   short: "Quantum Computing"
@@ -92,7 +99,8 @@
   # The course document says classes are deliberately not recorded (CELCAT says Thursday is).
   recordedOverride: false
   lastYear: ["Eoin Woods", "Matthew Green"]
-  meanYear: ["Eoin Woods", "Robert Chatley"]
+  meanTeams:
+    "2024-25": ["Eoin Woods", "Robert Chatley"]
 
 "70028":
   short: "Reinforcement Learning"
@@ -102,7 +110,8 @@
   caveat: "The Friday lab isn't recorded; the 66.0 mean is from 2024-25, before the restructure."
   reviewSummary: "All three reviewers praised the clear, well-prepared teaching; one noted the module was restructured in 2025-26."
   # The archived page also lists Filippo Valdettaro; the research names Johns as the lecturer.
-  meanYear: ["Edward Johns"]
+  meanTeams:
+    "2024-25": ["Edward Johns"]
 
 "70050":
   short: "Machine Learning"
@@ -138,7 +147,8 @@
   reviewSummary: "Reviewers rated the teaching very highly and liked the flipped format and article-based exam, while warning there is a lot of content."
   site: "https://www.doc.ic.ac.uk/~phjk/AdvancedCompArchitecture/aca20/"
   # No archived page for 2024-25; he has taught it every year.
-  meanYear: ["Paul Kelly"]
+  meanTeams:
+    "2024-25": ["Paul Kelly"]
 
 "70100":
   short: "Neurodynamics"
@@ -201,6 +211,9 @@
   examiners: "Students did well overall, Q2 a little less so; slips on light fields, Fresnel and sampling."
   caveat: "About 26 sub-parts in 90 min, with many formulas to memorise and no formula sheet."
   site: "https://www.doc.ic.ac.uk/~ghosh/COMP70001.htm"
+  # No archived page for 2023-24; the same lecturer has taught it since 2013.
+  meanTeams:
+    "2023-24": ["Abhijeet Ghosh"]
 
 "70004":
   short: "Adv. Computer Security"
@@ -238,8 +251,11 @@
   exam: "70%: 90 min, 3 compulsory questions: 2-3 sentence answers plus calculations (word2vec, perplexity, BPE, attention)."
   examiners: "Examiners note marks may be scaled toward the department's 60-70 target."
   caveat: "New lead lecturer this year, and it shares an exam slot with Networked Systems."
-  # The archived page lists three PhD students/postdocs who taught most lectures.
-  meanYear: ["Marek Rei", "Chiraag Lala"]
+  # The archived pages also list PhD students/postdocs who helped teach.
+  meanTeams:
+    "2024-25": ["Marek Rei", "Chiraag Lala"]
+    "2023-24": ["Marek Rei"]
+    "2022-23": ["Marek Rei"]
 
 "70019":
   short: "Probabilistic Inference"
@@ -327,7 +343,8 @@
   caveat: "The final live run is marked on meeting service targets and depends on your group."
   site: "https://www.andreweland.org/swemls/"
   lastYear: ["Andrew Eland"]
-  meanYear: ["Andrew Eland"]
+  meanTeams:
+    "2024-25": ["Andrew Eland"]
   # Scientia 2026-27 adds Matt Collison; CELCAT only lists Eland.
   now: ["Andrew Eland", "Matt Collison"]
 

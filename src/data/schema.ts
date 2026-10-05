@@ -53,7 +53,12 @@ export const Coursework = z.object({
 })
 export type Coursework = z.infer<typeof Coursework>
 
-export const Mean = z.object({ year: z.string(), mean: z.number() })
+export const Mean = z.object({
+  year: z.string(), // "2024-25"
+  mean: z.number(),
+  /** Lecturers who taught that year's run (archived module page or hand notes); null = unknown. */
+  team: z.array(z.string()).nullable(),
+})
 export type Mean = z.infer<typeof Mean>
 
 export const Module = z.object({
@@ -76,10 +81,8 @@ export const Module = z.object({
   examDate: z.string().nullable(),
   lecturers: z.object({
     now: z.array(z.string()), // 2026-27
-    /** 2025-26 (who the reviews describe); null = unknown. */
+    /** 2025-26; null = unknown. */
     lastYear: z.array(z.string()).nullable(),
-    /** 2024-25 (who the published mean describes); null = unknown. */
-    meanYear: z.array(z.string()).nullable(),
   }),
   /** Published class means, newest first (exams site, MSc AC class). */
   means: z.array(Mean),

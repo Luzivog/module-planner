@@ -1,6 +1,6 @@
 import { ExternalLink, House, Info, Link2, TriangleAlert, User, Users, Video, VideoOff } from "lucide-react"
 import { Fragment, type ReactNode } from "react"
-import type { Coursework, Module, Session } from "@/data/schema"
+import type { Coursework, Mean, Module, Session } from "@/data/schema"
 import { Hint } from "./hint"
 import { BothTerms, SpansTermsTag } from "./both-terms"
 import { SplitBar } from "./split-bar"
@@ -13,8 +13,8 @@ import { useLayout } from "@/hooks/use-media"
 import { TERM_NAMES, usePlanner } from "@/hooks/use-planner"
 import { conflictsWith, describeConflict } from "@/lib/conflicts"
 import { examNeeded } from "@/lib/grade"
-import { includesName, meanByOtherTeam, teamVsLastYear, teamVsReviewed } from "@/lib/lecturers"
-import { CAP_NOTE, isCapped, otherTeamNote } from "@/lib/means"
+import { includesName, teamVsLastYear, teamVsReviewed } from "@/lib/lecturers"
+import { CAP_NOTE, isCapped, meanTeam, otherTeamNote, UNKNOWN_TEAM_NOTE } from "@/lib/means"
 import { difficultyTone, THIN_REVIEWS, toneBg, toneText, type Tone } from "@/lib/scores"
 import { formatDateTime, formatDay, runLabel, shortRange } from "@/lib/time"
 import { cn } from "@/lib/utils"
@@ -142,7 +142,7 @@ function KeyFacts({ module: m }: { module: Module }) {
   const thin = r !== null && r.count < THIN_REVIEWS
   const otherReviewed = r !== null && teamVsReviewed(m) === "different"
   const mean = m.means[0]
-  const otherTeam = meanByOtherTeam(m)
+  const otherTeam = mean !== undefined && meanTeam(m, mean) === "different"
   return (
     <div className="grid grid-cols-2 gap-2 @sm:grid-cols-4">
       <Fact label="exam" value={`${m.examPct}%`} sub={m.examPct === 0 ? "coursework only" : `${100 - m.examPct}% cw`} />
@@ -369,6 +369,28 @@ function ReviewsSection({ module: m }: { module: Module }) {
   )
 }
 
+/** "(different team)" or a muted "?" after one mean; nothing when this year's team set it. */
+function MeanTeamTag({ module: m, mean: x }: { module: Module; mean: Mean }) {
+  const team = meanTeam(m, x)
+  if (team === "same") return null
+  return (
+    <>
+      {" "}
+      {team === "different" ? (
+        <Hint label={otherTeamNote(x.year)}>
+          <span className="text-warn">(different team)</span>
+        </Hint>
+      ) : (
+        <Hint label={UNKNOWN_TEAM_NOTE}>
+          <span className="text-muted-foreground/70" role="img" aria-label={UNKNOWN_TEAM_NOTE}>
+            ?
+          </span>
+        </Hint>
+      )}
+    </>
+  )
+}
+
 function CapTag() {
   return (
     <Hint label={CAP_NOTE}>
@@ -377,9 +399,9 @@ function CapTag() {
   )
 }
 
-/** Published class means on one line, newest first; the latest is flagged if a different team set it. */
+/** Published class means on one line, newest first; each is flagged if a different team
+ * set it, or marked "?" when that year's team isn't known. */
 function MeansSection({ module: m }: { module: Module }) {
-  const otherTeam = meanByOtherTeam(m)
   return (
     <Section
       title="Class average"
@@ -395,14 +417,7 @@ function MeansSection({ module: m }: { module: Module }) {
             {i > 0 && <span className="text-muted-foreground"> · </span>}
             <span className="font-medium">{x.mean.toFixed(1)}</span>
             {isCapped(x) && <> <CapTag /></>} <span className="text-muted-foreground">{runLabel(x.year, m.term)}</span>
-            {i === 0 && otherTeam && (
-              <>
-                {" "}
-                <Hint label={otherTeamNote(x.year)}>
-                  <span className="text-warn">(different team)</span>
-                </Hint>
-              </>
-            )}
+            <MeanTeamTag module={m} mean={x} />
           </Fragment>
         ))}
       </p>
