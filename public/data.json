@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-04T16:45:51.543Z",
+ "generatedAt": "2026-10-05T11:05:13.821Z",
  "programme": "MSc Advanced Computing",
  "selection": {
   "closes": "2026-10-23T17:00:00"
@@ -97,14 +97,17 @@
     "teaching": 4,
     "difficulty": 3,
     "year": "2025-26",
+    "team": [
+     "Iain Phillips"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70005-complexity",
-    "summary": "The one reviewer found the exam predictable from the tutorials, the lecturer kind, and the content more intuitive than it looks."
+    "summary": "The one reviewer found the exam in line with the tutorials and the content more intuitive than it first looks."
    },
    "notes": {
     "coursework": "One written coursework (20%); unassessed tutorial exercises, about half discussed in class.",
     "exam": "80%: 2 h, all 3 questions, open book, all proof: NP-completeness and logspace reductions, NL, NC and oracle classes.",
-    "examiners": "2024-25: terse, no statistics; marks lost for non-total reductions and malformed clauses.",
-    "caveat": "Every question needs a fresh reduction idea, so open book barely helps; mean about 65.",
+    "examiners": "2024-25: marks lost for non-total reductions and malformed clauses.",
+    "caveat": "Each question needs a fresh reduction idea, so open book helps less than it seems; mean about 65.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -172,14 +175,17 @@
     "teaching": 2.25,
     "difficulty": 5,
     "year": "2025-26",
+    "team": [
+     "Panos Parpas"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70006-computational-finance",
-    "summary": "All four reviewers found the content interesting but the teaching weak and the exam extremely hard, long and unlike the tutorials."
+    "summary": "Reviewers found the content interesting and the tutorials manageable, but all four found the exam much harder and longer than the course prepared them for."
    },
    "notes": {
     "coursework": "Assessed exercises plus implementing and testing a portfolio optimisation model (20%).",
     "exam": "80%: 2 h, all 3 questions, calculator: ~45% derivations (portfolios, CAPM), ~40% calculations (binomial option pricing).",
     "examiners": "No recent report: the last paper was for resit students only; last mean 69.8 (2023-24).",
-    "caveat": "Reviewers say the exam is far harder than the teaching and too long for 2 h.",
+    "caveat": "Reviewers found the exam much harder and longer than the tutorials suggested.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -255,8 +261,11 @@
     "teaching": 3.5,
     "difficulty": 4.5,
     "year": "2025-26",
+    "team": [
+     "Matthew Wicker"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70015-mathematics-for-machine-learning",
-    "summary": "Reviewers split: one found the exam as expected thanks to plenty of practice papers, the other found the maths under-explained and the exam brutal."
+    "summary": "Reviewers split: one found the exam as expected thanks to plenty of practice papers, the other wanted more depth on the maths and found the exam very hard."
    },
    "notes": {
     "coursework": "Assessed exercises (30%), the Kryptonite-N project; not difficult but time-consuming.",
@@ -342,14 +351,18 @@
     "teaching": 5,
     "difficulty": 2.33,
     "year": "2025-26",
+    "team": [
+     "Paul Pritz",
+     "Sam Werner"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70017-principles-of-distributed-ledgers",
-    "summary": "Reviewers loved it: well taught, contemporary and enjoyable with very easy coursework, though fast-paced with a lot of content."
+    "summary": "Reviewers rated it highly: clear teaching, current content and easy coursework, though fast-paced with a lot to cover."
    },
    "notes": {
     "coursework": "Implement and test smart contracts in Foundry (in 2023 an NFT ticketing contract plus an ERC20 token), 20%; this year's not out yet.",
     "exam": "80%: 2 h, both questions: short concept answers plus an AMM calculation, then find the bug in a ~40-line Solidity contract.",
-    "examiners": "Dec 2025: paper slightly harder than in earlier years; concise answers wanted.",
-    "caveat": "Dec 2025 results were polarised: a large group did poorly, which examiners link to low attendance.",
+    "examiners": "Dec 2025: a slightly harder paper than in earlier years; examiners want concise answers.",
+    "caveat": "Fast-paced with a lot of content; examiners advise attending the lectures.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -426,14 +439,17 @@
     "teaching": 4.5,
     "difficulty": 4.5,
     "year": "2025-26",
+    "team": [
+     "Roberto Bondesan"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70021-quantum-computing",
-    "summary": "Reviewers praised the lecturer and found the exam fair, but the material hard, unusual and sometimes rushed, needing lots of practice."
+    "summary": "Reviewers praised the teaching and found the exam fair, but the material hard and unusual, needing a lot of practice."
    },
    "notes": {
     "coursework": "Two assessed coursework tests (20%).",
     "exam": "80%: 2 h, all 3 questions, no calculator: ~75% Dirac-notation calculation (teleportation, QFT, Grover, error-correcting codes).",
-    "examiners": "2024-25: went well with few resits; the complexity comparison and Q3c were hard for most.",
-    "caveat": "Means sit around 66 both years, so 70% takes real fluency.",
+    "examiners": "2024-25: generally went well; the complexity comparison and Q3c were the hardest parts.",
+    "caveat": "Means were about 66 in both recent years; plan on a lot of practice with the exercises.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -512,14 +528,18 @@
     "teaching": 2.4,
     "difficulty": 2.8,
     "year": "2025-26",
+    "team": [
+     "Thomas Heinis",
+     "Peter Pietzuch"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70022-scalable-systems-and-data",
-    "summary": "Reviewers liked the papers half and the easy coursework but found the storage half disorganised and poorly taught, with much self-study."
+    "summary": "Reviewers liked the papers and case studies and found the coursework easy, but said the slides alone weren't enough and much had to be learned from the papers."
    },
    "notes": {
     "coursework": "Two one-page worksheets (20%) that reviewers found very easy.",
     "exam": "80%: 2 h, one question per lecturer: explain 15-20 systems (Spanner, Dynamo, Bigtable...) and apply them to a scenario; no maths.",
     "examiners": "Dec 2025 report unavailable; in 2024-25 vague or off-target answers lost marks.",
-    "caveat": "The storage half is reviewed as disorganised, so expect to self-study from the papers.",
+    "caveat": "Expect a lot of self-study from the research papers; reviewers found the slides thin on their own.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -594,7 +614,7 @@
     "coursework": "Two coursework exercises (20%).",
     "exam": "80%: 2 h, both questions, all separation-logic proof: assertions and proof sketches for list and tree algorithms.",
     "examiners": "No report since 2022-23.",
-    "caveat": "All formal proof: formulaic, but long, notation-heavy and unforgiving of slips.",
+    "caveat": "All formal proof: formulaic but long and notation-heavy, so small slips cost marks.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -689,8 +709,11 @@
     "teaching": 5,
     "difficulty": 4,
     "year": "2025-26",
+    "team": [
+     "Cristian Cadar"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70024-software-reliability",
-    "summary": "The one reviewer rated the teaching top level and the module valuable, but found the courseworks and exam demanding and some tools niche."
+    "summary": "The one reviewer rated the teaching highly and found the module valuable, but the courseworks and exam demanding and some tools niche."
    },
    "notes": {
     "coursework": "Team project in groups of 2-3 (30%): study a reliability tool from its paper, extend its evaluation, then report and present.",
@@ -856,14 +879,18 @@
     "teaching": 3.2,
     "difficulty": 3,
     "year": "2025-26",
+    "team": [
+     "Eoin Woods",
+     "Matthew Green"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70025-software-engineering-for-industry",
-    "summary": "Reviewers found the weekly group worksheets tedious and the marking vague, harsh and slow, but valued the guest speakers and having no exam."
+    "summary": "Reviewers valued the guest speakers and having no exam, but found the weekly group deliverables time-consuming and wanted clearer marking criteria and faster feedback."
    },
    "notes": {
-    "coursework": "All in groups of 3: weekly worksheets 35%, presentation 25% (6 Nov), final report 40% (27 Nov); about 6 h a week.",
+    "coursework": "A 2% individual declaration, then in groups of 3: weekly worksheets 33%, presentation 25% (6 Nov), final report 40% (27 Nov).",
     "exam": null,
     "examiners": null,
-    "caveat": "Sessions are not recorded, Thursday attendance is expected, and marking is reportedly harsh.",
+    "caveat": "Not recorded (by design) and Thursday attendance is expected; reviewers say top marks on the weekly deliverables are hard to get.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -951,14 +978,17 @@
     "teaching": 5,
     "difficulty": 3,
     "year": "2025-26",
+    "team": [
+     "Stephen James"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70028-reinforcement-learning",
-    "summary": "All three reviewers praised the new lecturer's clear, caring teaching and the restructured, easier module."
+    "summary": "All three reviewers praised the clear, well-prepared teaching; one noted the module was restructured in 2025-26."
    },
    "notes": {
     "coursework": "One individual theory-and-code piece (30%), out 3 Nov, due 17 Nov, about 4 h; weekly tutorials are ungraded.",
     "exam": "70%: worked by hand: a grid-world MDP, policy evaluation and value iteration, then MC, TD, SARSA and Q-learning step by step.",
     "examiners": "Dec 2025: strong overall, Q2 and Q3 harder than Q1; formulas without the numbers lost marks.",
-    "caveat": "The Friday lab isn't recorded, and the 66.0 mean predates the current lecturer.",
+    "caveat": "The Friday lab isn't recorded; the 66.0 mean is from 2024-25, before the restructure.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -1019,7 +1049,8 @@
    "examDate": null,
    "lecturers": {
     "now": [
-     "Iason Kokkinos"
+     "Iasonas Kokkinos",
+     "Nuri Cingillioglu"
     ],
     "lastYear": [
      "Antoine Cully",
@@ -1052,13 +1083,18 @@
     "teaching": 3.75,
     "difficulty": 3.25,
     "year": "2025-26",
+    "team": [
+     "Antoine Cully",
+     "Marek Rei",
+     "Josiah Wang"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70050-introduction-to-machine-learning",
-    "summary": "Reviewers found it well organised and fair but repetitive for anyone with ML background, with time-consuming group work and a tight exam."
+    "summary": "Reviewers found it well organised, with time-consuming group courseworks and a tight exam; one found it repetitive after earlier ML courses."
    },
    "notes": {
     "coursework": "Two group courseworks in groups of 4 (Python/NumPy): decision trees (12%) and a neural-network library plus regressor (18%).",
     "exam": "70%: 90 min, 3 questions, one A4 notes sheet: ~90% calculation (information gain, k-means/GMM, backprop); tight on time.",
-    "examiners": "Dec 2025: most answered Q1a perfectly; marks lost to occasional calculation slips.",
+    "examiners": "Dec 2025: Q1a was answered well by most; marks lost to occasional calculation slips.",
     "caveat": "New lead lecturer this year; largely a repeat if you have already taken an ML course.",
     "extraHoursPerWeek": null
    },
@@ -1147,14 +1183,18 @@
     "teaching": 3.5,
     "difficulty": 3.5,
     "year": "2025-26",
+    "team": [
+     "Giuliano Casale",
+     "Dario Paccagnan"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70068-scheduling-and-resource-allocation",
-    "summary": "Reviewers found the workload high with many algorithms and proofs to memorise and the scheduling half dull, but enjoyed the game theory and coursework."
+    "summary": "One reviewer found the workload high, with many algorithms and proofs to memorise; the other found it straightforward, preferred the game-theory part and enjoyed the coursework."
    },
    "notes": {
     "coursework": "One group coursework (20%), e.g. a branch-and-bound scheduler plus report; out 2 Nov, due 18 Nov, about 15 h.",
     "exam": "80%: 2 h, 2 questions, closed book: ~70% algorithms by hand (scheduling, Nash equilibria, auctions), ~15% proofs, ~15% reasoning.",
     "examiners": "Dec 2025: step-by-step proofs beat qualitative arguments; calculation slips cost marks.",
-    "caveat": "Expect an unseen proof, and 2-3 new algorithms to memorise each lecture.",
+    "caveat": "Last year's exam had an unseen proof; the tutorial sheets include exam-style problems.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -1270,13 +1310,16 @@
     "teaching": 4.5,
     "difficulty": 3,
     "year": "2025-26",
+    "team": [
+     "Paul Kelly"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70086-advanced-computer-architecture",
-    "summary": "Reviewers rated the lecturer outstanding and liked the flipped format and article-based exam, while warning there is a lot of content."
+    "summary": "Reviewers rated the teaching very highly and liked the flipped format and article-based exam, while warning there is a lot of content."
    },
    "notes": {
     "coursework": "Two pieces (20%): a simulator lab finding the lowest-energy configuration, then an open-ended piece in groups of up to 3.",
     "exam": "80%: 2 h, open book, 3 open-ended questions mostly on a recent processor article handed out in advance; no maths.",
-    "examiners": "Dec 2025 paper built on AMD's Zen 5 guide; 2024-25 marking rewarded any sensible argument.",
+    "examiners": "Dec 2025 paper built on AMD's Zen 5 guide; in 2024-25 any well-argued answer earned credit.",
     "caveat": "Heavy: lots of content, time-consuming coursework, and Monday's material is watched at home.",
     "extraHoursPerWeek": 1
    },
@@ -1349,14 +1392,17 @@
     "teaching": 5,
     "difficulty": 3,
     "year": "2025-26",
+    "team": [
+     "Pedro Mediano"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70100-computational-neurodynamics",
-    "summary": "The one reviewer found the content interesting and the lecturer nice, but the exam harder than in previous years."
+    "summary": "The one reviewer found the content interesting and the teaching good, and the 2025-26 exam harder than in previous years."
    },
    "notes": {
     "coursework": "Labs (Thu and Fri), 20%.",
     "exam": "80%: 2 h, all 3 questions: mostly concepts and sketches (neuron models, networks) plus ODE and mutual-information calculations.",
     "examiners": "2024-25: Q1 hardest, Q2 best answered; marks lost for missing proofs, mixed-up plots and units.",
-    "caveat": "The 2025-26 exam reportedly felt harder than in earlier years.",
+    "caveat": null,
     "extraHoursPerWeek": null
    },
    "links": {
@@ -1419,7 +1465,7 @@
    "notes": {
     "coursework": "30%: two in-class exercises, a short programming assignment and a group project with peer evaluation.",
     "exam": "70%: 2 h, 3 questions (2023-24): user-study design writing, Markov-chain calculations and multi-select MCQs.",
-    "examiners": "2023-24: most did well; marks lost for weak study controls and HMM vs POMDP mix-ups.",
+    "examiners": "2023-24: most did well; marks lost for study designs lacking controls and HMM vs POMDP mix-ups.",
     "caveat": "Didn't run in 2024-25 or 2025-26, so the only paper and feedback are from 2023-24.",
     "extraHoursPerWeek": null
    },
@@ -1492,6 +1538,9 @@
     "teaching": 5,
     "difficulty": 4,
     "year": "2025-26",
+    "team": [
+     "Pedro Mediano"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70103-statistical-information-theory",
     "summary": "The one reviewer found the content interesting and useful, the coursework simple and the exam balanced, though some proofs take time."
    },
@@ -1578,14 +1627,17 @@
     "teaching": 4.33,
     "difficulty": 3.67,
     "year": "2025-26",
+    "team": [
+     "Stamatia Giannarou"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70110-computer-vision",
-    "summary": "Reviewers praised the kind lecturer and consistent exam style but found the content huge and fast-paced; coursework was manageable."
+    "summary": "Reviewers praised the teaching and the consistent exam style but found the content large and fast-paced; the coursework was manageable."
    },
    "notes": {
     "coursework": "Two Jupyter-notebook courseworks (20%).",
     "exam": "80%: 2 h, all 3 questions: ~40% calculation (Sobel, camera projection, epipolar lines), ~40% outlining methods.",
-    "examiners": "2024-25: strict partial credit; procedural slips and the epipolar proof cost the most.",
-    "caveat": "Lots of fast-paced content, close to two modules' worth; mean 66.5.",
+    "examiners": "2024-25: partial credit needed correct working; procedural slips and the epipolar proof cost the most.",
+    "caveat": "A lot of fast-paced content; mean 66.5 in 2024-25.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -1657,7 +1709,7 @@
    "notes": {
     "coursework": "One individual coursework (20%): an image generator (VAEs) scored on metrics; out 22 Oct, due 20 Nov, about 16 h.",
     "exam": "80%: 3 questions of 20 marks: about half conceptual, a quarter calculation, a quarter derivation (ELBO, Gaussian KL, diffusion).",
-    "examiners": "Spring 2026: about 83% average; Q2 (receptive field, attention, LoRA rank) split the class.",
+    "examiners": "Spring 2026: high raw exam marks; Q2 (receptive field, attention, LoRA rank) separated the class.",
     "caveat": "Page says weekly videos plus a class, but CELCAT books two lectures; same course as spring 70010.",
     "extraHoursPerWeek": null
    },
@@ -1685,30 +1737,8 @@
      "rooms": [
       "HXLY 145"
      ],
-     "recorded": null,
-     "weeks": 4
-    },
-    {
-     "day": "Tue",
-     "start": "14:00",
-     "end": "15:00",
-     "kind": "lecture",
-     "rooms": [
-      "HXLY 145"
-     ],
      "recorded": true,
-     "weeks": 4
-    },
-    {
-     "day": "Tue",
-     "start": "15:00",
-     "end": "16:00",
-     "kind": "lab",
-     "rooms": [
-      "HXLY 219"
-     ],
-     "recorded": false,
-     "weeks": 4
+     "weeks": 8
     },
     {
      "day": "Fri",
@@ -1750,13 +1780,16 @@
     "teaching": 4,
     "difficulty": 3.5,
     "year": "2025-26",
+    "team": [
+     "Hongxiang Fan"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70114-machine-learning-systems-and-hardware",
-    "summary": "Reviewers found the lecturer helpful and the examinable material clear, but the first run unstructured and the CUDA coursework tough."
+    "summary": "Split: one found the lecturer very helpful and the examinable material clear, the other found the first run still taking shape; both found the CUDA coursework hard without prior experience."
    },
    "notes": {
-    "coursework": "An individual assignment implementing and optimising ML operators in CUDA, code plus report (20%); reviewers found it tough.",
+    "coursework": "An individual assignment implementing and optimising ML operators in CUDA, code plus report (20%).",
     "exam": "80%: 2 questions of 3 parts, ~70% calculation (roofline, compression ratios, tiling, KV-cache memory).",
-    "examiners": "2025-26: Q1 answered well; Q2 weak on compression metadata, per-tile latency and KV blocks.",
+    "examiners": "2025-26: Q1 answered well; Q2 errors on compression metadata, per-tile latency and KV blocks.",
     "caveat": "Only one previous run: no past papers, just a mock exam.",
     "extraHoursPerWeek": null
    },
@@ -1889,13 +1922,13 @@
    "notes": {
     "coursework": "Two courseworks, alone or in pairs: HDR and image-based lighting, then Monte Carlo rendering (30%).",
     "exam": "70%: 90 min, 2 questions, about 60% numeric calculation (radiometry, HDR, sampling) and 40% short concepts.",
-    "examiners": "Students did well overall; Q2 weaker; slips on light fields, Fresnel and sampling.",
-    "caveat": "Very tight on time, with many formulas to memorise and no formula sheet.",
+    "examiners": "Students did well overall, Q2 a little less so; slips on light fields, Fresnel and sampling.",
+    "caveat": "About 26 sub-parts in 90 min, with many formulas to memorise and no formula sheet.",
     "extraHoursPerWeek": null
    },
    "links": {
     "official": "https://www.imperial.ac.uk/computing/current-students/courses/70001/",
-    "site": "http://www.doc.ic.ac.uk/~ghosh/COMP70001.htm"
+    "site": "https://www.doc.ic.ac.uk/~ghosh/COMP70001.htm"
    }
   },
   {
@@ -1967,7 +2000,7 @@
    "notes": {
     "coursework": "Three individual paper summaries (10%) and a group Android malvertising assignment run as a competition (10%).",
     "exam": "80%: 2 h, all 4 questions: scenario reasoning, MCQs needing a justification, and writing an SELinux policy.",
-    "examiners": "MCQs went well but unjustified answers lost marks; SELinux syntax errors; few good designs.",
+    "examiners": "MCQs went well; unjustified answers and SELinux syntax errors lost marks.",
     "caveat": "One half is built on new real-world incidents each year, so it can't be memorised.",
     "extraHoursPerWeek": null
    },
@@ -2118,7 +2151,7 @@
    "notes": {
     "coursework": "One term-long project to design, build and evaluate a deep generative model for images (20%).",
     "exam": "80%; the last Deep Learning paper: 90 min, 2 questions, 1-page sheet, MCQs, calculations, derivations and design.",
-    "examiners": "Deep Learning 2024-25: Q2 averaged 12.2/20; conditional GAN hardest; paper too long.",
+    "examiners": "Deep Learning 2024-25: the conditional GAN question was the hardest; examiners found the paper long.",
     "caveat": "Rebuilt from Deep Learning, so old papers only partly apply; same syllabus as 70113, take one.",
     "extraHoursPerWeek": null
    },
@@ -2196,7 +2229,7 @@
     "coursework": "One mini-project in groups of two (20%).",
     "exam": "80%: 2 h, 2 questions: hand calculation (convolutions), short recall, MCQs and pseudo-code tied to the tutorials.",
     "examiners": "Mostly good; errors on transposed convolutions, U-Nets and unjustified causal claims.",
-    "caveat": "Strong medical-imaging focus; an old review found little new over computer vision.",
+    "caveat": "Strong medical-imaging focus; one older review found much overlap with Computer Vision.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -2272,7 +2305,7 @@
    "notes": {
     "coursework": "One coursework on a real NLP shared task (30%); a past one detected patronising language with BERT.",
     "exam": "70%: 90 min, 3 compulsory questions: 2-3 sentence answers plus calculations (word2vec, perplexity, BPE, attention).",
-    "examiners": "Standard calculations went well, parsing less so; averages may be scaled down to 60-70.",
+    "examiners": "Examiners note marks may be scaled toward the department's 60-70 target.",
     "caveat": "New lead lecturer this year, and it shares an exam slot with Networked Systems.",
     "extraHoursPerWeek": null
    },
@@ -2339,7 +2372,7 @@
    "notes": {
     "coursework": "One coursework, partly programming (20%).",
     "exam": "80%; the 2023 paper: 2 h, 3 questions, closed book with a formula sheet (graphical models, VI, decision theory).",
-    "examiners": "2022-23: reasonable overall but few excellent scripts; the VI question was done poorly.",
+    "examiners": "2022-23: reasonable overall; the variational inference question was the hardest.",
     "caveat": "New team and only one old paper from a previous lecturer; maths heavy.",
     "extraHoursPerWeek": null
    },
@@ -2549,7 +2582,7 @@
    "notes": {
     "coursework": "Two individual pieces of 15% each; the second is a simulated-robot strategy ending in a live competition.",
     "exam": "70%: 90 min, 3 questions, open book: mostly short reasoning plus some modelling and derivation.",
-    "examiners": "Q2 best and Q3 weakest; vague answers and copied slide phrases were penalised.",
+    "examiners": "Q2 answered best and Q3 the hardest; vague answers and copied slide phrases lost marks.",
     "caveat": "Assumes autumn Reinforcement Learning or equivalent; each question ends with an unusual part.",
     "extraHoursPerWeek": null
    },
@@ -2629,7 +2662,7 @@
    },
    "links": {
     "official": "https://www.imperial.ac.uk/computing/current-students/courses/70070/",
-    "site": "http://www.doc.ic.ac.uk/~wl/teach/cuscomp.html"
+    "site": "https://www.doc.ic.ac.uk/~wl/teach/cuscomp.html"
    }
   },
   {
@@ -2647,21 +2680,12 @@
      "day": "Mon",
      "start": "16:00",
      "end": "18:00",
-     "kind": "video",
-     "rooms": [],
-     "recorded": false,
-     "weeks": 4
-    },
-    {
-     "day": "Mon",
-     "start": "16:00",
-     "end": "18:00",
      "kind": "lecture",
      "rooms": [
       "HXLY 311"
      ],
      "recorded": true,
-     "weeks": 4
+     "weeks": 8
     },
     {
      "day": "Thu",
@@ -2706,7 +2730,7 @@
    "notes": {
     "coursework": "Two courseworks, often in pairs: profiling, micro-benchmarks and thread-safe C++ (20%).",
     "exam": "80%: 2 h, 2 questions: applied analysis (lock-free code, profiles, counters), essay-like explanation, some calculation.",
-    "examiners": "Only Q1 feedback published: high average, but races and bottleneck terms mishandled.",
+    "examiners": "Only Q1 feedback published: it went well overall; errors on races and bottleneck terms.",
     "caveat": "Low mean (62.7), only two past papers, and heavy use of C++.",
     "extraHoursPerWeek": null
    },
@@ -2782,7 +2806,7 @@
     "coursework": "One interpretability lab: run explainability tools on a model and write a technical report (20%).",
     "exam": "80%: mostly causality (structural causal models, do-calculus, identifiability, counterfactuals).",
     "examiners": null,
-    "caveat": "Rebuilt from an ethics module, so there is no past paper; teaching starts early, on 6 Jan.",
+    "caveat": "Rebuilt from an ethics module, so there is no past paper or mean.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -2855,8 +2879,8 @@
    "notes": {
     "coursework": "One individual coursework, a short test-like analysis (20%).",
     "exam": "80%: 2 h in the labs, 2 questions, one A4 sheet: about half live hacking on VMs, half written.",
-    "examiners": "Generic written answers lost marks; few solved the later flags or the session forgery.",
-    "caveat": "Lowest mean (60.8): the practical half needs CTF practice all term.",
+    "examiners": "Generic written answers lost marks; the later flags and the session forgery were the hardest.",
+    "caveat": "Mean 60.8 in 2024-25; the practical half rewards regular CTF practice.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -2930,7 +2954,7 @@
     "coursework": "Three individual shader tasks (20%): illumination 40%, texture 10%, GPU ray tracer 50%.",
     "exam": "80%: 2 h, 2 questions: a design essay with some maths, MCQs and calculation.",
     "examiners": "Q1 only: MCQs went well, stricter thresholds applied; matrix questions now dropped.",
-    "caveat": "New lecturer pair moving toward 3D vision, so past papers predict less.",
+    "caveat": "New co-lecturer and a shift toward 3D vision, so past papers predict less.",
     "extraHoursPerWeek": null
    },
    "links": {
@@ -3105,7 +3129,8 @@
    "examDate": null,
    "lecturers": {
     "now": [
-     "Andrew Eland"
+     "Andrew Eland",
+     "Matt Collison"
     ],
     "lastYear": [
      "Andrew Eland"
@@ -3262,13 +3287,16 @@
     "teaching": 5,
     "difficulty": 3.33,
     "year": "2025-26",
+    "team": [
+     "Marios Kogias"
+    ],
     "url": "https://www.ratemymodules.co.uk/icl/adv-comp/70111-networked-systems",
-    "summary": "Reviewers rate the lecturer very highly, but a research paper to read and discuss each week plus intense coursework make it demanding."
+    "summary": "Reviewers rated the teaching very highly, but found the weekly research paper to read and discuss, plus intense coursework, demanding."
    },
    "notes": {
     "coursework": "Three small courseworks building a middlebox in eBPF, DPDK or P4 (30%).",
     "exam": "70%: 90 min, 2 questions: half recall of class topics, half continuing an in-class design exercise.",
-    "examiners": "Students did well overall; generic answers not tied to the class design scored almost nothing.",
+    "examiners": "Students did well overall; generic answers not tied to the class design scored low.",
     "caveat": "Assumes networking background, and it shares an exam slot with NLP.",
     "extraHoursPerWeek": null
    },

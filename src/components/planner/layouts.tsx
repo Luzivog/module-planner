@@ -1,6 +1,7 @@
 import { CalendarDays, ClipboardList, List } from "lucide-react"
 import { useState, type ReactNode } from "react"
 import type { Module } from "@/data/schema"
+import { Disclaimer } from "./disclaimer"
 import { ModuleList } from "./module-list"
 import { ResizeHandle } from "./resize-handle"
 import { Summary } from "./summary"
@@ -9,22 +10,31 @@ import { ThemeToggle } from "./theme-toggle"
 import { Timetable } from "./timetable"
 import { useColumnWidth } from "@/hooks/use-column-width"
 import { usePlanner } from "@/hooks/use-planner"
+import { readStorage, writeStorage } from "@/lib/storage"
 import { cn } from "@/lib/utils"
 
 type TermProps = { term: Module["term"]; onTermChange: (t: Module["term"]) => void }
 
-/** ≥ 1280px: list | timetable | summary, with draggable dividers. */
+/** ≥ 1280px: list | timetable | summary, with draggable (and keyboard-resizable) dividers. */
 export function DesktopLayout({ term, onTermChange }: TermProps) {
-  const left = useColumnWidth("col-left", 340, 260, 560)
+  const left = useColumnWidth("col-left", 360, 280, 560)
   const right = useColumnWidth("col-right", 260, 220, 420)
   return (
-    <div className="flex h-dvh overflow-hidden text-[13px]">
+    <div className="flex h-full overflow-hidden text-[13px]">
       <div className="h-full shrink-0" style={{ width: left.width }}>
-        <ModuleList term={term} onTermChange={onTermChange} />
+        <ModuleList
+          term={term}
+          onTermChange={onTermChange}
+          footer={
+            <div className="px-2 py-1">
+              <ThemeToggle />
+            </div>
+          }
+        />
       </div>
-      <ResizeHandle side="left" width={left.width} onResize={left.setWidth} onReset={left.reset} />
+      <ResizeHandle side="left" label="Resize module list" column={left} />
       <Timetable term={term} />
-      <ResizeHandle side="right" width={right.width} onResize={right.setWidth} onReset={right.reset} />
+      <ResizeHandle side="right" label="Resize plan summary" column={right} />
       <div className="h-full shrink-0" style={{ width: right.width }}>
         <Summary />
       </div>
@@ -35,9 +45,18 @@ export function DesktopLayout({ term, onTermChange }: TermProps) {
 /** 768–1279px: list | timetable, with the summary as a bar above the timetable. */
 export function TabletLayout({ term, onTermChange }: TermProps) {
   return (
-    <div className="flex h-dvh overflow-hidden text-[13px]">
-      <div className="h-full w-[300px] shrink-0 border-r lg:w-[340px]">
-        <ModuleList term={term} onTermChange={onTermChange} />
+    <div className="flex h-full overflow-hidden text-[13px]">
+      <div className="h-full w-[340px] shrink-0 border-r">
+        <ModuleList
+          term={term}
+          onTermChange={onTermChange}
+          footer={
+            <div className="flex items-center gap-1 border-t py-1 pr-3 pl-1">
+              <ThemeToggle />
+              <Disclaimer withClose className="text-[10px]" />
+            </div>
+          }
+        />
       </div>
       <div className="flex min-w-0 flex-1 flex-col">
         <SummaryBar />
@@ -55,18 +74,21 @@ const TABS = [
 type Tab = (typeof TABS)[number]["id"]
 
 const TAB_KEY = "module-planner:tab"
-const readTab = (): Tab => TABS.find((t) => t.id === localStorage.getItem(TAB_KEY))?.id ?? "modules"
+const readTab = (): Tab => TABS.find((t) => t.id === readStorage(TAB_KEY))?.id ?? "modules"
 
-/** < 768px: one panel at a time with a bottom tab bar (remembered). */
+/**
+ * < 768px: one panel at a time with a bottom tab bar (remembered). All panels
+ * stay mounted (hidden when inactive) so each keeps its scroll position.
+ */
 export function PhoneLayout({ term, onTermChange }: TermProps) {
   const [tab, setTab] = useState<Tab>(readTab)
   const { selected } = usePlanner()
   const choose = (t: Tab) => {
     setTab(t)
-    localStorage.setItem(TAB_KEY, t)
+    writeStorage(TAB_KEY, t)
   }
   const panels: Record<Tab, ReactNode> = {
-    modules: <ModuleList term={term} onTermChange={onTermChange} themeToggle={false} />,
+    modules: <ModuleList term={term} onTermChange={onTermChange} endNote={<Disclaimer className="px-4 pt-1 pb-4" />} />,
     week: <Timetable term={term} compact onTermChange={onTermChange} />,
     plan: (
       <Summary
@@ -79,9 +101,13 @@ export function PhoneLayout({ term, onTermChange }: TermProps) {
     ),
   }
   return (
-    <div className="flex h-dvh flex-col overflow-hidden text-[13px]">
-      <div className="flex min-h-0 flex-1 flex-col">{panels[tab]}</div>
-      <nav className="flex shrink-0 border-t bg-background pb-[env(safe-area-inset-bottom)]">
+    <div className="flex h-full flex-col overflow-hidden text-[13px]">
+      {TABS.map(({ id }) => (
+        <div key={id} className={cn("min-h-0 flex-1 flex-col", tab === id ? "flex" : "hidden")}>
+          {panels[id]}
+        </div>
+      ))}
+      <nav aria-label="Sections" className="flex shrink-0 border-t bg-background pb-[env(safe-area-inset-bottom)]">
         {TABS.map(({ id, label, Icon }) => (
           <button
             key={id}

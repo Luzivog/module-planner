@@ -4,7 +4,8 @@
 // and the hand notes in data/notes.yaml. Run with `pnpm data`.
 // Review texts go to data/.reviews-cache.json (local only: copyrighted, never
 // published). Wayback lookups are cached in data/wayback.json (archived pages don't
-// change); delete an entry to look it up again.
+// change); delete an entry to look it up again. data/celcat-2025-26.json keeps each
+// module's 2025-26 run (staff, start date), since CELCAT stops showing it.
 import { execFile } from "node:child_process"
 import { mkdir, readFile, writeFile } from "node:fs/promises"
 import { promisify } from "node:util"
@@ -17,6 +18,7 @@ const OUT = new URL("public/data.json", ROOT)
 const NOTES = new URL("data/notes.yaml", ROOT)
 const REVIEWS_CACHE = new URL("data/.reviews-cache.json", ROOT)
 const WAYBACK_CACHE = new URL("data/wayback.json", ROOT)
+const PAST_RUNS = new URL("data/celcat-2025-26.json", ROOT)
 
 /** First day of 2026-27 in CELCAT's merged feed; earlier events are 2025-26. */
 const THIS_YEAR_FROM = "2026-09-26"
@@ -24,7 +26,6 @@ const LAST_YEAR_FROM = "2025-09-01"
 const AVERAGE_YEARS = ["2024-2025", "2023-2024", "2022-2023"] // newest first
 const RMM = "https://www.ratemymodules.co.uk"
 const RMM_COURSE = `${RMM}/icl/adv-comp`
-const REVIEW_YEAR = "2025-26"
 /** The year `lecturers.meanYear` describes (the latest published means). */
 const MEAN_YEAR = "2024-25"
 /** Wayback snapshot windows: teaching months of each year, aiming for the middle. */
@@ -185,38 +186,60 @@ function sessionKind(kind: string): Session["kind"] {
   return "lecture"
 }
 
-/** Collapses this year's events into weekly sessions, dropping one-offs, exams and presentations. */
+/** Kind order for ties when slots merge: in-person teaching first. */
+const KIND_PRIORITY: Session["kind"][] = ["lecture", "lab", "tutorial", "video"]
+/** Distinct dates: some sessions are booked twice on one date (an overflow room). */
+const datesOf = (evs: TimetableEvent[]) => new Set(evs.map((e) => e.start.slice(0, 10)))
+const minutes = (hhmm: string) => Number(hhmm.slice(0, 2)) * 60 + Number(hhmm.slice(3, 5))
+
+type Slot = { day: Day; start: string; end: string; parts: { kind: Session["kind"]; events: TimetableEvent[] }[] }
+
+/**
+ * Collapses this year's events into weekly sessions, dropping one-offs, exams and
+ * presentations. Slots inside another slot on the same day merge into it, so each
+ * time block appears once (e.g. 70114's Tue 14-16 lecture alternating with a 14-15
+ * lecture + 15-16 lab, or 70075's Mon 16-18 alternating video/lecture weeks); the
+ * merged session takes the kind that ran most weeks.
+ */
 function toSessions(events: TimetableEvent[]): Session[] {
-  const groups = new Map<string, { day: Day; start: string; end: string; kind: Session["kind"]; events: TimetableEvent[] }>()
+  const groups = new Map<string, Slot>()
   for (const e of events) {
     if (e.start < THIS_YEAR_FROM || SKIPPED_KINDS.has(e.kind)) continue
     const day = DAYS[new Date(`${e.start.slice(0, 10)}T00:00:00Z`).getUTCDay()]
     if (!day) continue
     const [start, end, kind] = [e.start.slice(11, 16), e.end.slice(11, 16), sessionKind(e.kind)]
     const key = `${day} ${start} ${end} ${kind}`
-    const group = groups.get(key) ?? { day, start, end, kind, events: [] }
-    group.events.push(e)
+    const group = groups.get(key) ?? { day, start, end, parts: [{ kind, events: [] }] }
+    group.parts[0].events.push(e)
     groups.set(key, group)
   }
-  return [...groups.values()]
-    // Some sessions are booked twice on the same date (an overflow room), so weeks = distinct dates.
-    .map((g) => ({ ...g, weeks: new Set(g.events.map((e) => e.start.slice(0, 10))).size }))
-    .filter((g) => g.weeks >= 2)
-    .map(({ events: evs, ...slot }) => {
+  const recurring = [...groups.values()].filter((g) => datesOf(g.parts[0].events).size >= 2)
+  const slots: Slot[] = []
+  for (const g of recurring.sort((a, b) => minutes(b.end) - minutes(b.start) - (minutes(a.end) - minutes(a.start)))) {
+    const host = slots.find((s) => s.day === g.day && s.start <= g.start && g.end <= s.end)
+    if (host) host.parts.push(...g.parts)
+    else slots.push(g)
+  }
+  return slots
+    .map(({ parts, ...slot }) => {
+      const evs = parts.flatMap((p) => p.events)
+      const weeksOf = (kind: Session["kind"]) => datesOf(parts.filter((p) => p.kind === kind).flatMap((p) => p.events)).size
       const recorded = evs.map((e) => e.recorded)
       return {
         ...slot,
+        kind: [...KIND_PRIORITY].sort((a, b) => weeksOf(b) - weeksOf(a))[0],
         rooms: mostCommon(evs.map((e) => e.rooms.filter((r) => r !== "Online"))),
         recorded: recorded.includes(true) ? true : recorded.includes(null) ? null : false,
+        weeks: datesOf(evs).size,
       }
     })
     .sort((a, b) => DAYS.indexOf(a.day) - DAYS.indexOf(b.day) || a.start.localeCompare(b.start))
 }
 
-/** The most frequent room set (first seen wins ties). */
+/** The most frequent non-empty room set (first seen wins ties); [] if none. */
 function mostCommon(sets: string[][]): string[] {
   const counts = new Map<string, { rooms: string[]; n: number }>()
-  for (const rooms of sets) {
+  for (const rooms of sets.filter((r) => r.length > 0)) {
     const key = JSON.stringify(rooms)
     const c = counts.get(key) ?? { rooms, n: 0 }
     c.n++
@@ -241,6 +264,34 @@ function staffBetween(events: TimetableEvent[], from: string, to: string): strin
     for (const s of e.staff) counts.set(staffName(s), (counts.get(staffName(s)) ?? 0) + 1)
   }
   return [...counts].sort((a, b) => b[1] - a[1]).map(([name]) => name)
+}
+
+// CELCAT's feed only reaches a year back, and for modules in the maintainer's own timetable it
+// only has this year, so each module's 2025-26 run is saved while it's still visible.
+const PastRun = z.object({
+  staff: z.array(z.string()),
+  /** First 2025-26 teaching date, or null when not recorded. */
+  from: z.string().nullable(),
+})
+type PastRun = z.infer<typeof PastRun>
+const PastRuns = z.record(z.string(), PastRun)
+
+/** Saved 2025-26 runs (data/celcat-2025-26.json), refreshed from whatever CELCAT still shows. */
+async function updatePastRuns(codes: string[], events: TimetableEvent[][]): Promise<Record<string, PastRun>> {
+  let runs: Record<string, PastRun> = {}
+  try {
+    runs = PastRuns.parse(JSON.parse(await readFile(PAST_RUNS, "utf8")))
+  } catch {
+    // no file yet
+  }
+  codes.forEach((code, i) => {
+    const taught = events[i].filter((e) => e.start >= LAST_YEAR_FROM && e.start < THIS_YEAR_FROM && !SKIPPED_KINDS.has(e.kind))
+    const staff = staffBetween(taught, LAST_YEAR_FROM, THIS_YEAR_FROM)
+    if (staff.length) runs[code] = { staff, from: taught.map((e) => e.start.slice(0, 10)).sort()[0] }
+  })
+  const sorted = Object.fromEntries(Object.entries(runs).sort(([a], [b]) => a.localeCompare(b)))
+  await writeFile(PAST_RUNS, `${JSON.stringify(sorted, null, 1)}\n`)
+  return sorted
 }
 
 // --- Exams site: class means (imperial-doc get) ---------------------------------
@@ -474,9 +525,26 @@ async function fetchRmm(): Promise<Map<string, CachedReviews>> {
   return out
 }
 
-/** Average scores for the public dataset (no review text). */
-function reviewScores(cached: CachedReviews | undefined, summary: string | null): Reviews | null {
+/**
+ * The run the reviews describe. All reviews so far were written Jan-Mar 2026: the
+ * 2025-26 run if it started before the first review, else (a spring module) 2024-25.
+ * Without a recorded start date, the term decides.
+ */
+function reviewYear(pastRun: PastRun | undefined, term: 1 | 2, firstReview: string): ArchiveYear {
+  if (pastRun?.from) return pastRun.from < firstReview ? "2025-26" : "2024-25"
+  return term === 1 ? "2025-26" : "2024-25"
+}
+
+/** Average scores for the public dataset (no review text), attributed to that year's team. */
+function reviewScores(
+  cached: CachedReviews | undefined,
+  summary: string | null,
+  pastRun: PastRun | undefined,
+  term: 1 | 2,
+  teams: Record<ArchiveYear, string[] | null>,
+): Reviews | null {
   if (!cached || cached.reviews.length === 0) return null
+  const year = reviewYear(pastRun, term, cached.reviews.map((r) => r.date).sort()[0])
   const avg = (pick: (r: CachedReviews["reviews"][number]) => number) =>
     round2(cached.reviews.reduce((s, r) => s + pick(r), 0) / cached.reviews.length)
   return {
@@ -484,7 +552,8 @@ function reviewScores(cached: CachedReviews | undefined, summary: string | null)
     content: avg((r) => r.content),
     teaching: avg((r) => r.teaching),
     difficulty: avg((r) => r.difficulty),
-    year: REVIEW_YEAR,
+    year,
+    team: teams[year],
     url: cached.url,
     summary,
   }
@@ -500,10 +569,11 @@ const Note = z
     examiners: z.string(),
     caveat: z.string(),
     reviewSummary: z.string(),
-    site: z.string().url(),
+    site: z.url({ protocol: /^https$/ }),
     /** Overrides CELCAT's lecture capture: for every session, or per day ({ Tue: false }). */
     recordedOverride: z.union([z.boolean(), z.partialRecord(Day, z.boolean())]),
     /** Lecturers when the archive and CELCAT are missing or wrong ("First Last"). */
+    now: z.array(z.string()),
     lastYear: z.array(z.string()),
     meanYear: z.array(z.string()),
     extraHoursPerWeek: z.number(),
@@ -531,6 +601,7 @@ function overrideRecorded(sessions: Session[], override: Note["recordedOverride"
 
 type Sources = {
   events: TimetableEvent[]
+  pastRun: PastRun | undefined
   means: Mean[]
   rmm: CachedReviews | undefined
   coursework: Coursework[]
@@ -540,10 +611,12 @@ type Sources = {
 }
 
 /** One module record from all sources (notes override). */
-function buildModule(m: DocModule, { events, means, rmm, coursework, examDate, archive, note }: Sources): Module {
+function buildModule(m: DocModule, { events, pastRun, means, rmm, coursework, examDate, archive, note }: Sources): Module {
   const code = m.code.replace(/^COMP/, "")
   const term = m.terms[0] === 2 ? 2 : 1 // ISO runs in both; listed under its first term
-  const celcatLastYear = staffBetween(events, LAST_YEAR_FROM, THIS_YEAR_FROM)
+  // Notes, then CELCAT's 2025-26 run, then the archived module page.
+  const lastYear = note.lastYear ?? pastRun?.staff ?? archived(archive, code, "2025-26")
+  const meanYear = note.meanYear ?? (means.some((x) => x.year === MEAN_YEAR) ? archived(archive, code, "2024-25") : null)
   return {
     code,
     title: m.title,
@@ -559,13 +632,12 @@ function buildModule(m: DocModule, { events, means, rmm, coursework, examDate, a
     coursework,
     examDate,
     lecturers: {
-      now: staffBetween(events, THIS_YEAR_FROM, "9999"),
-      // Notes, then CELCAT's 2025-26 events, then the archived module page.
-      lastYear: note.lastYear ?? (celcatLastYear.length ? celcatLastYear : archived(archive, code, "2025-26")),
-      meanYear: note.meanYear ?? (means.some((x) => x.year === MEAN_YEAR) ? archived(archive, code, "2024-25") : null),
+      now: note.now ?? staffBetween(events, THIS_YEAR_FROM, "9999"),
+      lastYear,
+      meanYear,
     },
     means,
-    reviews: reviewScores(rmm, note.reviewSummary ?? null),
+    reviews: reviewScores(rmm, note.reviewSummary ?? null, pastRun, term, { "2025-26": lastYear, "2024-25": meanYear }),
     notes: {
       coursework: note.coursework ?? null,
       exam: note.exam ?? null,
@@ -608,12 +680,13 @@ async function main() {
   console.log(`${selective.length} SELECTIVE modules; fetching timetables...`)
   const events = await pool(selective, 4, (m) => fetchEvents(m.code))
   const means = selective.map((m) => meansFor(m.code, m.title, meanYears))
+  const pastRuns = await updatePastRuns(selective.map((m) => m.code.replace(/^COMP/, "")), events)
 
   // Archive lookups only where notes and CELCAT leave a gap.
   const needs = selective.map((m, i) => {
     const note = notes[m.code.replace(/^COMP/, "")] ?? {}
     const years: ArchiveYear[] = []
-    if (!note.lastYear && staffBetween(events[i], LAST_YEAR_FROM, THIS_YEAR_FROM).length === 0) years.push("2025-26")
+    if (!note.lastYear && !pastRuns[m.code.replace(/^COMP/, "")]) years.push("2025-26")
     if (!note.meanYear && means[i].some((x) => x.year === MEAN_YEAR)) years.push("2024-25")
     return { code: m.code.replace(/^COMP/, ""), years }
   })
@@ -627,6 +700,7 @@ async function main() {
       const code = m.code.replace(/^COMP/, "")
       return buildModule(m, {
         events: events[i],
+        pastRun: pastRuns[code],
         means: means[i],
         rmm: rmm.get(code),
         coursework: coursework.get(code) ?? [],

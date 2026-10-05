@@ -1,4 +1,4 @@
-# Module planner
+# Module planner (unofficial)
 
 A cleaner way to choose Imperial College London MSc Advanced Computing modules
 (Department of Computing, 2026-27): toggle modules on and off, see your week, and
@@ -31,6 +31,9 @@ generated JSON, and no personal data is included. To fix or add data, edit
 Contributions: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Everything is unofficial and can be out of date: check Scientia before choosing.
+This is a student project, not affiliated with Imperial College London. The
+one-line summaries on the site (coursework, exams, examiners' feedback, reviews)
+are our own unofficial paraphrases, not official descriptions.
 
 ## Develop
 
@@ -43,3 +46,8 @@ pnpm data     # maintainer only: refresh public/data.json
 
 Vite, React, TypeScript, Tailwind and shadcn/ui (Base UI). The dataset's shape is
 defined once in `src/data/schema.ts` (zod) and shared by the script and the app.
+
+## Licence
+
+[MIT](LICENSE). The licence covers the code; the facts in the dataset come from
+the sources above.

@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useState } from "react"
 import { Filters, NO_FILTERS } from "@/lib/filters"
+import { readStorage, writeStorage } from "@/lib/storage"
 
 const STORAGE_KEY = "module-planner:filters"
 
 function readFilters(): Filters {
   try {
-    return Filters.parse(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}"))
+    return Filters.parse(JSON.parse(readStorage(STORAGE_KEY) ?? "{}"))
   } catch {
     return NO_FILTERS
   }
@@ -16,7 +17,7 @@ export function useFilters() {
   const [filters, setFilters] = useState<Filters>(readFilters)
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(filters))
+    writeStorage(STORAGE_KEY, JSON.stringify(filters))
   }, [filters])
 
   const set = useCallback((patch: Partial<Filters>) => setFilters((f) => ({ ...f, ...patch })), [])

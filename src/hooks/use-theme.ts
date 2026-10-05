@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react"
+import { readStorage, writeStorage } from "@/lib/storage"
 
 // Must match the inline script in index.html.
 const STORAGE_KEY = "module-planner:theme"
@@ -7,7 +8,7 @@ const media = window.matchMedia("(prefers-color-scheme: dark)")
 type Override = "light" | "dark" | null
 
 function readOverride(): Override {
-  const v = localStorage.getItem(STORAGE_KEY)
+  const v = readStorage(STORAGE_KEY)
   return v === "light" || v === "dark" ? v : null
 }
 
@@ -29,7 +30,7 @@ export function useTheme() {
 
   const toggle = useCallback(() => {
     const next = dark ? "light" : "dark"
-    localStorage.setItem(STORAGE_KEY, next)
+    writeStorage(STORAGE_KEY, next)
     setOverride(next)
   }, [dark])
 

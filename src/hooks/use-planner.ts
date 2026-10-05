@@ -1,13 +1,11 @@
 import { createContext, useContext } from "react"
 import type { Dataset, Module } from "@/data/schema"
-import type { LecturerReview } from "@/lib/lecturers"
 
 /** Everything the planner panels share: data, derived lookups and actions. */
 export type Planner = {
   data: Dataset
   byCode: Map<string, Module>
   colors: Map<string, string>
-  lecturerIndex: Map<string, LecturerReview[]>
   /** Selected modules that exist in the dataset. */
   selected: Module[]
   isSelected: (code: string) => boolean

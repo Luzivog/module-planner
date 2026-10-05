@@ -15,3 +15,12 @@ export function planStats(data: Dataset, selected: Module[]) {
   const avgCoursework = selected.length ? Math.round(selected.reduce((sum, m) => sum + (100 - m.examPct), 0) / selected.length) : 0
   return { rules, terms, conflicts: planConflicts(selected), avgCoursework }
 }
+
+/** First-visit guidance, e.g. "Switch modules on to build your plan (45 ECTS of selectives)". */
+export function guidance(data: Dataset): string {
+  const goal = data.rules.map((r) => `${r.max} ECTS of ${r.group.toLowerCase()}s`).join(" + ")
+  return `Switch modules on to build your plan${goal ? ` (${goal})` : ""}`
+}
+
+/** "1 exam", "2 exams". */
+export const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`

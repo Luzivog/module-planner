@@ -32,7 +32,7 @@ export function BothTerms({ m }: { m: Module }) {
   )
   return (
     <Hint label={label}>
-      <span className="inline-flex shrink-0 items-center gap-0.5 align-middle" aria-label={twin ? "Offered in both terms" : "Runs across both terms"}>
+      <span role="img" className="inline-flex shrink-0 items-center gap-0.5 align-middle" aria-label={twin ? "Offered in both terms" : "Runs across both terms"}>
         <Leaf className="size-4 text-orange-500 dark:text-orange-400" />
         <Flower2 className="size-4 text-pink-500 dark:text-pink-400" />
       </span>

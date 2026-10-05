@@ -2,7 +2,7 @@ import { TriangleAlert } from "lucide-react"
 import { ConflictList, CopyLink } from "./summary"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { TERM_NAMES, usePlanner } from "@/hooks/use-planner"
-import { planStats } from "@/lib/plan"
+import { planStats, plural } from "@/lib/plan"
 import { cn } from "@/lib/utils"
 
 /** Tablet: the summary column squeezed into one bar above the timetable. */
@@ -21,7 +21,7 @@ export function SummaryBar() {
       ))}
       {terms.map((t) => (
         <span key={t.term} className="text-muted-foreground tabular-nums">
-          <span className="font-medium text-foreground">{t.count}</span> {TERM_NAMES[t.term].toLowerCase()} · {t.exams} exams
+          <span className="font-medium text-foreground">{t.count}</span> {TERM_NAMES[t.term].toLowerCase()} · {plural(t.exams, "exam")}
         </span>
       ))}
       <span className="ml-auto flex items-center gap-2">

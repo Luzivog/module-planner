@@ -11,11 +11,15 @@ import { layoutLanes } from "@/lib/lanes"
 import { durationMinutes, shortRange, toMinutes } from "@/lib/time"
 import { cn } from "@/lib/utils"
 import { termWorkload, type Workload } from "@/lib/workload"
+import { guidance } from "@/lib/plan"
 
 const DAYS: Day[] = ["Mon", "Tue", "Wed", "Thu", "Fri"]
 const HOUR_PX = 56
 
-type Block = { module: Module; session: Session; start: string; end: string; clash: boolean }
+/** A selected module's session placed on the grid; `idx` = its index in `module.sessions` (for unique keys). */
+type Block = { module: Module; session: Session; idx: number; start: string; end: string; clash: boolean }
+
+const blockKey = (b: Block) => `${b.module.code}-${b.session.day}-${b.start}-${b.end}-${b.session.kind}-${b.idx}`
 
 /** Today's weekday, or Monday at weekends. */
 function today(): Day {
@@ -40,10 +44,11 @@ export function Timetable({ term, compact = false, onTermChange }: { term: Modul
   const hours = Array.from({ length: lastHour - firstHour }, (_, i) => firstHour + i)
 
   const termModules = selected.filter((m) => m.term === term)
-  const sessions = termModules.flatMap((module) => module.sessions.map((session) => ({ module, session })))
-  const blocks: Block[] = sessions.map(({ module, session }) => ({
+  const sessions = termModules.flatMap((module) => module.sessions.map((session, idx) => ({ module, session, idx })))
+  const blocks: Block[] = sessions.map(({ module, session, idx }) => ({
     module,
     session,
+    idx,
     start: session.start,
     end: session.end,
     clash:
@@ -54,7 +59,7 @@ export function Timetable({ term, compact = false, onTermChange }: { term: Modul
   const load = termWorkload(termModules, teaching)
 
   return (
-    <main className="flex min-h-0 min-w-0 flex-1 flex-col">
+    <main id="timetable" tabIndex={-1} aria-label="Weekly timetable" className="flex min-h-0 min-w-0 flex-1 flex-col outline-none">
       <header
         className={cn(
           "flex shrink-0 flex-wrap items-center border-b text-[13px]",
@@ -66,13 +71,18 @@ export function Timetable({ term, compact = false, onTermChange }: { term: Modul
         <Stat label="exams" value={termInfo.exams} />
         <Stat label="in person / wk" value={`${fmtHours(load.inPerson)} h`} />
         <Hint label={<WorkloadBreakdown load={load} weeks={teaching} />}>
-          <span>
-            <Stat label="total / wk" value={`≈ ${Math.round(load.total)}${load.unpublished.length > 0 ? "+" : ""} h`} />
+          <span className="flex items-baseline gap-1.5 underline decoration-muted-foreground/50 decoration-dotted underline-offset-4">
+            <span className="text-xs text-muted-foreground">timetabled + coursework</span>
+            <span className="font-medium tabular-nums">
+              ≈ {Math.round(load.total)}
+              {load.unpublished.length > 0 ? "+" : ""} h/wk
+            </span>
           </span>
         </Hint>
       </header>
       {compact ? (
-        <div className="min-h-0 flex-1 overflow-y-auto px-3 pt-2 pb-4">
+        <div className="relative min-h-0 flex-1 overflow-y-auto px-3 pt-2 pb-4">
+          {selected.length === 0 && <EmptyPlan className="top-44" />}
           <WeekOverview blocks={blocks} firstHour={firstHour} hours={hours.length} day={day} onDay={setDay} />
           <div className="mt-3 flex">
             <HourAxis hours={hours} lastHour={lastHour} />
@@ -80,7 +90,8 @@ export function Timetable({ term, compact = false, onTermChange }: { term: Modul
           </div>
         </div>
       ) : (
-        <div className="min-h-0 flex-1 overflow-y-auto px-5 pt-3 pb-5">
+        <div className="relative min-h-0 flex-1 overflow-y-auto px-5 pt-3 pb-5">
+          {selected.length === 0 && <EmptyPlan className="top-28" />}
           <div className="flex">
             <div className="w-10 shrink-0" />
             {DAYS.map((day) => {
@@ -103,6 +114,19 @@ export function Timetable({ term, compact = false, onTermChange }: { term: Modul
       )}
       <DeadlineStrip term={term} />
     </main>
+  )
+}
+
+/** First-visit guidance floating over the empty grid (no layout change when it goes). */
+function EmptyPlan({ className }: { className: string }) {
+  const { data } = usePlanner()
+  return (
+    <div className={cn("pointer-events-none absolute inset-x-0 z-10 flex justify-center px-4", className)}>
+      <div className="rounded-lg border bg-background/95 px-4 py-3 text-center shadow-sm">
+        <h2 className="text-sm font-semibold">Module planner</h2>
+        <p className="mt-0.5 text-xs text-muted-foreground">{guidance(data)}</p>
+      </div>
+    </div>
   )
 }
 
@@ -167,7 +191,7 @@ function WeekOverview(props: { blocks: Block[]; firstHour: number; hours: number
                 const color = colors.get(item.module.code) ?? "gray"
                 return (
                   <span
-                    key={`${item.module.code}-${item.start}-${item.session.kind}`}
+                    key={blockKey(item)}
                     className={cn("absolute rounded-[2px]", item.clash && "ring-1 ring-bad")}
                     style={{
                       top: ((toMinutes(item.start) - props.firstHour * 60) / 60) * MINI_HOUR_PX,
@@ -209,6 +233,7 @@ function WorkloadBreakdown({ load, weeks }: { load: Workload; weeks: number }) {
         <span>Coursework not published yet: {load.unpublished.map((m) => m.short).join(", ")}</span>
       )}
       {load.unestimated > 0 && <span>{load.unestimated} piece(s) without an hour estimate</span>}
+      <span className="opacity-80">Not included: self-study and revision (5 ECTS ≈ 125 h of work per module).</span>
     </>
   )
 }
@@ -231,8 +256,9 @@ function DayColumn({ blocks, firstHour, hours }: { blocks: Block[]; firstHour: n
       ))}
       {layoutLanes(blocks).map(({ item, lane, lanes }) => (
         <SessionBlock
-          key={`${item.module.code}-${item.start}-${item.session.kind}`}
+          key={blockKey(item)}
           block={item}
+          narrow={lanes > 1}
           style={{
             top: ((toMinutes(item.start) - firstHour * 60) / 60) * HOUR_PX,
             height: (durationMinutes(item) / 60) * HOUR_PX,
@@ -265,7 +291,7 @@ function recording(s: Session) {
  * The grid already shows the time, so the block shows only the kind (when not a
  * plain lecture) and room; the tooltip has everything.
  */
-function SessionBlock({ block, style }: { block: Block; style: CSSProperties }) {
+function SessionBlock({ block, style, narrow }: { block: Block; style: CSSProperties; narrow: boolean }) {
   const { colors, openSheet } = usePlanner()
   const { module: m, session: s } = block
   const color = colors.get(m.code) ?? "gray"
@@ -305,13 +331,32 @@ function SessionBlock({ block, style }: { block: Block; style: CSSProperties }) 
             : tint(color, 24),
         }}
       >
-        <div className={cn("pr-3.5 text-xs font-medium", tall ? "line-clamp-2 hyphens-auto [overflow-wrap:anywhere]" : "truncate")}>{m.short}</div>
+        <BlockName name={m.short} wrap={tall && !narrow} />
         {detail && <div className="truncate text-[11px] text-foreground/70">{detail}</div>}
         {block.clash && <div className="text-[11px] font-semibold text-bad">clash</div>}
-        <span className="absolute top-1.5 right-1.5" aria-label={rec.label}>
+        <span className="absolute top-1.5 right-1.5" role="img" aria-label={rec.label}>
           <rec.Icon className={cn("size-3", rec.className)} />
         </span>
       </button>
     </Hint>
+  )
+}
+
+/**
+ * Module name in a block. `wrap`: up to two lines, breaking only between words;
+ * a word too long for the block ends in "…" instead of being split. Otherwise
+ * one truncated line. The full name is in the tooltip and the sheet.
+ */
+function BlockName({ name, wrap }: { name: string; wrap: boolean }) {
+  if (!wrap) return <div className="truncate pr-3.5 text-xs font-medium">{name}</div>
+  return (
+    <div className="line-clamp-2 pr-3.5 text-xs font-medium">
+      {name.split(" ").map((word, i) => (
+        <span key={i}>
+          {i > 0 && " "}
+          <span className="inline-block max-w-full truncate align-bottom">{word}</span>
+        </span>
+      ))}
+    </div>
   )
 }

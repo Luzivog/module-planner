@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react"
 import type { Module } from "@/data/schema"
+import { readStorage, writeStorage } from "@/lib/storage"
 
 const STORAGE_KEY = "module-planner:sort"
 
@@ -13,7 +14,7 @@ const VALUE: Record<SortKey, (m: Module) => number | null> = {
 
 function readSort(): ListSort {
   try {
-    const v: unknown = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "null")
+    const v: unknown = JSON.parse(readStorage(STORAGE_KEY) ?? "null")
     if (typeof v === "object" && v !== null && "key" in v && "dir" in v) {
       const { key, dir } = v
       if ((key === "teaching" || key === "mean") && (dir === "asc" || dir === "desc")) return { key, dir }
@@ -32,7 +33,7 @@ export function useListSort() {
   const [sort, setSort] = useState<ListSort>(readSort)
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(sort))
+    writeStorage(STORAGE_KEY, JSON.stringify(sort))
   }, [sort])
 
   const cycle = useCallback((key: SortKey) => {

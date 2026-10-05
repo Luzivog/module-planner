@@ -17,10 +17,19 @@ const BUSY_WEEK = 3
  */
 export function DeadlineStrip({ term }: { term: Module["term"] }) {
   const { data, selected, colors, openSheet } = usePlanner()
-  const { mondays, teaching } = useTermWeeks(term)
+  const { mondays, teaching, hasBefore } = useTermWeeks(term)
   const touch = useTouch()
   if (mondays.length === 0) return null
-  const weeks = deadlinesByWeek(selected.filter((m) => m.term === term), mondays[0], mondays.length)
+  const { before, weeks } = deadlinesByWeek(selected.filter((m) => m.term === term), mondays[0], mondays.length)
+  const columns = [
+    ...(hasBefore ? [{ id: "before", label: <>before</>, due: before, faded: true }] : []),
+    ...weeks.map((due, i) => ({
+      id: `w${i}`,
+      label: i < teaching ? <><span className="font-medium">W{i + 1}</span> {formatDay(mondays[i])}</> : <>after {formatDay(mondays[i])}</>,
+      due,
+      faded: i >= teaching,
+    })),
+  ]
   const published = data.modules.some((m) => m.term === term && m.coursework.length > 0)
 
   return (
@@ -28,11 +37,9 @@ export function DeadlineStrip({ term }: { term: Module["term"] }) {
       {/* Scrolls sideways on narrow screens; the "Due" label stays put. */}
       <div className="flex h-full overflow-x-auto overflow-y-hidden px-3 py-1.5 [scrollbar-width:none] sm:px-5">
         <div className="sticky left-0 z-10 w-10 shrink-0 bg-background pt-px text-[10px] text-muted-foreground">Due</div>
-        {weeks.map((due, i) => (
-          <div key={i} className={cn("min-w-16 flex-1 rounded-sm px-1", due.length >= BUSY_WEEK && "bg-warn/12")}>
-            <div className={cn("truncate text-[10px] tabular-nums text-muted-foreground", i >= teaching && "opacity-60")}>
-              {i < teaching ? <span className="font-medium">W{i + 1}</span> : "after"} {formatDay(mondays[i])}
-            </div>
+        {columns.map(({ id, label, due, faded }) => (
+          <div key={id} className={cn("min-w-16 flex-1 rounded-sm px-1", due.length >= BUSY_WEEK && "bg-warn/12")}>
+            <div className={cn("truncate text-[10px] tabular-nums text-muted-foreground", faded && "italic")}>{label}</div>
             <div className="mt-1 flex flex-wrap gap-0.5">
               {due.map((d) => (
                 <Hint

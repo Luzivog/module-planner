@@ -1,12 +1,14 @@
 import { Check, Link } from "lucide-react"
 import { useState, type ReactNode } from "react"
-import { Hint } from "./hint"
+import { Disclaimer } from "./disclaimer"
 import { SplitBar } from "./split-bar"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import { useTouch } from "@/hooks/use-media"
 import { TERM_NAMES, usePlanner } from "@/hooks/use-planner"
-import type { Conflict } from "@/lib/conflicts"
-import { planStats } from "@/lib/plan"
+import { isTermTwin, twinName, type Conflict } from "@/lib/conflicts"
+import { planStats, plural } from "@/lib/plan"
+import { formatDay } from "@/lib/time"
 import { cn } from "@/lib/utils"
 
 /** Right column (desktop) / Plan tab (phone): whole-plan health in a few big numbers. `footer` goes at the very bottom. */
@@ -42,7 +44,7 @@ export function Summary({ footer }: { footer?: ReactNode }) {
           <div key={t.term} className="rounded-lg bg-muted/60 p-2.5">
             <div className="text-xs text-muted-foreground">{TERM_NAMES[t.term]}</div>
             <div className="text-2xl font-semibold tabular-nums">{t.count}</div>
-            <div className="text-xs text-muted-foreground tabular-nums">{t.exams} exams</div>
+            <div className="text-xs text-muted-foreground tabular-nums">{plural(t.exams, "exam")}</div>
           </div>
         ))}
       </div>
@@ -67,24 +69,11 @@ export function Summary({ footer }: { footer?: ReactNode }) {
         <CopyLink />
         <div className="space-y-0.5 text-center">
           <p>
-            <span className="font-medium text-foreground">Both terms</span> close {formatDate(data.selection.closes)}
+            <span className="font-medium text-foreground">Both terms</span> close {formatDay(data.selection.closes)}
           </p>
-          <p>Spring picks can be swapped until 29 Jan (end of week 4), but not how many.</p>
+          <p>Spring changes may be possible early in spring term — check with the programme team.</p>
         </div>
-        <Hint
-          label={
-            <>
-              <span>Imperial timetable: sessions, rooms, recording</span>
-              <span>Scientia: modules, ECTS, exam slots, coursework</span>
-              <span>Exams site: class averages, papers, examiners' reports</span>
-              <span>Rate My Modules: student reviews</span>
-            </>
-          }
-        >
-          <p className="truncate text-center text-[10px] text-muted-foreground/80">
-            Data: timetable, Scientia, exams, RMM · {formatDate(data.generatedAt)}
-          </p>
-        </Hint>
+        <Disclaimer className="text-center" />
         {footer}
       </div>
     </aside>
@@ -98,13 +87,26 @@ export function ConflictList({ conflicts }: { conflicts: Conflict[] }) {
     <div className="space-y-1.5 text-xs">
       <div className="font-medium text-bad">{conflicts.length === 1 ? "1 conflict" : `${conflicts.length} conflicts`}</div>
       <ul className="space-y-1">
-        {conflicts.map((c) => (
-          <li key={`${c.kind}-${c.a.code}-${c.b.code}`} className="flex flex-wrap gap-x-1">
-            <button type="button" className="hover:underline" onClick={() => openSheet(c.a.code)}>{c.a.short}</button>×
-            <button type="button" className="hover:underline" onClick={() => openSheet(c.b.code)}>{c.b.short}</button>
-            <span className="text-muted-foreground">{conflictDetail(c)}</span>
-          </li>
-        ))}
+        {conflicts.map((c) => {
+          const key = `${c.kind}-${c.a.code}-${c.b.code}`
+          if (isTermTwin(c)) {
+            const [first, second] = c.a.term <= c.b.term ? [c.a, c.b] : [c.b, c.a]
+            return (
+              <li key={key}>
+                <button type="button" className="hover:underline" onClick={() => openSheet(first.code)}>{twinName(first)}</button> ×{" "}
+                <button type="button" className="hover:underline" onClick={() => openSheet(second.code)}>{twinName(second)}</button>
+                <span className="text-muted-foreground">: same module, take only one</span>
+              </li>
+            )
+          }
+          return (
+            <li key={key} className="flex flex-wrap gap-x-1">
+              <button type="button" className="hover:underline" onClick={() => openSheet(c.a.code)}>{c.a.short}</button>×
+              <button type="button" className="hover:underline" onClick={() => openSheet(c.b.code)}>{c.b.short}</button>
+              <span className="text-muted-foreground">{conflictDetail(c)}</span>
+            </li>
+          )
+        })}
       </ul>
     </div>
   )
@@ -121,29 +123,37 @@ function conflictDetail(c: Conflict): string {
   }
 }
 
-/** Copies the current URL (which carries ?m=) to the clipboard. `compact` = icon only. */
+/**
+ * Shares the current URL (which carries ?m=). Touch devices get the system share
+ * sheet when there is one; otherwise it's copied, with a prompt as the fallback
+ * when the clipboard is unavailable. `compact` = icon only.
+ */
 export function CopyLink({ compact = false }: { compact?: boolean }) {
+  const touch = useTouch()
   const [copied, setCopied] = useState(false)
+  const share = async () => {
+    const url = window.location.href
+    if (touch && typeof navigator.share === "function") {
+      try {
+        await navigator.share({ title: "My module plan", url })
+        return
+      } catch (err) {
+        if (err instanceof DOMException && err.name === "AbortError") return
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(url)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    } catch {
+      window.prompt("Copy this link to your plan:", url)
+    }
+  }
+  const label = touch ? "Share plan link" : "Copy plan link"
   return (
-    <Button
-      variant="outline"
-      size={compact ? "icon-sm" : "sm"}
-      className={compact ? "" : "w-full"}
-      aria-label="Copy plan link"
-      onClick={() => {
-        void navigator.clipboard.writeText(window.location.href).then(() => {
-          setCopied(true)
-          setTimeout(() => setCopied(false), 1500)
-        })
-      }}
-    >
+    <Button variant="outline" size={compact ? "icon-sm" : "sm"} className={compact ? "" : "w-full"} aria-label={label} onClick={() => void share()}>
       {copied ? <Check /> : <Link />}
-      {!compact && (copied ? "Copied" : "Copy plan link")}
+      {!compact && (copied ? "Copied" : label)}
     </Button>
   )
-}
-
-function formatDate(iso: string): string {
-  const d = new Date(iso)
-  return Number.isNaN(d.getTime()) ? iso : d.toLocaleDateString("en-GB", { day: "numeric", month: "short" })
 }

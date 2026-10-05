@@ -21,5 +21,5 @@ export function useLayout(): Layout {
   return desktop ? "desktop" : tablet ? "tablet" : "phone"
 }
 
-/** True on devices without hover (phones, tablets): tooltips must open on tap. */
-export const useTouch = () => useMedia("(hover: none)")
+/** True on touch-first devices (no hover, coarse pointer): tooltips must open on tap. */
+export const useTouch = () => useMedia("(hover: none) and (pointer: coarse)")

@@ -4,11 +4,12 @@ PRs welcome, from people or their agents. Keep them small: one change per PR.
 
 ## Rules
 
-- **Data fixes go in `data/notes.yaml`** (short, plain-English one-liners and
-  overrides), with the source of each fact in the PR description. You can't run
-  `pnpm data` (it needs the maintainer's private Imperial tools), so to see your
-  change in the app before then, also make the same edit in `public/data.json`;
-  the next refresh regenerates it from `notes.yaml`.
+- **Data changes go only in `data/notes.yaml`** (short, plain-English one-liners
+  and overrides). Don't edit `public/data.json`: it's generated, and the
+  maintainer regenerates it with `pnpm data` (which needs private Imperial
+  tools) after merging.
+- **Every data PR must cite a source** for each fact (a link, or where in
+  Scientia, the timetable or the exams site it's shown). Links must be `https://`.
 - **No personal data** (no names of students, no individual marks or choices).
 - **No copied review text** from Rate My Modules or elsewhere: scores, counts
   and a one-sentence summary in your own words only. No pasted examiners'
@@ -16,7 +17,7 @@ PRs welcome, from people or their agents. Keep them small: one change per PR.
 - **Keep the UI minimal**: numbers and badges over text, nothing that shifts the
   layout, and check it on a phone-sized screen too.
 - `pnpm build` and `pnpm lint` must pass (CI runs them on every PR).
-- UI changes: include a screenshot.
+- UI changes: include screenshots (desktop and phone width).
 
 ## Code
 

@@ -2,13 +2,13 @@ import { useMemo, useState } from "react"
 import type { Dataset, Module } from "@/data/schema"
 import { DesktopLayout, PhoneLayout, TabletLayout } from "@/components/planner/layouts"
 import { ModuleSheet } from "@/components/planner/module-sheet"
+import { Button } from "@/components/ui/button"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { useDataset } from "@/hooks/use-dataset"
 import { useLayout } from "@/hooks/use-media"
 import { PlannerContext, type Planner } from "@/hooks/use-planner"
 import { useSelection } from "@/hooks/use-selection"
 import { assignColors } from "@/lib/colors"
-import { buildLecturerIndex } from "@/lib/lecturers"
 
 /** Loads the dataset, then renders the planner (or a minimal loading/error state). */
 export default function App() {
@@ -31,17 +31,12 @@ export default function App() {
 
 /** The planner (layout per screen size: desktop, tablet, phone) plus the details sheet. */
 function PlannerApp({ data }: { data: Dataset }) {
-  const { codes, toggle } = useSelection()
+  const validCodes = useMemo(() => new Set(data.modules.map((m) => m.code)), [data])
+  const { codes, toggle, shared, keepMine, adoptShared } = useSelection(validCodes)
   const [term, setTerm] = useState<Module["term"]>(1)
   const [sheet, setSheet] = useState<{ code: string | null; open: boolean }>({ code: null, open: false })
 
-  const lookups = useMemo(
-    () => ({
-      byCode: new Map(data.modules.map((m) => [m.code, m])),
-      lecturerIndex: buildLecturerIndex(data.modules),
-    }),
-    [data],
-  )
+  const lookups = useMemo(() => ({ byCode: new Map(data.modules.map((m) => [m.code, m])) }), [data])
 
   const planner = useMemo<Planner>(() => {
     const selected = data.modules.filter((m) => codes.includes(m.code))
@@ -64,9 +59,38 @@ function PlannerApp({ data }: { data: Dataset }) {
   return (
     <PlannerContext value={planner}>
       <TooltipProvider delay={150}>
-        <Layout term={term} onTermChange={setTerm} />
+        <a
+          href="#timetable"
+          className="sr-only rounded-md bg-foreground text-sm text-background focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-3 focus:py-2"
+        >
+          Skip to timetable
+        </a>
+        <h1 className="sr-only">Module planner (unofficial)</h1>
+        <div className="flex h-dvh flex-col">
+          {shared && <SharedPlanBanner hasMine={shared.hasMine} onKeepMine={keepMine} onUseThis={adoptShared} />}
+          <div className="min-h-0 flex-1">
+            <Layout term={term} onTermChange={setTerm} />
+          </div>
+        </div>
         <ModuleSheet module={sheetModule} open={sheet.open} onOpenChange={(open) => setSheet((s) => ({ ...s, open }))} />
       </TooltipProvider>
     </PlannerContext>
+  )
+}
+
+/** Shown while previewing a plan from someone's link; nothing is saved until they choose (or edit it). */
+function SharedPlanBanner({ hasMine, onKeepMine, onUseThis }: { hasMine: boolean; onKeepMine: () => void; onUseThis: () => void }) {
+  return (
+    <div role="status" className="flex shrink-0 flex-wrap items-center justify-center gap-x-3 gap-y-1 border-b bg-muted px-4 py-1.5 text-xs">
+      <span className="font-medium">Viewing a shared plan</span>
+      <span className="flex gap-1.5">
+        <Button size="sm" variant="outline" className="h-7 pointer-coarse:h-9" onClick={onKeepMine}>
+          {hasMine ? "Keep mine" : "Start empty"}
+        </Button>
+        <Button size="sm" className="h-7 pointer-coarse:h-9" onClick={onUseThis}>
+          Use this one
+        </Button>
+      </span>
+    </div>
   )
 }

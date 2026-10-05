@@ -1,7 +1,7 @@
 import { z } from "zod"
 import { Day, type Module } from "@/data/schema"
 import { conflictsWith } from "./conflicts"
-import { teamVsLastYear } from "./lecturers"
+import { teamVsReviewed } from "./lecturers"
 import { THIN_REVIEWS } from "./scores"
 import { toMinutes } from "./time"
 
@@ -39,9 +39,9 @@ const RULES: { label: (f: Filters, m: Module) => string; on: (f: Filters) => boo
   { label: (f) => `From ${String(f.startFrom).padStart(2, "0")}:00`, on: (f) => f.startFrom !== null, pass: (m, f) => inPerson(m).every((s) => toMinutes(s.start) >= (f.startFrom ?? 0) * 60) },
   // Modules whose last-year team is unknown don't pass either (the tooltip says why).
   {
-    label: (_f, m) => (teamVsLastYear(m) === "unknown" ? "Same lecturer (last year unknown)" : "Same lecturer"),
+    label: (_f, m) => (teamVsReviewed(m) === "unknown" ? "Same lecturer (last year unknown)" : "Same lecturer"),
     on: (f) => f.sameLecturer,
-    pass: (m) => teamVsLastYear(m) === "same",
+    pass: (m) => teamVsReviewed(m) === "same",
   },
   { label: () => "Fits my plan", on: (f) => f.fitsPlan, pass: (m, _f, ctx) => conflictsWith(m, ctx.selected).length === 0 },
   { label: (f) => (f.exam === "none" ? "No exam" : "≤ 70% exam"), on: (f) => f.exam !== "any", pass: (m, f) => (f.exam === "none" ? m.examPct === 0 : m.examPct <= 70) },

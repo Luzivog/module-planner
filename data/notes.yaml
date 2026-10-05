@@ -8,8 +8,8 @@
 #   reviewSummary  one sentence in our own words on the Rate My Modules reviews (only if it has reviews)
 #   site           lecturer's own course site
 #   recordedOverride  overrides CELCAT's lecture capture: true/false for every session, or per day ({ Tue: false })
-#   lastYear / meanYear  lecturers in 2025-26 / 2024-25 ("First Last"), when CELCAT and the
-#                  archived module pages are missing or wrong
+#   now / lastYear / meanYear  lecturers in 2026-27 / 2025-26 / 2024-25 ("First Last"), when CELCAT (and, for past
+#                  years, the archived module pages) are missing or wrong
 #   extraHoursPerWeek  study hours a week beyond the timetabled sessions (incl. "video" slots) and coursework
 # This file is published with the app: keep it paraphrased and impersonal.
 
@@ -20,9 +20,9 @@
   short: "Complexity"
   coursework: "One written coursework (20%); unassessed tutorial exercises, about half discussed in class."
   exam: "80%: 2 h, all 3 questions, open book, all proof: NP-completeness and logspace reductions, NL, NC and oracle classes."
-  examiners: "2024-25: terse, no statistics; marks lost for non-total reductions and malformed clauses."
-  caveat: "Every question needs a fresh reduction idea, so open book barely helps; mean about 65."
-  reviewSummary: "The one reviewer found the exam predictable from the tutorials, the lecturer kind, and the content more intuitive than it looks."
+  examiners: "2024-25: marks lost for non-total reductions and malformed clauses."
+  caveat: "Each question needs a fresh reduction idea, so open book helps less than it seems; mean about 65."
+  reviewSummary: "The one reviewer found the exam in line with the tutorials and the content more intuitive than it first looks."
 
 "70006":
   # Pre-recorded lectures are in the timetable as a 2 h "video" slot; no extra hours known beyond it.
@@ -30,8 +30,8 @@
   coursework: "Assessed exercises plus implementing and testing a portfolio optimisation model (20%)."
   exam: "80%: 2 h, all 3 questions, calculator: ~45% derivations (portfolios, CAPM), ~40% calculations (binomial option pricing)."
   examiners: "No recent report: the last paper was for resit students only; last mean 69.8 (2023-24)."
-  caveat: "Reviewers say the exam is far harder than the teaching and too long for 2 h."
-  reviewSummary: "All four reviewers found the content interesting but the teaching weak and the exam extremely hard, long and unlike the tutorials."
+  caveat: "Reviewers found the exam much harder and longer than the tutorials suggested."
+  reviewSummary: "Reviewers found the content interesting and the tutorials manageable, but all four found the exam much harder and longer than the course prepared them for."
 
 "70015":
   short: "Maths for ML"
@@ -39,15 +39,15 @@
   exam: "70%: 90 min, 2 questions of 50% each, closed book, no calculator: mostly textbook derivations (MLE, estimator bias, conjugate priors)."
   examiners: "No report since 2022-23."
   caveat: "With only two questions, one blank derivation costs a lot."
-  reviewSummary: "Reviewers split: one found the exam as expected thanks to plenty of practice papers, the other found the maths under-explained and the exam brutal."
+  reviewSummary: "Reviewers split: one found the exam as expected thanks to plenty of practice papers, the other wanted more depth on the maths and found the exam very hard."
 
 "70017":
   short: "Distributed Ledgers"
   coursework: "Implement and test smart contracts in Foundry (in 2023 an NFT ticketing contract plus an ERC20 token), 20%; this year's not out yet."
   exam: "80%: 2 h, both questions: short concept answers plus an AMM calculation, then find the bug in a ~40-line Solidity contract."
-  examiners: "Dec 2025: paper slightly harder than in earlier years; concise answers wanted."
-  caveat: "Dec 2025 results were polarised: a large group did poorly, which examiners link to low attendance."
-  reviewSummary: "Reviewers loved it: well taught, contemporary and enjoyable with very easy coursework, though fast-paced with a lot of content."
+  examiners: "Dec 2025: a slightly harder paper than in earlier years; examiners want concise answers."
+  caveat: "Fast-paced with a lot of content; examiners advise attending the lectures."
+  reviewSummary: "Reviewers rated it highly: clear teaching, current content and easy coursework, though fast-paced with a lot to cover."
   # The archived page also lists the organiser (Knottenbelt), who does not lecture.
   meanYear: ["Paul Pritz", "Sam Werner", "Daniel Perez Hernandez"]
 
@@ -55,24 +55,24 @@
   short: "Quantum Computing"
   coursework: "Two assessed coursework tests (20%)."
   exam: "80%: 2 h, all 3 questions, no calculator: ~75% Dirac-notation calculation (teleportation, QFT, Grover, error-correcting codes)."
-  examiners: "2024-25: went well with few resits; the complexity comparison and Q3c were hard for most."
-  caveat: "Means sit around 66 both years, so 70% takes real fluency."
-  reviewSummary: "Reviewers praised the lecturer and found the exam fair, but the material hard, unusual and sometimes rushed, needing lots of practice."
+  examiners: "2024-25: generally went well; the complexity comparison and Q3c were the hardest parts."
+  caveat: "Means were about 66 in both recent years; plan on a lot of practice with the exercises."
+  reviewSummary: "Reviewers praised the teaching and found the exam fair, but the material hard and unusual, needing a lot of practice."
 
 "70022":
   short: "Scalable Systems & Data"
   coursework: "Two one-page worksheets (20%) that reviewers found very easy."
   exam: "80%: 2 h, one question per lecturer: explain 15-20 systems (Spanner, Dynamo, Bigtable...) and apply them to a scenario; no maths."
   examiners: "Dec 2025 report unavailable; in 2024-25 vague or off-target answers lost marks."
-  caveat: "The storage half is reviewed as disorganised, so expect to self-study from the papers."
-  reviewSummary: "Reviewers liked the papers half and the easy coursework but found the storage half disorganised and poorly taught, with much self-study."
+  caveat: "Expect a lot of self-study from the research papers; reviewers found the slides thin on their own."
+  reviewSummary: "Reviewers liked the papers and case studies and found the coursework easy, but said the slides alone weren't enough and much had to be learned from the papers."
 
 "70023":
   short: "Software Verification"
   coursework: "Two coursework exercises (20%)."
   exam: "80%: 2 h, both questions, all separation-logic proof: assertions and proof sketches for list and tree algorithms."
   examiners: "No report since 2022-23."
-  caveat: "All formal proof: formulaic, but long, notation-heavy and unforgiving of slips."
+  caveat: "All formal proof: formulaic but long and notation-heavy, so small slips cost marks."
 
 "70024":
   short: "Software Reliability"
@@ -80,14 +80,14 @@
   exam: "70%: 90 min, two compulsory questions on code and tool internals (ASan, KLEE, AFL); guest lectures are examinable."
   examiners: "2024-25 (MEng paper): all did well; slips on ASan redzones and KLEE path details."
   caveat: "Teams and project choice are due 13 Oct; the last MSc mean (61.4) is the lowest in autumn."
-  reviewSummary: "The one reviewer rated the teaching top level and the module valuable, but found the courseworks and exam demanding and some tools niche."
+  reviewSummary: "The one reviewer rated the teaching highly and found the module valuable, but the courseworks and exam demanding and some tools niche."
   site: "https://srg.doc.ic.ac.uk/70024/"
 
 "70025":
   short: "SE for Industry"
-  coursework: "All in groups of 3: weekly worksheets 35%, presentation 25% (6 Nov), final report 40% (27 Nov); about 6 h a week."
-  caveat: "Sessions are not recorded, Thursday attendance is expected, and marking is reportedly harsh."
-  reviewSummary: "Reviewers found the weekly group worksheets tedious and the marking vague, harsh and slow, but valued the guest speakers and having no exam."
+  coursework: "A 2% individual declaration, then in groups of 3: weekly worksheets 33%, presentation 25% (6 Nov), final report 40% (27 Nov)."
+  caveat: "Not recorded (by design) and Thursday attendance is expected; reviewers say top marks on the weekly deliverables are hard to get."
+  reviewSummary: "Reviewers valued the guest speakers and having no exam, but found the weekly group deliverables time-consuming and wanted clearer marking criteria and faster feedback."
   site: "https://www.doc.ic.ac.uk/~ewoods1/sei70025_autumn2026.html"
   # The course document says classes are deliberately not recorded (CELCAT says Thursday is).
   recordedOverride: false
@@ -99,8 +99,8 @@
   coursework: "One individual theory-and-code piece (30%), out 3 Nov, due 17 Nov, about 4 h; weekly tutorials are ungraded."
   exam: "70%: worked by hand: a grid-world MDP, policy evaluation and value iteration, then MC, TD, SARSA and Q-learning step by step."
   examiners: "Dec 2025: strong overall, Q2 and Q3 harder than Q1; formulas without the numbers lost marks."
-  caveat: "The Friday lab isn't recorded, and the 66.0 mean predates the current lecturer."
-  reviewSummary: "All three reviewers praised the new lecturer's clear, caring teaching and the restructured, easier module."
+  caveat: "The Friday lab isn't recorded; the 66.0 mean is from 2024-25, before the restructure."
+  reviewSummary: "All three reviewers praised the clear, well-prepared teaching; one noted the module was restructured in 2025-26."
   # The archived page also lists Filippo Valdettaro; the research names Johns as the lecturer.
   meanYear: ["Edward Johns"]
 
@@ -108,17 +108,19 @@
   short: "Machine Learning"
   coursework: "Two group courseworks in groups of 4 (Python/NumPy): decision trees (12%) and a neural-network library plus regressor (18%)."
   exam: "70%: 90 min, 3 questions, one A4 notes sheet: ~90% calculation (information gain, k-means/GMM, backprop); tight on time."
-  examiners: "Dec 2025: most answered Q1a perfectly; marks lost to occasional calculation slips."
+  examiners: "Dec 2025: Q1a was answered well by most; marks lost to occasional calculation slips."
   caveat: "New lead lecturer this year; largely a repeat if you have already taken an ML course."
-  reviewSummary: "Reviewers found it well organised and fair but repetitive for anyone with ML background, with time-consuming group work and a tight exam."
+  reviewSummary: "Reviewers found it well organised, with time-consuming group courseworks and a tight exam; one found it repetitive after earlier ML courses."
+  # Scientia 2026-27 lists Nuri Cingillioglu as a lecturer too; CELCAT only Kokkinos.
+  now: ["Iasonas Kokkinos", "Nuri Cingillioglu"]
 
 "70068":
   short: "Scheduling"
   coursework: "One group coursework (20%), e.g. a branch-and-bound scheduler plus report; out 2 Nov, due 18 Nov, about 15 h."
   exam: "80%: 2 h, 2 questions, closed book: ~70% algorithms by hand (scheduling, Nash equilibria, auctions), ~15% proofs, ~15% reasoning."
   examiners: "Dec 2025: step-by-step proofs beat qualitative arguments; calculation slips cost marks."
-  caveat: "Expect an unseen proof, and 2-3 new algorithms to memorise each lecture."
-  reviewSummary: "Reviewers found the workload high with many algorithms and proofs to memorise and the scheduling half dull, but enjoyed the game theory and coursework."
+  caveat: "Last year's exam had an unseen proof; the tutorial sheets include exam-style problems."
+  reviewSummary: "One reviewer found the workload high, with many algorithms and proofs to memorise; the other found it straightforward, preferred the game-theory part and enjoyed the coursework."
 
 "70072":
   short: "Independent Study"
@@ -129,11 +131,11 @@
   short: "Comp. Architecture"
   coursework: "Two pieces (20%): a simulator lab finding the lowest-energy configuration, then an open-ended piece in groups of up to 3."
   exam: "80%: 2 h, open book, 3 open-ended questions mostly on a recent processor article handed out in advance; no maths."
-  examiners: "Dec 2025 paper built on AMD's Zen 5 guide; 2024-25 marking rewarded any sensible argument."
+  examiners: "Dec 2025 paper built on AMD's Zen 5 guide; in 2024-25 any well-argued answer earned credit."
   caveat: "Heavy: lots of content, time-consuming coursework, and Monday's material is watched at home."
   # Its page says 2-4 h of pre-recorded lectures a week; the Mon "video" slot already counts 2 h.
   extraHoursPerWeek: 1
-  reviewSummary: "Reviewers rated the lecturer outstanding and liked the flipped format and article-based exam, while warning there is a lot of content."
+  reviewSummary: "Reviewers rated the teaching very highly and liked the flipped format and article-based exam, while warning there is a lot of content."
   site: "https://www.doc.ic.ac.uk/~phjk/AdvancedCompArchitecture/aca20/"
   # No archived page for 2024-25; he has taught it every year.
   meanYear: ["Paul Kelly"]
@@ -143,14 +145,13 @@
   coursework: "Labs (Thu and Fri), 20%."
   exam: "80%: 2 h, all 3 questions: mostly concepts and sketches (neuron models, networks) plus ODE and mutual-information calculations."
   examiners: "2024-25: Q1 hardest, Q2 best answered; marks lost for missing proofs, mixed-up plots and units."
-  caveat: "The 2025-26 exam reportedly felt harder than in earlier years."
-  reviewSummary: "The one reviewer found the content interesting and the lecturer nice, but the exam harder than in previous years."
+  reviewSummary: "The one reviewer found the content interesting and the teaching good, and the 2025-26 exam harder than in previous years."
 
 "70101":
   short: "Human-Robot Interaction"
   coursework: "30%: two in-class exercises, a short programming assignment and a group project with peer evaluation."
   exam: "70%: 2 h, 3 questions (2023-24): user-study design writing, Markov-chain calculations and multi-select MCQs."
-  examiners: "2023-24: most did well; marks lost for weak study controls and HMM vs POMDP mix-ups."
+  examiners: "2023-24: most did well; marks lost for study designs lacking controls and HMM vs POMDP mix-ups."
   caveat: "Didn't run in 2024-25 or 2025-26, so the only paper and feedback are from 2023-24."
 
 "70103":
@@ -165,24 +166,24 @@
   short: "Computer Vision"
   coursework: "Two Jupyter-notebook courseworks (20%)."
   exam: "80%: 2 h, all 3 questions: ~40% calculation (Sobel, camera projection, epipolar lines), ~40% outlining methods."
-  examiners: "2024-25: strict partial credit; procedural slips and the epipolar proof cost the most."
-  caveat: "Lots of fast-paced content, close to two modules' worth; mean 66.5."
-  reviewSummary: "Reviewers praised the kind lecturer and consistent exam style but found the content huge and fast-paced; coursework was manageable."
+  examiners: "2024-25: partial credit needed correct working; procedural slips and the epipolar proof cost the most."
+  caveat: "A lot of fast-paced content; mean 66.5 in 2024-25."
+  reviewSummary: "Reviewers praised the teaching and the consistent exam style but found the content large and fast-paced; the coursework was manageable."
 
 "70113":
   short: "Generative AI"
   coursework: "One individual coursework (20%): an image generator (VAEs) scored on metrics; out 22 Oct, due 20 Nov, about 16 h."
   exam: "80%: 3 questions of 20 marks: about half conceptual, a quarter calculation, a quarter derivation (ELBO, Gaussian KL, diffusion)."
-  examiners: "Spring 2026: about 83% average; Q2 (receptive field, attention, LoRA rank) split the class."
+  examiners: "Spring 2026: high raw exam marks; Q2 (receptive field, attention, LoRA rank) separated the class."
   caveat: "Page says weekly videos plus a class, but CELCAT books two lectures; same course as spring 70010."
 
 "70114":
   short: "ML Systems & Hardware"
-  coursework: "An individual assignment implementing and optimising ML operators in CUDA, code plus report (20%); reviewers found it tough."
+  coursework: "An individual assignment implementing and optimising ML operators in CUDA, code plus report (20%)."
   exam: "80%: 2 questions of 3 parts, ~70% calculation (roofline, compression ratios, tiling, KV-cache memory)."
-  examiners: "2025-26: Q1 answered well; Q2 weak on compression metadata, per-tile latency and KV blocks."
+  examiners: "2025-26: Q1 answered well; Q2 errors on compression metadata, per-tile latency and KV blocks."
   caveat: "Only one previous run: no past papers, just a mock exam."
-  reviewSummary: "Reviewers found the lecturer helpful and the examinable material clear, but the first run unstructured and the CUDA coursework tough."
+  reviewSummary: "Split: one found the lecturer very helpful and the examinable material clear, the other found the first run still taking shape; both found the CUDA coursework hard without prior experience."
 
 "70117":
   short: "Type Systems"
@@ -197,15 +198,15 @@
   short: "Adv. Computer Graphics"
   coursework: "Two courseworks, alone or in pairs: HDR and image-based lighting, then Monte Carlo rendering (30%)."
   exam: "70%: 90 min, 2 questions, about 60% numeric calculation (radiometry, HDR, sampling) and 40% short concepts."
-  examiners: "Students did well overall; Q2 weaker; slips on light fields, Fresnel and sampling."
-  caveat: "Very tight on time, with many formulas to memorise and no formula sheet."
-  site: "http://www.doc.ic.ac.uk/~ghosh/COMP70001.htm"
+  examiners: "Students did well overall, Q2 a little less so; slips on light fields, Fresnel and sampling."
+  caveat: "About 26 sub-parts in 90 min, with many formulas to memorise and no formula sheet."
+  site: "https://www.doc.ic.ac.uk/~ghosh/COMP70001.htm"
 
 "70004":
   short: "Adv. Computer Security"
   coursework: "Three individual paper summaries (10%) and a group Android malvertising assignment run as a competition (10%)."
   exam: "80%: 2 h, all 4 questions: scenario reasoning, MCQs needing a justification, and writing an SELinux policy."
-  examiners: "MCQs went well but unjustified answers lost marks; SELinux syntax errors; few good designs."
+  examiners: "MCQs went well; unjustified answers and SELinux syntax errors lost marks."
   caveat: "One half is built on new real-world incidents each year, so it can't be memorised."
   site: "https://comp97109.doc.ic.ac.uk/"
 
@@ -220,7 +221,7 @@
   short: "Generative AI"
   coursework: "One term-long project to design, build and evaluate a deep generative model for images (20%)."
   exam: "80%; the last Deep Learning paper: 90 min, 2 questions, 1-page sheet, MCQs, calculations, derivations and design."
-  examiners: "Deep Learning 2024-25: Q2 averaged 12.2/20; conditional GAN hardest; paper too long."
+  examiners: "Deep Learning 2024-25: the conditional GAN question was the hardest; examiners found the paper long."
   caveat: "Rebuilt from Deep Learning, so old papers only partly apply; same syllabus as 70113, take one."
 
 "70014":
@@ -229,13 +230,13 @@
   coursework: "One mini-project in groups of two (20%)."
   exam: "80%: 2 h, 2 questions: hand calculation (convolutions), short recall, MCQs and pseudo-code tied to the tutorials."
   examiners: "Mostly good; errors on transposed convolutions, U-Nets and unjustified causal claims."
-  caveat: "Strong medical-imaging focus; an old review found little new over computer vision."
+  caveat: "Strong medical-imaging focus; one older review found much overlap with Computer Vision."
 
 "70016":
   short: "NLP"
   coursework: "One coursework on a real NLP shared task (30%); a past one detected patronising language with BERT."
   exam: "70%: 90 min, 3 compulsory questions: 2-3 sentence answers plus calculations (word2vec, perplexity, BPE, attention)."
-  examiners: "Standard calculations went well, parsing less so; averages may be scaled down to 60-70."
+  examiners: "Examiners note marks may be scaled toward the department's 60-70 target."
   caveat: "New lead lecturer this year, and it shares an exam slot with Networked Systems."
   # The archived page lists three PhD students/postdocs who taught most lectures.
   meanYear: ["Marek Rei", "Chiraag Lala"]
@@ -244,7 +245,7 @@
   short: "Probabilistic Inference"
   coursework: "One coursework, partly programming (20%)."
   exam: "80%; the 2023 paper: 2 h, 3 questions, closed book with a formula sheet (graphical models, VI, decision theory)."
-  examiners: "2022-23: reasonable overall but few excellent scripts; the VI question was done poorly."
+  examiners: "2022-23: reasonable overall; the variational inference question was the hardest."
   caveat: "New team and only one old paper from a previous lecturer; maths heavy."
 
 "70020":
@@ -266,7 +267,7 @@
   short: "Robot Learning"
   coursework: "Two individual pieces of 15% each; the second is a simulated-robot strategy ending in a live competition."
   exam: "70%: 90 min, 3 questions, open book: mostly short reasoning plus some modelling and derivation."
-  examiners: "Q2 best and Q3 weakest; vague answers and copied slide phrases were penalised."
+  examiners: "Q2 answered best and Q3 the hardest; vague answers and copied slide phrases lost marks."
   caveat: "Assumes autumn Reinforcement Learning or equivalent; each question ends with an unusual part."
 
 "70070":
@@ -275,13 +276,13 @@
   exam: "80%: 2 h, 2 questions: circuits in Ruby notation, then MaxJ dataflow code and design."
   examiners: "Most had no major problems; slips in wiring, MaxJ types and PCIe bandwidth."
   caveat: "A large part of the first half is learning Ruby, a niche hardware notation."
-  site: "http://www.doc.ic.ac.uk/~wl/teach/cuscomp.html"
+  site: "https://www.doc.ic.ac.uk/~wl/teach/cuscomp.html"
 
 "70075":
   short: "System Perf. Engineering"
   coursework: "Two courseworks, often in pairs: profiling, micro-benchmarks and thread-safe C++ (20%)."
   exam: "80%: 2 h, 2 questions: applied analysis (lock-free code, profiles, counters), essay-like explanation, some calculation."
-  examiners: "Only Q1 feedback published: high average, but races and bottleneck terms mishandled."
+  examiners: "Only Q1 feedback published: it went well overall; errors on races and bottleneck terms."
   caveat: "Low mean (62.7), only two past papers, and heavy use of C++."
   site: "https://co339.pages.doc.ic.ac.uk/"
 
@@ -289,14 +290,14 @@
   short: "Causality & Explanation"
   coursework: "One interpretability lab: run explainability tools on a model and write a technical report (20%)."
   exam: "80%: mostly causality (structural causal models, do-calculus, identifiability, counterfactuals)."
-  caveat: "Rebuilt from an ethics module, so there is no past paper; teaching starts early, on 6 Jan."
+  caveat: "Rebuilt from an ethics module, so there is no past paper or mean."
 
 "70082":
   short: "Network & Web Security"
   coursework: "One individual coursework, a short test-like analysis (20%)."
   exam: "80%: 2 h in the labs, 2 questions, one A4 sheet: about half live hacking on VMs, half written."
-  examiners: "Generic written answers lost marks; few solved the later flags or the session forgery."
-  caveat: "Lowest mean (60.8): the practical half needs CTF practice all term."
+  examiners: "Generic written answers lost marks; the later flags and the session forgery were the hardest."
+  caveat: "Mean 60.8 in 2024-25; the practical half rewards regular CTF practice."
   site: "https://331.cybersec.fun/"
 
 "70090":
@@ -304,7 +305,7 @@
   coursework: "Three individual shader tasks (20%): illumination 40%, texture 10%, GPU ray tracer 50%."
   exam: "80%: 2 h, 2 questions: a design essay with some maths, MCQs and calculation."
   examiners: "Q1 only: MCQs went well, stricter thresholds applied; matrix questions now dropped."
-  caveat: "New lecturer pair moving toward 3D vision, so past papers predict less."
+  caveat: "New co-lecturer and a shift toward 3D vision, so past papers predict less."
 
 "70093":
   short: "Logic-Based Learning"
@@ -327,6 +328,8 @@
   site: "https://www.andreweland.org/swemls/"
   lastYear: ["Andrew Eland"]
   meanYear: ["Andrew Eland"]
+  # Scientia 2026-27 adds Matt Collison; CELCAT only lists Eland.
+  now: ["Andrew Eland", "Matt Collison"]
 
 "70105":
   # Pre-recorded lectures are in the timetable as a 2 h "video" slot; no extra hours known beyond it.
@@ -339,9 +342,9 @@
   short: "Networked Systems"
   coursework: "Three small courseworks building a middlebox in eBPF, DPDK or P4 (30%)."
   exam: "70%: 90 min, 2 questions: half recall of class topics, half continuing an in-class design exercise."
-  examiners: "Students did well overall; generic answers not tied to the class design scored almost nothing."
+  examiners: "Students did well overall; generic answers not tied to the class design scored low."
   caveat: "Assumes networking background, and it shares an exam slot with NLP."
-  reviewSummary: "Reviewers rate the lecturer very highly, but a research paper to read and discuss each week plus intense coursework make it demanding."
+  reviewSummary: "Reviewers rated the teaching very highly, but found the weekly research paper to read and discuss, plus intense coursework, demanding."
 
 "70112":
   short: "Non-Euclidean ML"

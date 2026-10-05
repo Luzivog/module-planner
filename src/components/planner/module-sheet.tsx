@@ -1,4 +1,4 @@
-import { ExternalLink, House, Info, TriangleAlert, User, Users, Video, VideoOff } from "lucide-react"
+import { ExternalLink, House, Info, Link2, TriangleAlert, User, Users, Video, VideoOff } from "lucide-react"
 import { Fragment, type ReactNode } from "react"
 import type { Coursework, Module, Session } from "@/data/schema"
 import { Hint } from "./hint"
@@ -13,8 +13,9 @@ import { useLayout } from "@/hooks/use-media"
 import { TERM_NAMES, usePlanner } from "@/hooks/use-planner"
 import { conflictsWith, describeConflict } from "@/lib/conflicts"
 import { examNeeded } from "@/lib/grade"
-import { includesName, meanSetByOthers, nameKey, teamVsLastYear } from "@/lib/lecturers"
-import { scoreTone, THIN_REVIEWS, toneBg, toneText, type Tone } from "@/lib/scores"
+import { includesName, meanByOtherTeam, teamVsLastYear, teamVsReviewed } from "@/lib/lecturers"
+import { CAP_NOTE, isCapped, otherTeamNote } from "@/lib/means"
+import { difficultyTone, THIN_REVIEWS, toneBg, toneText, type Tone } from "@/lib/scores"
 import { formatDateTime, formatDay, runLabel, shortRange } from "@/lib/time"
 import { cn } from "@/lib/utils"
 
@@ -88,9 +89,9 @@ function Header({ module: m }: { module: Module }) {
         <Button size="sm" variant={on ? "outline" : "default"} onClick={() => toggle(m.code)}>
           {on ? "Remove" : "Add to plan"}
         </Button>
-        <ExtLink href={m.links.official} icon="./imperial.svg">Official page</ExtLink>
+        <ExtLink href={m.links.official} icon={<Link2 className="size-3.5" />}>Official page</ExtLink>
         {m.links.site && <ExtLink href={m.links.site}>Lecturer site</ExtLink>}
-        {m.reviews && <ExtLink href={m.reviews.url} icon="./rmm.svg">Reviews</ExtLink>}
+        {m.reviews && <ExtLink href={m.reviews.url} icon={<img src="./rmm.svg" alt="" className="size-3.5 rounded-[3px]" />}>Reviews</ExtLink>}
       </div>
       {conflicts.length > 0 && (
         <ul className="space-y-0.5 text-xs text-bad">
@@ -112,11 +113,11 @@ function Header({ module: m }: { module: Module }) {
   )
 }
 
-// External link; `icon` is an optional logo shown before the label.
-function ExtLink({ href, icon, children }: { href: string; icon?: string; children: ReactNode }) {
+// External link; `icon` is an optional icon or logo shown before the label.
+function ExtLink({ href, icon, children }: { href: string; icon?: ReactNode; children: ReactNode }) {
   return (
     <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
-      {icon && <img src={icon} alt="" className="size-3.5 rounded-[3px]" />}
+      {icon}
       {children}
       <ExternalLink className="size-3" />
     </a>
@@ -139,22 +140,22 @@ function Section({ title, aside, children }: { title: string; aside?: ReactNode;
 function KeyFacts({ module: m }: { module: Module }) {
   const r = m.reviews
   const thin = r !== null && r.count < THIN_REVIEWS
+  const otherReviewed = r !== null && teamVsReviewed(m) === "different"
   const mean = m.means[0]
-  const setBy = meanSetByOthers(m)
+  const otherTeam = meanByOtherTeam(m)
   return (
     <div className="grid grid-cols-2 gap-2 @sm:grid-cols-4">
       <Fact label="exam" value={`${m.examPct}%`} sub={m.examPct === 0 ? "coursework only" : `${100 - m.examPct}% cw`} />
       <Fact
-        label="teaching"
+        label="teaching (RMM)"
         value={r ? r.teaching.toFixed(1) : "–"}
-        tone={r && !thin ? scoreTone(r.teaching) : "neutral"}
-        muted={!r || thin}
-        sub={r ? `${r.count} review${r.count === 1 ? "" : "s"}${thin ? " · thin" : ""}` : "no reviews"}
+        muted={!r || thin || otherReviewed}
+        sub={r ? `${r.count} review${r.count === 1 ? "" : "s"}${thin ? " · thin" : ""}${otherReviewed ? " · other team" : ""}` : "no reviews"}
       />
       <Fact
         label="difficulty"
         value={r ? r.difficulty.toFixed(1) : "–"}
-        tone={r && !thin ? scoreTone(r.difficulty, true) : "neutral"}
+        tone={r && !thin ? difficultyTone(r.difficulty) : "neutral"}
         muted={!r || thin}
         sub="5 = hardest"
       />
@@ -162,11 +163,11 @@ function KeyFacts({ module: m }: { module: Module }) {
         label="average"
         value={mean ? mean.mean.toFixed(1) : "–"}
         muted={!mean}
-        tag={mean && isCapped(mean.mean) ? <CapTag /> : null}
+        tag={mean && isCapped(mean) ? <CapTag /> : null}
         sub={
-          !mean ? "none published" : setBy ? (
-            <Hint label={`Set by ${setBy.join(", ")}`}>
-              <span className="text-warn">different lecturer</span>
+          !mean ? "none published" : otherTeam ? (
+            <Hint label={otherTeamNote(mean.year)}>
+              <span className="text-warn">different team</span>
             </Hint>
           ) : (
             runLabel(mean.year, m.term)
@@ -294,8 +295,8 @@ function WeekSection({ module: m }: { module: Module }) {
         <p className="text-xs text-muted-foreground">No sessions timetabled.</p>
       ) : (
         <ul className="space-y-1 text-xs">
-          {m.sessions.map((s) => (
-            <li key={`${s.day}-${s.start}-${s.kind}`} className="grid grid-cols-[2rem_3.5rem_4.5rem_1fr_1rem] items-center gap-2">
+          {m.sessions.map((s, i) => (
+            <li key={`${s.day}-${s.start}-${s.end}-${s.kind}-${i}`} className="grid grid-cols-[2rem_3.5rem_4.5rem_1fr_1rem] items-center gap-2">
               <span className="font-medium">{s.day}</span>
               <span className="tabular-nums">{shortRange(s.start, s.end)}</span>
               <Badge variant="outline" className="h-4 text-[10px] font-normal">{s.kind}</Badge>
@@ -319,49 +320,27 @@ function CaptureIcon({ session: s }: { session: Session }) {
   return <span />
 }
 
-/** Current lecturers vs last year, with their module ratings from other modules. */
+/** Current lecturers vs last year (who the reviews describe). */
 function PeopleSection({ module: m }: { module: Module }) {
-  const { lecturerIndex } = usePlanner()
   const { lastYear } = m.lecturers
-  const team = teamVsLastYear(m)
   return (
-    <Section
-      title="People"
-      aside={
-        <Hint label="Ratings are per module (Rate My Modules), credited to everyone who taught it last year.">
-          <Info className="size-3" />
-        </Hint>
-      }
-    >
+    <Section title="People">
       <ul className="space-y-1.5 text-xs">
-        {m.lecturers.now.map((name) => {
-          const elsewhere = (lecturerIndex.get(nameKey(name)) ?? []).filter((r) => r.code !== m.code)
-          return (
-            <li key={name}>
-              <div className="flex items-center gap-2">
-                <span className="font-medium">{name}</span>
-                {lastYear === null ? (
-                  <Badge variant="secondary" className="h-4 text-[10px] font-normal text-muted-foreground">last year unknown</Badge>
-                ) : includesName(lastYear, name) ? (
-                  <Badge variant="secondary" className="h-4 text-[10px] font-normal">same as last year</Badge>
-                ) : (
-                  <Badge variant="outline" className="h-4 border-warn/40 text-[10px] font-normal text-warn">new</Badge>
-                )}
-              </div>
-              {elsewhere.map((r) => (
-                <div key={r.code} className="truncate text-muted-foreground">
-                  {r.short} module rating{" "}
-                  <span className={cn("font-medium tabular-nums", r.count >= THIN_REVIEWS && toneText[scoreTone(r.teaching)])}>{r.teaching.toFixed(1)}</span>
-                  {" "}· {r.count} review{r.count === 1 ? "" : "s"}
-                  {r.sharedWith.length > 0 && <> · shared with {r.sharedWith.join(", ")}</>}
-                </div>
-              ))}
-            </li>
-          )
-        })}
+        {m.lecturers.now.map((name) => (
+          <li key={name} className="flex items-center gap-2">
+            <span className="font-medium">{name}</span>
+            {lastYear === null ? (
+              <Badge variant="secondary" className="h-4 text-[10px] font-normal text-muted-foreground">last year unknown</Badge>
+            ) : includesName(lastYear, name) ? (
+              <Badge variant="secondary" className="h-4 text-[10px] font-normal">same as last year</Badge>
+            ) : (
+              <Badge variant="outline" className="h-4 border-warn/40 text-[10px] font-normal text-warn">new</Badge>
+            )}
+          </li>
+        ))}
         {m.lecturers.now.length === 0 && <li className="text-muted-foreground">Not announced.</li>}
       </ul>
-      {team === "different" && lastYear && lastYear.length > 0 && (
+      {teamVsLastYear(m) === "different" && lastYear && lastYear.length > 0 && (
         <p className="text-xs text-muted-foreground">Last year: {lastYear.join(", ")}</p>
       )}
     </Section>
@@ -380,7 +359,7 @@ function ReviewsSection({ module: m }: { module: Module }) {
             <ExtLink href={r.url}>
               {r.count} review{r.count === 1 ? "" : "s"} · {runLabel(r.year, m.term)}
             </ExtLink>
-            {teamVsLastYear(m) === "different" && <span className="text-warn">describes last year's team</span>}
+            {teamVsReviewed(m) === "different" && <span className="text-warn">describes a different team</span>}
           </div>
         </div>
       ) : (
@@ -390,12 +369,9 @@ function ReviewsSection({ module: m }: { module: Module }) {
   )
 }
 
-/** Class averages above 75 are scaled down to 75, so a mean right at 75 means "at least 75". */
-const isCapped = (mean: number) => mean >= 75 && Math.round(mean * 10) <= 752
-
 function CapTag() {
   return (
-    <Hint label="Class averages above 75 are scaled down to 75, so 75.0 means 'at least 75'">
+    <Hint label={CAP_NOTE}>
       <span className="rounded-sm bg-muted px-1 text-[9px] font-medium tracking-wide text-muted-foreground uppercase">cap</span>
     </Hint>
   )
@@ -403,13 +379,13 @@ function CapTag() {
 
 /** Published class means on one line, newest first; the latest is flagged if a different team set it. */
 function MeansSection({ module: m }: { module: Module }) {
-  const setBy = meanSetByOthers(m)
+  const otherTeam = meanByOtherTeam(m)
   return (
     <Section
       title="Class average"
       aside={
-        <Hint label="Class averages above 75 are scaled down to 75, so 75.0 means 'at least 75'">
-          <Info className="size-3" />
+        <Hint label={CAP_NOTE}>
+          <Info className="size-3" role="img" aria-label="About class averages" />
         </Hint>
       }
     >
@@ -418,12 +394,12 @@ function MeansSection({ module: m }: { module: Module }) {
           <Fragment key={x.year}>
             {i > 0 && <span className="text-muted-foreground"> · </span>}
             <span className="font-medium">{x.mean.toFixed(1)}</span>
-            {isCapped(x.mean) && <> <CapTag /></>} <span className="text-muted-foreground">{runLabel(x.year, m.term)}</span>
-            {i === 0 && setBy && (
+            {isCapped(x) && <> <CapTag /></>} <span className="text-muted-foreground">{runLabel(x.year, m.term)}</span>
+            {i === 0 && otherTeam && (
               <>
                 {" "}
-                <Hint label={`Set by ${setBy.join(", ")}`}>
-                  <span className="text-warn">(different lecturer)</span>
+                <Hint label={otherTeamNote(x.year)}>
+                  <span className="text-warn">(different team)</span>
                 </Hint>
               </>
             )}

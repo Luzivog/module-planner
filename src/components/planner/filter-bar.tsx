@@ -13,6 +13,8 @@ type Props = {
   clear: () => void
   shown: number
   total: number
+  /** Shown in the status line when no filter is active (first-visit guidance). */
+  idleHint: string | null
 }
 
 const EXAM_NEXT = { any: "max70", max70: "none", none: "any" } as const satisfies Record<Filters["exam"], Filters["exam"]>
@@ -25,7 +27,7 @@ const pad = (h: number) => `${String(h).padStart(2, "0")}:00`
  * a status line. Chips that change label have fixed widths and the status line
  * always takes its height, so toggling never shifts the list.
  */
-export function FilterBar({ filters: f, set, clear, shown, total }: Props) {
+export function FilterBar({ filters: f, set, clear, shown, total, idleHint }: Props) {
   const more = moreCount(f)
   return (
     <div className="space-y-1.5 px-3 pb-2">
@@ -75,6 +77,7 @@ export function FilterBar({ filters: f, set, clear, shown, total }: Props) {
         </Popover>
       </div>
       <div className="flex h-4 items-center gap-1.5 text-[11px] text-muted-foreground pointer-coarse:h-6 pointer-coarse:text-xs">
+        {activeCount(f) === 0 && idleHint && <span className="truncate text-foreground">{idleHint}</span>}
         {activeCount(f) > 0 && (
           <>
             <span className="tabular-nums">

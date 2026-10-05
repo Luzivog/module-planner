@@ -20,15 +20,21 @@ export const Session = z.object({
 })
 export type Session = z.infer<typeof Session>
 
+/** A public https link. */
+const HttpsUrl = z.url({ protocol: /^https$/ })
+
 /** Rate My Modules scores for the module's last run (1-5; difficulty 5 = hardest). */
 export const Reviews = z.object({
   count: z.number().int(),
   content: z.number(),
   teaching: z.number(),
   difficulty: z.number(),
-  /** Academic year the reviews describe, e.g. "2025-26". */
+  /** Academic year the reviews describe: "2025-26" for autumn modules, "2024-25" for
+   * spring modules not yet run since (reviews were written Jan-Mar 2026). */
   year: z.string(),
-  url: z.string().url(),
+  /** Lecturers that year (the team the reviews describe); null = unknown. */
+  team: z.array(z.string()).nullable(),
+  url: HttpsUrl,
   /** One sentence in our own words, from data/notes.yaml. */
   summary: z.string().nullable(),
 })
@@ -89,8 +95,8 @@ export const Module = z.object({
     extraHoursPerWeek: z.number().nullable(),
   }),
   links: z.object({
-    official: z.string().url(),
-    site: z.string().url().nullable(), // lecturer's own course site
+    official: HttpsUrl,
+    site: HttpsUrl.nullable(), // lecturer's own course site
   }),
 })
 export type Module = z.infer<typeof Module>

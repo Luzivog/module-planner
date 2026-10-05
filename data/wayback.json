@@ -37,6 +37,13 @@
     "Matthew Sheldon",
     "Ruth Misener"
    ]
+  },
+  "2025-26": {
+   "url": "https://web.archive.org/web/20251206085717/https://www.imperial.ac.uk/computing/current-students/courses/70007/",
+   "leaders": [
+    "Panos Parpas",
+    "Ruth Misener"
+   ]
   }
  },
  "70014": {
@@ -67,6 +74,13 @@
     "Chiraag Lala",
     "Nuri Cingillioglu"
    ]
+  },
+  "2025-26": {
+   "url": "https://web.archive.org/web/20251216063631/https://www.imperial.ac.uk/computing/current-students/courses/70016/",
+   "leaders": [
+    "Marek Rei",
+    "Chiraag Lala"
+   ]
   }
  },
  "70017": {
@@ -76,6 +90,14 @@
     "Paul Pritz",
     "Sam Werner",
     "Daniel Perez Hernandez",
+    "William Knottenbelt"
+   ]
+  },
+  "2025-26": {
+   "url": "https://web.archive.org/web/20251016223848/https://www.imperial.ac.uk/computing/current-students/courses/70017/",
+   "leaders": [
+    "Paul Pritz",
+    "Sam Werner",
     "William Knottenbelt"
    ]
   }
@@ -134,6 +156,10 @@
     "Edward Johns",
     "Filippo Valdettaro"
    ]
+  },
+  "2025-26": {
+   "url": "https://web.archive.org/web/20260217033033/https://www.imperial.ac.uk/computing/current-students/courses/70028/",
+   "leaders": []
   }
  },
  "70050": {
@@ -157,6 +183,13 @@
  "70068": {
   "2024-25": {
    "url": "https://web.archive.org/web/20250119031759/https://www.imperial.ac.uk/computing/current-students/courses/70068/",
+   "leaders": [
+    "Dario Paccagnan",
+    "Giuliano Casale"
+   ]
+  },
+  "2025-26": {
+   "url": "https://web.archive.org/web/20260214105911/https://www.imperial.ac.uk/computing/current-students/courses/70068/",
    "leaders": [
     "Dario Paccagnan",
     "Giuliano Casale"
@@ -187,6 +220,17 @@
    ]
   }
  },
+ "70076": {
+  "2025-26": {
+   "url": "https://web.archive.org/web/20260208080218/https://www.imperial.ac.uk/computing/current-students/courses/70076/",
+   "leaders": [
+    "Saman Hina",
+    "Robert Craven",
+    "Matthew Wicker",
+    "Francesco Leofante"
+   ]
+  }
+ },
  "70082": {
   "2024-25": {
    "url": "https://web.archive.org/web/20250119024534/https://www.imperial.ac.uk/computing/current-students/courses/70082/",
@@ -196,7 +240,13 @@
   }
  },
  "70086": {
-  "2024-25": null
+  "2024-25": null,
+  "2025-26": {
+   "url": "https://web.archive.org/web/20251205023824/https://www.imperial.ac.uk/computing/current-students/courses/70086/",
+   "leaders": [
+    "Paul Kelly"
+   ]
+  }
  },
  "70090": {
   "2024-25": {
@@ -267,6 +317,14 @@
    "url": "https://web.archive.org/web/20250124003329/https://www.imperial.ac.uk/computing/current-students/courses/70112/",
    "leaders": [
     "Tolga Birdal"
+   ]
+  }
+ },
+ "70113": {
+  "2025-26": {
+   "url": "https://web.archive.org/web/20251215180201/https://www.imperial.ac.uk/computing/current-students/courses/70113/",
+   "leaders": [
+    "Jiankang Deng"
    ]
   }
  },

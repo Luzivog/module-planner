@@ -43,6 +43,12 @@ export function planConflicts(selected: Module[]): Conflict[] {
   return selected.flatMap((a, i) => selected.slice(i + 1).flatMap((b) => conflictsBetween(a, b)))
 }
 
+/** True for the same module offered in both terms under two codes. */
+export const isTermTwin = (c: Conflict) => c.kind === "excludes" && c.a.title === c.b.title
+
+/** "Generative AI (spring, 70010)": names a term twin unambiguously. */
+export const twinName = (m: Module) => `${m.title} (${m.term === 1 ? "autumn" : "spring"}, ${m.code})`
+
 /** One-line description, phrased from `a`'s point of view. */
 export function describeConflict(c: Conflict): string {
   switch (c.kind) {
@@ -51,6 +57,6 @@ export function describeConflict(c: Conflict): string {
     case "examSlot":
       return `Same exam slot as ${c.b.short} (${c.slot})`
     case "excludes":
-      return c.a.title === c.b.title ? `Same module as ${c.b.short} in the other term: take only one` : `Can't be taken with ${c.b.short}`
+      return isTermTwin(c) ? `Same module as ${twinName(c.b)}: take only one` : `Can't be taken with ${c.b.short}`
   }
 }
