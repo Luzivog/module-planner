@@ -580,7 +580,23 @@ function buildModule(m: DocModule, { events, means, rmm, coursework, examDate, a
   }
 }
 
+/** Stops early with a clear message when the maintainer's private tools aren't installed. */
+async function requireTools(): Promise<void> {
+  for (const tool of ["imperial-doc", "imperial-timetable"]) {
+    try {
+      await execFileAsync("which", [tool])
+    } catch {
+      console.error(
+        `\`pnpm data\` needs ${tool}, a private tool the maintainer uses with their Imperial login; it isn't published.\n` +
+          "To fix or add data, edit data/notes.yaml (and public/data.json to preview) and open a PR with a source.",
+      )
+      process.exit(1)
+    }
+  }
+}
+
 async function main() {
+  await requireTools()
   const [offer, notes, meanYears, coursework, examDates] = await Promise.all([
     fetchOffer(),
     readNotes(),

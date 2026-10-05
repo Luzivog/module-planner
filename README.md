@@ -22,9 +22,11 @@ Your plan is saved in your browser, and "Copy plan link" gives a URL that restor
 - **`data/notes.yaml`:** hand-written one-liners (coursework, exam, examiners' feedback,
   the main caveat, a review summary in our own words) and corrections.
 
-The Imperial sources need a student login, so the script runs locally with the
-author's read-only CLI tools (`imperial-doc`, `imperial-timetable`); the site itself
-only reads the generated JSON. No personal data is included.
+The Imperial sources need a student login, so only the maintainer refreshes the
+dataset: the script relies on private, read-only tools (`imperial-doc`,
+`imperial-timetable`) that aren't published. The site itself only reads the
+generated JSON, and no personal data is included. To fix or add data, edit
+`data/notes.yaml` and open a PR with a source; it's applied on the next refresh.
 
 Contributions: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -36,7 +38,7 @@ Everything is unofficial and can be out of date: check Scientia before choosing.
 pnpm install
 pnpm dev      # http://localhost:5173
 pnpm build    # type-check and build to dist/
-pnpm data     # refresh public/data.json (needs the Imperial CLIs)
+pnpm data     # maintainer only: refresh public/data.json
 ```
 
 Vite, React, TypeScript, Tailwind and shadcn/ui (Base UI). The dataset's shape is
