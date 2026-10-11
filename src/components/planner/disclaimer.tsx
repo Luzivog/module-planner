@@ -12,8 +12,8 @@ const SOURCES = [
 ]
 
 /**
- * The unofficial-project notice, shown in every layout. `withClose` adds the
- * selection deadline (tablet, where there's no summary column).
+ * The unofficial-project notice and author credit, shown in every layout.
+ * `withClose` adds the selection deadline (tablet, where there's no summary column).
  */
 export function Disclaimer({ withClose = false, className }: { withClose?: boolean; className?: string }) {
   const { data } = usePlanner()
@@ -25,6 +25,18 @@ export function Disclaimer({ withClose = false, className }: { withClose?: boole
       </Hint>{" "}
       · check Scientia before choosing.
       {withClose && <> Choices close {formatDay(data.selection.closes)}.</>}
+      <span className="mt-0.5 block">
+        Made by{" "}
+        <a
+          href="https://thomasfairhurst.com"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Thomas Fairhurst, personal website (opens in a new tab)"
+          className="underline underline-offset-2 hover:text-foreground"
+        >
+          Thomas Fairhurst
+        </a>
+      </span>
     </p>
   )
 }
